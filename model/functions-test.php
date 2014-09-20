@@ -5,6 +5,7 @@
 //include_once './users.php';
 //$users=new users();
 include_once './friends.php';
+$friends=new friends();
 
 ////Start DB_FUNCTIONS TEST
 //$input['username']='hamada';
