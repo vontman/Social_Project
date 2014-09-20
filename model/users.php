@@ -1,25 +1,15 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of users
- *
- * @author omar
- */
 class users {
     public $link;
     public $functions;
-    public function __construct() {
+    public function __construct(){
         include_once './connect.php';
         include_once './function.php';
         $this->functions=new db_functions;
         $this->functions->table_name='users';
     }
+<<<<<<< HEAD
     public function adduser(){
         $this->functions->insert($input);
         
@@ -30,5 +20,26 @@ class users {
          $sql=  mysqli_query($con, $query);
          return mysqli_affected_rows($con);
         
+=======
+    public function view_user($user_id){
+        $cols=array("id","username","email","firstname","lastname","mobile_number","job","gender","country_id","image","cover","created");
+        try{
+            $user=$this->functions->select($cols, $user_id);
+            return $user;
+        }
+        catch (Exception $ex){
+            return mysqli_errno($this->link);
+        }
+    }
+    public function check_login($username,$password){
+        $user['username']=$username;
+        $user['password']=$password;
+        try{
+            $aff_rows=$this->functions->select($user);
+            return $aff_rows;
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+>>>>>>> f40cc573117112f9158d487cad3d8ee875849287
     }
 }
