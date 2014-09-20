@@ -11,7 +11,6 @@ class users {
     }
     public function adduser(){
         $this->functions->insert($input);
-        
     }
     public function check_user($username){
         $con=  $this->con;
