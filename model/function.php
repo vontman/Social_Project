@@ -35,7 +35,7 @@ class db_functions{
         }
         try{
             $sql= mysqli_query($this->link, $query);
-            if(mysqli_affected_rows($this->link)<0){
+            if(mysqli_affected_rows($this->link)>0){
                 while($row = mysql_fetch_array($query)){
                      $array[]=$row;
                 }

@@ -20,4 +20,15 @@ class users {
         $this->functions=new db_functions;
         $this->functions->table_name='users';
     }
+    public function adduser(){
+        $this->functions->insert($input);
+        
+    }
+    public function check_user($username){
+        $con=  $this->con;
+         $query="SELECT * FROM users WHERE username='$user'";
+         $sql=  mysqli_query($con, $query);
+         return mysqli_affected_rows($con);
+        
+    }
 }
