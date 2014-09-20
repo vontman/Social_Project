@@ -22,6 +22,11 @@ class users {
     public function check_login($username,$password){
         $user['username']=$username;
         $user['password']=$password;
-        $this->functions->select($user);
+        try{
+            $aff_rows=$this->functions->select($user);
+            return $aff_rows;
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
     }
 }
