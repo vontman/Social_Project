@@ -20,6 +20,15 @@ class users {
         $aff_rows= $this->functions->select($cols);  
          return $aff_rows;
     }
+
+    public function check_user($username){
+        $con=  $this->con;
+         $query="SELECT * FROM users WHERE username='$user'";
+         $sql=  mysqli_query($con, $query);
+         return mysqli_affected_rows($con);
+    }
+        
+
     public function view_user($user_id){
         $cols=array("id","username","email","firstname","lastname","mobile_number","job","gender","country_id","image","cover","created");
         try{
