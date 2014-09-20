@@ -9,10 +9,13 @@ class users {
         $this->functions=new db_functions;
         $this->functions->table_name='users';
     }
-    public function adduser(){
-        $this->functions->insert($input);
-        $id=$input;
-        return $input;
+    public function adduser($arry){
+        $arry[]='username';
+        $arry[]='password';
+        $arry[]='email';
+        $this->functions->insert();
+        $id=$arry;
+        return $id;
     }
     public function check_username($username){
         $cols[]='id'; 
