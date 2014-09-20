@@ -10,9 +10,6 @@ class users {
         $this->functions->table_name='users';
     }
     public function adduser($arry){
-        $arry[]='username';
-        $arry[]='password';
-        $arry[]='email';
         $this->functions->insert();
         $id=$arry;
         return $id;
