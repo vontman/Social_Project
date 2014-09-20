@@ -64,4 +64,28 @@ class friends {
             }
         }
     }
+    public function view_friends($user_id){
+        $row=array();
+        $row['cols']['user_id']=$user_id;
+        $row['cols']['friend_id']=$user_id;
+        $row['relation'][]='OR';
+        try{
+            $ids=$this->functions->select(array('id','user_id','friend_id'), false, false,false,$row);
+            if($ids){
+                foreach($ids as $k=>$v){
+                    if ($v['user_id']==$user_id){
+                        $friends_ids[]=$v['friend_id'];
+                    }
+                    if($v['friend_id']==$user_id){
+                        $friends_ids[]=$v['user_id'];
+                    }
+                }
+                return $friends_ids;
+            }else{
+                return 0;
+            }
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
 }

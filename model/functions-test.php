@@ -50,3 +50,4 @@ $friends=new friends();
 //echo $friends->accept(1, true);
 //echo $friends->accept(2, false);
 //end accepted test !!!
+print_r($friends->view_friends(2));

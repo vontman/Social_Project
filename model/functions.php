@@ -8,7 +8,7 @@ class db_functions{
         $connect= new db_connect();
         $this->link= $connect->connect();
     }
-    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false){
+    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row){
         $query="SELECT ";
         if($cols){
             $cols_input=  implode(",", $cols);
@@ -18,7 +18,23 @@ class db_functions{
             $query.="* ";
         }
         $query.="FROM $this->table_name ";
-        if($id){
+        if($specific_row){
+            $query.=" WHERE ";
+            $i=0;
+            foreach($specific_row['cols'] as $k=>$v){
+                if($i>0){
+                    if(@$specific_row['relation']){
+                        $query.=" ".$specific_row['relation'][$i-1]." ";
+                    }
+                    else{
+                        $query.=" AND ";
+                    }
+                }
+                $query.=" ".$k."='".$v."' ";
+                $i++;
+            }
+        }
+        elseif($id){
            $query.="WHERE id=$id ";
         }
         if($order){
@@ -40,6 +56,7 @@ class db_functions{
 //                $query.="LIMIT 1,1";
              }
         }
+
         try{
             $sql= mysqli_query($this->link, $query);
             if(mysqli_affected_rows($this->link)>0){
@@ -47,9 +64,11 @@ class db_functions{
                      $array[]=$rows;
                 }
                 return $array;
+//                return $query;
             }
             else {                      
                 return mysqli_affected_rows($this->link);
+//                return $query;
             }
         } catch (Exception $ex) {
                 return mysqli_errno($this->link);
