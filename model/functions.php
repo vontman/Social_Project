@@ -80,7 +80,7 @@ class db_functions{
             $query.="WHERE id='$id'";
             try{
                 $sql=  mysqli_query($this->link, $query);
-                return mysqli_insert_id($this->link);
+                return mysqli_affected_rows($this->link);
             } catch (Exception $ex) {
                 return mysqli_errno($this->link);
             }
