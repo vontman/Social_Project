@@ -13,5 +13,11 @@
  */
 class users {
     public $link;
-    
+    public $functions;
+    public function __construct() {
+        include_once './connect.php';
+        include_once './function.php';
+        $this->functions=new db_functions;
+        $this->functions->table_name='users';
+    }
 }
