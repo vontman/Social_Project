@@ -29,9 +29,15 @@ class db_functions{
         }
          if($limit){
             foreach ($limit as $key => $value) {
-                $set_no=$value-1;
-                $items_no=$value*$key;
+                $items_no=$key;
+                if($value==1){
+                    $set_no=0;
+                }
+                else{
+                    $set_no=($key*$value)-$key;
+                }
                 $query.="LIMIT  $set_no , $items_no";
+//                $query.="LIMIT 1,1";
              }
         }
         try{

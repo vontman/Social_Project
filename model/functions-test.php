@@ -8,4 +8,4 @@ $functions->table_name='users';
 //$input['password']=md5('test');
 //$input['email']='hamada@rmial.com';
 //$functions->insert($input);
-print_r($functions->select(array('id','username','email'),false,false,array(1=>2)));
+//print_r($functions->select(array('id','username','email'),false,array('id','DESC'),array(1=>3)));
