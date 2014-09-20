@@ -1,9 +1,11 @@
 <?php
 include_once 'functions.php';
-$functions=new db_functions();
-$functions->table_name='users';
+include_once './users.php';
+//$functions=new db_functions();
+//$functions->table_name='users';
+$users=new users();
 
-
+////Start DB_FUNCTIONS TEST
 //$input['username']='hamada';
 //$input['password']=md5('test');
 //$input['email']='hamada@rmial.com';
@@ -18,3 +20,7 @@ $functions->table_name='users';
 //$update['firstname']='elawy';
 //$functions->update($update,2);
 ////end update test!!
+//// END DB_FUNCTIONS TEST
+
+
+////Start USERS TEST
