@@ -1,8 +1,8 @@
 <?php
 
-class db_con {
+class db_connect{
     public $link;
-    public function connect() {
+    public function connect(){
         try{
             $this->link=  mysqli_connect('localhost', 'root','', 'social_project');
             return $this->link;
