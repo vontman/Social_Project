@@ -1,9 +1,10 @@
 <?php
-include_once 'functions.php';
-include_once './users.php';
+//include_once 'functions.php';
 //$functions=new db_functions();
 //$functions->table_name='users';
-$users=new users();
+//include_once './users.php';
+//$users=new users();
+include_once './friends.php';
 
 ////Start DB_FUNCTIONS TEST
 //$input['username']='hamada';
