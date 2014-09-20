@@ -46,7 +46,7 @@ class db_functions{
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;
                 }
-                return $query;
+                return $array;
             }
             else {                      
                 return mysqli_affected_rows($this->link);

@@ -24,3 +24,14 @@ $users=new users();
 
 
 ////Start USERS TEST
+//$user['username']='test';
+//$user['password']=md5('adfas');
+//$user['email']='test2$email.com';
+//$users->adduser($user);
+////end add_user function test
+//echo $users->check_username('hamada');
+//echo $users->check_email('hamada');
+////end check uesr tests!!
+//print_r($users->view_user(2));
+////end view user !!
+echo $users->login('test', 'passtest');

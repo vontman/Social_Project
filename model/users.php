@@ -18,20 +18,31 @@ class users {
             return mysqli_errno($this->link);
         }
     }
-    public function check_username($username){
-        $cols[]='id'; 
-        $cols[]='username';        
-        $aff_rows= $this->functions->select($cols);  
-         return $aff_rows;
-    }
+//    public function check_username($username){ // Soo WRong
+//        $cols[]='id'; 
+//        $cols[]='username';        
+//        $aff_rows= $this->functions->select($cols);  
+//         return $aff_rows;
+//    }
 
-    public function check_user($username){
-        $con=  $this->con;
-         $query="SELECT * FROM users WHERE username='$user'";
-         $sql=  mysqli_query($con, $query);
-         return mysqli_affected_rows($con);
+    public function check_username($username){
+         $query="SELECT id,username FROM users WHERE username='$username'";
+         try{
+            $sql=  mysqli_query($this->link, $query);
+            return mysqli_affected_rows($this->link);
+         } catch (Exception $ex) {
+             return mysqli_errno($this->link);
+         }
     }
-        
+    public function check_email($email){
+         $query="SELECT id,username FROM users WHERE email='$email'";
+         try{
+            $sql=  mysqli_query($this->link, $query);
+            return mysqli_affected_rows($this->link);
+         } catch (Exception $ex) {
+             return mysqli_errno($this->link);
+         }
+    }
 
     public function view_user($user_id){
         $cols=array("id","username","email","firstname","lastname","mobile_number","job","gender","country_id","image","cover","created");
@@ -63,7 +74,7 @@ class users {
 //        } catch (Exception $ex) {
 //            return mysqli_errno($this->link);
 //        }
-        $query="SELECT id,username,password FROM uesrs WHERE username='$username' AND password='$password'";
+        $query="SELECT id,username,password FROM users WHERE username='$username' AND password='$password'";
         try{
             $sql=  mysqli_query($this->link, $query);
             $aff_rows=  mysqli_affected_rows($this->link);
@@ -71,8 +82,9 @@ class users {
                 while($rows= mysqli_fetch_array($sql)){
                     $user_id=$rows['id'];
                 }
+                $date = date('Y/m/d h:i:s', time());
+                $user_login['last_logged']=$date;
                 $user_login['logged_in']='1';
-                $user_login['last_logged']=date("dd-mm-yy");
                 $this->functions->update($user_login, $user_id);
                 return $user_id;
             }
