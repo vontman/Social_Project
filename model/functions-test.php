@@ -40,3 +40,13 @@ $friends=new friends();
 ////end login test!!
 //echo $users->logout(6);
 ////end logout test !!!
+////END USERS TEST
+
+
+
+////Start Friends Test !!
+//echo $friends->add_friend(1, 3);
+//end add friend test !!
+//echo $friends->accept(1, true);
+//echo $friends->accept(2, false);
+//end accepted test !!!
