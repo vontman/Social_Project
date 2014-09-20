@@ -3,12 +3,14 @@
 class users {
     public $link;
     public $functions;
+    public $date;
     public function __construct(){
         include_once './connect.php';
         include_once './functions.php';
         $this->functions=new db_functions;
         $this->functions->table_name='users';
         $this->link=$this->functions->link;
+        $this->date=date('Y/m/d h:i:s', time());
     }
     public function adduser($user){
         try{
@@ -82,8 +84,7 @@ class users {
                 while($rows= mysqli_fetch_array($sql)){
                     $user_id=$rows['id'];
                 }
-                $date = date('Y/m/d h:i:s', time());
-                $user_login['last_logged']=$date;
+                $user_login['last_logged']=$this->date;
                 $user_login['logged_in']='1';
                 $this->functions->update($user_login, $user_id);
                 return $user_id;
@@ -91,6 +92,19 @@ class users {
             else{
                 return $aff_rows;
             }
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
+    public function logout($user_id){
+        $user_logout['last_logged']=$this->date;
+        $user_logout['logged_in']=0;
+        try{
+//            setcookie($name, $value, $expire, $path);
+//            setcookie($name, $value, $expire, $path);
+//            session_start();
+//            session_destroy();
+            return $this->functions->update($user_logout, $user_id);
         } catch (Exception $ex) {
             return mysqli_errno($this->link);
         }

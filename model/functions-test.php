@@ -34,4 +34,7 @@ $users=new users();
 ////end check uesr tests!!
 //print_r($users->view_user(2));
 ////end view user !!
-echo $users->login('test', 'passtest');
+//echo $users->login('test', 'passtest');
+////end login test!!
+//echo $users->logout(6);
+////end logout test !!!
