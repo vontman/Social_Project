@@ -1,0 +1,315 @@
+            body{
+                /*font-family: 'Open Sans', sans-serif;*/
+                /*background:teal;*/
+                /*background:#5683b8;*/
+                /*background:rgb(22, 100, 111);*/
+                /*background-image: url("texture5.jpg");*/
+                /*background: whitesmoke;*/
+                background:rgb(202, 223, 243);  
+                margin:0;
+                padding:0;
+            }
+            #left_notifications{
+                position:fixed;
+                height:500px;
+            }
+            .leftslider{
+                border-radius: 0px 5px 5px 0px;
+                border:2px groove #d4d4d4;
+                border-left:0;
+                overflow-x: hidden;
+                overflow-y: auto;
+                position:fixed;
+                /*background: rgba(0,0,0,.15);*/
+                background:rgb(156, 180, 202);
+                width:0px;
+                height:100%;
+                transition:all 1.2s ease;
+                box-shadow: 3px 3px 10px ;
+            }
+            .leftslider_click{
+                width:265px;
+            }
+            .leftslider ul{
+                position:absolute;
+                /*top:50%;*/
+                overflow:hidden;
+                padding:0;
+                width:265px;
+                margin:25px auto;
+                list-style-type: none;
+                /*transform: translateY(-50%);*/
+            }
+            .leftslider ul li{
+                display:block;
+                margin:2px 0;
+                padding:4px 2px;
+                width:100%;
+                height:75px;
+                font-size: 16px;
+                font-weight: bold;
+                /*background:#3F6072;*/
+                background: rgba(0,0,0,.15);
+                /*background:#6aace2;*/
+                text-align: left;
+                transition: all .6s ease;
+                word-wrap: break-word;
+                overflow:hidden;
+                color:lightgrey;
+/*                top:50%;
+                transform:translateY(-50%);*/
+            }
+            .leftslider ul li:hover{
+                cursor: pointer;
+                color:black;
+                background: whitesmoke;
+            }
+            .leftslider ul img{
+                position:absolute;
+                width:20%;
+            }
+            .notification{
+                width:78%;
+                height:81%;
+                float:right;
+            }
+            #notification_date{
+                float: right;
+                height:18%;
+                font-size:12px;
+/*                bottom: 0;
+                right: 0;
+                position: absolute;*/
+            }
+            .icon{
+                position:relative;
+                width:50px;
+                height:50px;
+                float:left;
+                top:50%;
+                transform:translateY(-50%) translateX(-50%) rotate(0deg);
+                left:0;
+                transition:all 1.2s ease,left 1.2s ease,margin .8s ease;
+                z-index: 999;
+            }
+            .icon_hover{
+                margin-left:25px;
+            }            
+            .icon_afterclick{
+                margin:0 -35px;
+                left:300px;
+                transform:translateY(-50%) translateX(-50%) rotate(360deg);
+            }
+            .icon img{
+                height:100%;
+                width:100%;
+                border-radius: 50%;
+                border-radius: 50%;
+                border:1px hidden;
+                border: 1px hidden;
+                margin-top:5px;
+                background:#354b60;
+                transition:all .5s ease;
+            }
+            .icon img:hover{
+                background:whitesmoke;
+                cursor:pointer;
+            }
+            .icon .not_num{
+                position:relative;
+                width:15px;
+                height:22px;
+                position:relative;
+                border:1px solid black;
+                z-index: 999;
+                margin:-15px 50%;
+                background:whitesmoke;
+            }
+            .icon .not_num font{
+                font-size: 14px;
+                color:blue;
+                font-weight: bold;
+            }
+            .leftslider .close{
+                position:relative;
+                float:right;
+                width:10px;
+                height:10px; 
+                background:blue;
+                opacity:0;
+                transition-delay: .4s;
+                transition: all .5s ease;
+            }
+            .leftslider .close_afterclick{
+                opacity:1;
+                background: red;
+            }
+
+
+/*            ::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-button {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	border: thin solid lightgray;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+	background:
+	border: thin solid gray;
+	border-radius:10px;
+}*/
+
+
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+::-webkit-scrollbar-corner {
+    background-image: url(http://i.stack.imgur.com/FguQn.png?corner.png);
+    background-repeat: no-repeat;
+}
+::-webkit-resizer {
+    background-image: url(http://i.stack.imgur.com/aKKDY.png?resizer.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+::-webkit-scrollbar-button:start {
+    display: none;
+}
+::-webkit-scrollbar-button:end {
+    display: block;
+}
+::-webkit-scrollbar:horizontal {
+    -webkit-border-image: url(http://i.stack.imgur.com/NQ2K6.png?horizontal-button.png) 0 2 0 2;
+    border-color: transparent;
+    border-width: 0 2px;
+    background-image: url(http://i.stack.imgur.com/8xDbU.png?horizontal-button-background.png);
+    background-repeat: repeat-x;
+}
+::-webkit-scrollbar:horizontal:corner-present {
+    border-right-width: 0;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    -webkit-border-image: url(http://i.stack.imgur.com/YQRD7.png?horizontal-thumb.png) 0 15 0 15;
+    border-color: transparent;
+    border-width: 0 15px;
+    min-width: 20px;
+}
+::-webkit-scrollbar-track-piece:horizontal:start {
+    margin-left: 6px;
+}
+::-webkit-scrollbar-track-piece:horizontal:end {
+    margin-right: -6px;
+}
+::-webkit-scrollbar-track-piece:horizontal:decrement {
+    -webkit-border-image: url(http://i.stack.imgur.com/p9yMk.png?horizontal-track.png) 0 15 0 15;
+    border-color: transparent;
+    border-width: 0 0 0 15px;
+}
+::-webkit-scrollbar-track-piece:horizontal:increment {
+    -webkit-border-image: url(http://i.stack.imgur.com/p9yMk.png?horizontal-track.png) 0 15 0 15;
+    border-color: transparent;
+    border-width: 0 15px 0 0;
+}
+::-webkit-scrollbar-button:horizontal {
+    width: 21px;
+    -webkit-border-image: url(http://i.stack.imgur.com/NQ2K6.png?horizontal-button.png) 0 2 0 2;
+    border-color: transparent;
+    border-width: 0 2px;
+}
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-image: url(http://i.stack.imgur.com/dGOKL.png?horizontal-decrement-arrow.png), url(http://i.stack.imgur.com/8xDbU.png?horizontal-button-background.png);
+    background-repeat: no-repeat, repeat-x;
+    background-position: 7px 4px, 0 0;
+}
+::-webkit-scrollbar-button:horizontal:decrement:active {
+    -webkit-border-image: url(http://i.stack.imgur.com/gT5BM.png?horizontal-button-active.png) 0 2 0 2;
+    background-image: url(http://i.stack.imgur.com/dGOKL.png?horizontal-decrement-arrow.png), url(http://i.stack.imgur.com/RDf8L.png?horizontal-button-background-active.png);
+}
+::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url(http://i.stack.imgur.com/5rJr5.png?horizontal-increment-arrow.png), url(http://i.stack.imgur.com/8xDbU.png?horizontal-button-background.png);
+    background-repeat: no-repeat, repeat-x;
+    width: 16px;
+    border-left-width: 0;
+    background-position: 3px 4px, 0 0;
+}
+::-webkit-scrollbar-button:horizontal:increment:active {
+    -webkit-border-image: url(http://i.stack.imgur.com/gT5BM.png?horizontal-button-active.png) 0 2 0 2;
+    background-image: url(http://i.stack.imgur.com/5rJr5.png?horizontal-increment-arrow.png), url(http://i.stack.imgur.com/RDf8L.png?horizontal-button-background-active.png);
+}
+::-webkit-scrollbar-button:horizontal:end:increment:corner-present {
+    border-right-width: 0;
+    width: 15px;
+}
+::-webkit-scrollbar:vertical {
+    -webkit-border-image: url(http://i.stack.imgur.com/NdaTT.png?vertical-button.png) 2 0 2 0;
+    border-color: transparent;
+    border-width: 2px 0;
+    background-image: url(http://i.stack.imgur.com/p7j9a.png?vertical-button-background.png);
+    background-repeat: repeat-y;
+}
+::-webkit-scrollbar:vertical:corner-present {
+    border-bottom-width: 0;
+}
+::-webkit-scrollbar-thumb:vertical {
+    -webkit-border-image: url(http://i.stack.imgur.com/rPEsZ.png?vertical-thumb.png) 15 0 15 0;
+    border-color: transparent;
+    border-width: 15px 0;
+    min-height: 20px;
+}
+::-webkit-scrollbar-track-piece:vertical:start {
+    margin-top: 6px;
+}
+::-webkit-scrollbar-track-piece:vertical:end {
+    margin-bottom: -6px;
+}
+::-webkit-scrollbar-track-piece:vertical:decrement {
+    -webkit-border-image: url(http://i.stack.imgur.com/Rb6ru.png?vertical-track.png) 15 0 15 0;
+    border-color: transparent;
+    border-width: 15px 0 0 0;
+}
+::-webkit-scrollbar-track-piece:vertical:increment {
+    -webkit-border-image: url(http://i.stack.imgur.com/Rb6ru.png?vertical-track.png) 15 0 15 0;
+    border-color: transparent;
+    border-width: 0 0 15px 0;
+}
+::-webkit-scrollbar-button:vertical {
+    height: 21px;
+    -webkit-border-image: url(http://i.stack.imgur.com/NdaTT.png?vertical-button.png) 2 0 2 0;
+    border-color: transparent;
+    border-width: 2px 0;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(http://i.stack.imgur.com/KQvwk.png?vertical-decrement-arrow.png), url(http://i.stack.imgur.com/p7j9a.png?vertical-button-background.png);
+    background-repeat: no-repeat, repeat-y;
+    background-position: 4px 7px, 0 0;
+}
+::-webkit-scrollbar-button:vertical:decrement:active {
+    -webkit-border-image: url(http://i.stack.imgur.com/uW3TL.png?vertical-button-active.png) 2 0 2 0;
+    background-image: url(http://i.stack.imgur.com/KQvwk.png?vertical-decrement-arrow.png), url(http://i.stack.imgur.com/puDsH.png?vertical-button-background-active.png);
+}
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(http://i.stack.imgur.com/UjkVR.png?vertical-increment-arrow.png), url(http://i.stack.imgur.com/p7j9a.png?vertical-button-background.png);
+    background-repeat: no-repeat, repeat-y;
+    height: 16px;
+    border-top-width: 0;
+    background-position: 4px 5px, 0 0;
+}
+::-webkit-scrollbar-button:vertical:increment:active {
+    -webkit-border-image: url(http://i.stack.imgur.com/uW3TL.png?vertical-button-active.png) 2 0 2 0;
+    background-image: url(http://i.stack.imgur.com/UjkVR.png?vertical-increment-arrow.png), url(http://i.stack.imgur.com/puDsH.png?vertical-button-background-active.png);
+}
+::-webkit-scrollbar-button:vertical:end:increment:corner-present {
+    border-bottom-width: 0;
+    height: 15px;
+}
+::-webkit-scrollbar:disabled {
+    background: red;
+    -webkit-border-image: none;
+    display: none;
+}
