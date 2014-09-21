@@ -6,8 +6,6 @@
 //$users=new users();
 //include_once './friends.php';
 //$friends=new friends();
-include_once './messages.php';
-$messages=new messages();
 
 ////Start DB_FUNCTIONS TEST
 //$input['username']='hamada';
@@ -63,3 +61,4 @@ $messages=new messages();
 //print_r($messages->check(2));
 //end check test!!
 //print_r($messages->view(2, 5));
+//end view test !!

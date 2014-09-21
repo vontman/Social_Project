@@ -32,7 +32,7 @@ class messages {
         return $messages;
 
     }
-    public function view($user_id,$message_id){
+    public function view($user_id,$message_id=false){
         $cols[]='id';
         $cols[]='user_id';
         $cols[]='recieved_id';
@@ -43,9 +43,14 @@ class messages {
         $row['cols']['user_id']=$user_id;
         $row['cols']['recieved_id']=$user_id;
         $row['relation'][]='OR';
-        $message=$this->functions->select($cols, $message_id, false, false,$row);
-        $seen['seen']=1;
-        $this->functions->update($seen, $message_id);
+        if($message_id){
+            $message=$this->functions->select($cols, $message_id, false, false,$row);
+            $seen['seen']=1;
+            $this->functions->update($seen, $message_id);
+        }
+        else{
+            $message=$this->functions->select($cols, false, false, false,$row);
+        }
         return $message;
     }
 }
