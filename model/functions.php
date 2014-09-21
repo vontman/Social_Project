@@ -8,7 +8,7 @@ class db_functions{
         $connect= new db_connect();
         $this->link= $connect->connect();
     }
-    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row){
+    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row=false){
         $query="SELECT ";
         if($cols){
             $cols_input=  implode(",", $cols);
@@ -21,6 +21,9 @@ class db_functions{
         if($specific_row){
             $query.=" WHERE ";
             $i=0;
+            if($id){
+                $query.=" id=".$id." AND (";
+            }
             foreach($specific_row['cols'] as $k=>$v){
                 if($i>0){
                     if(@$specific_row['relation']){
@@ -32,6 +35,9 @@ class db_functions{
                 }
                 $query.=" ".$k."='".$v."' ";
                 $i++;
+            }
+            if($id){
+                $query.=" ) ";
             }
         }
         elseif($id){

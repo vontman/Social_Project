@@ -39,10 +39,13 @@ class messages {
         $cols[]='name';
         $cols[]='body';
         $cols[]='created';
+        $row=array();
         $row['cols']['user_id']=$user_id;
         $row['cols']['recieved_id']=$user_id;
-        $row['relation']='OR';
-        $message=$this->functions->select($cols, $message_id, false, $limit);
+        $row['relation'][]='OR';
+        $message=$this->functions->select($cols, $message_id, false, false,$row);
+        $seen['seen']=1;
+        $this->functions->update($seen, $message_id);
         return $message;
     }
 }
