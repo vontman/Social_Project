@@ -4,8 +4,10 @@
 //$functions->table_name='users';
 //include_once './users.php';
 //$users=new users();
-include_once './friends.php';
-$friends=new friends();
+//include_once './friends.php';
+//$friends=new friends();
+include_once './messages.php';
+$messages=new messages();
 
 ////Start DB_FUNCTIONS TEST
 //$input['username']='hamada';
@@ -52,3 +54,9 @@ $friends=new friends();
 //end accepted test !!!
 //print_r($friends->view_friends(2));
 //end view friends test !!
+
+
+
+////Start Messages Test !!!
+//echo $messages->send(3, 2, "good night !!!", "long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!");
+////end send test !!!

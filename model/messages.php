@@ -17,6 +17,7 @@ class messages {
         $input['recieved_id']=$recieved_id;
         $input['name']=$message_name;
         $input['body']=$message_body;
+        $input['created']=$this->date;
         $id=$this->functions->insert($input);
         return $id;
     }
