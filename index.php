@@ -7,7 +7,19 @@
         <script src="js/jquery-ui.js"></script>
         <script src='datetimepicker/DateTimePicker.js'></script>
         <script>
+            function auto_blend(){
+                if($(window).width()<840){
+                    $('.r-sidebar').hide();
+                    $('#wrapper').css('float','right');
+                }
+                else{
+                    $('.r-sidebar').show();
+                    $('#wrapper').css('float','none');
+                }
+            }
+            $(window).resize(function(){auto_blend();});
             $(document).ready(function(){
+                auto_blend();
                 var icon_hover = true;
                 $('.icon').click(function(){
                     leftslider();
