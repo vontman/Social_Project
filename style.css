@@ -92,7 +92,7 @@
                 top:50%;
                 transform:translateY(-50%) translateX(-50%) rotate(0deg);
                 left:0;
-                transition:all 1.2s ease,left 1.2s ease,margin .8s ease;
+                transition:left 1.2s ease,transform 1.2s ease,margin .8s ease;
                 z-index: 999;
             }
             .icon_hover{
@@ -102,6 +102,11 @@
                 margin:0 -35px;
                 left:300px;
                 transform:translateY(-50%) translateX(-50%) rotate(360deg);
+            }
+            .icon_drag{
+                margin:0;
+                left:0;
+                transform:translateY(-50%) translateX(-50%) rotate(0deg);
             }
             .icon img{
                 height:100%;
