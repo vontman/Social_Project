@@ -18,23 +18,24 @@
                         view.text(lol);
                     }
                 });
-            },2000);
+            },1000);
         });
         $('.send').click(function(){
             var form=$(this);
             var msg=form.siblings('.user_send').val();
             var to=form.siblings('.user_to').val();
             $.ajax({url:'chat.php',
+                dataType:'json',
                 data:{msg:msg,to:to},
                     success:function(lol){
-                        form.siblings('.done').text(lol);
+                        form.siblings('.done').append(lol);
                     }
             });
         });
     });
 </script>
-<div>
-    <input name='user' class="user" type=text placeholder="send" >
+<div style="width:45%;float:left;">
+    <input name='user' class="user" align='left' type=text placeholder="send" >
     <label class="user_submit">user</label><br>
     <input class="user_send" type="text">
     <input class="user_to" type="text" placeholder="to">
@@ -42,9 +43,8 @@
     <textarea class="view">message</textarea><br>
     <label class="done">!</label>
 </div>
-<br>
-<br>
-<div>
+
+<div style="width:45%;float:left;">
     <input name='user' class="user" type=text placeholder="send">
     <label class="user_submit">user</label><br>
     <input class="user_send" type="text">
