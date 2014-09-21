@@ -60,3 +60,4 @@ $messages=new messages();
 ////Start Messages Test !!!
 //echo $messages->send(3, 2, "good night !!!", "long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!long message !!!");
 ////end send test !!!
+print_r($messages->check(2));

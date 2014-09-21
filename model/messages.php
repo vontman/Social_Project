@@ -17,8 +17,19 @@ class messages {
         $input['recieved_id']=$recieved_id;
         $input['name']=$message_name;
         $input['body']=$message_body;
+        $input['seen']=0;
         $input['created']=$this->date;
         $id=$this->functions->insert($input);
         return $id;
+    }
+    public function check($user_id){
+        $cols[]='id';
+        $cols[]='seen';
+        $cols[]='user_id';
+        $row['cols']['recieved_id']=$user_id;
+        $row['cols']['seen']=0;
+        $messages=$this->functions->select($cols, false, array('created'=>'ASC'), false,$row);
+        return $messages;
+
     }
 }
