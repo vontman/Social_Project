@@ -32,4 +32,17 @@ class messages {
         return $messages;
 
     }
+    public function view($user_id,$message_id){
+        $cols[]='id';
+        $cols[]='user_id';
+        $cols[]='recieved_id';
+        $cols[]='name';
+        $cols[]='body';
+        $cols[]='created';
+        $row['cols']['user_id']=$user_id;
+        $row['cols']['recieved_id']=$user_id;
+        $row['relation']='OR';
+        $message=$this->functions->select($cols, $message_id, false, $limit);
+        return $message;
+    }
 }
