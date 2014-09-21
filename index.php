@@ -19,9 +19,15 @@
             }
             $(window).resize(function(){auto_blend();});
             $(document).ready(function(){
+                $('.icon').draggable({axis:'y'},function(){
+                    $('.icon').addClass('icon_drag');
+                });
                 auto_blend();
                 var icon_hover = true;
                 $('.icon').click(function(){
+                    if($(this).hasClass('icon_drag')){
+                        $(this).removeClass('icon_drag');
+                    }
                     leftslider();
 //                    $('.test').css({"width":"250px"});
 //                  $('.close').toggleClass('close_afterclick');
