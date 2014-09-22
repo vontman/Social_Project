@@ -41,12 +41,16 @@
         padding:10px 5px;
         
     }
-    .msgs div{
+    .msgs div div{
         max-width: 95%;
         background:red;
         margin:5px 2px;
         padding:5px 2px;
         line-height: 100%;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size:14px;
+        font-weight: 300;
         bottom:0;
     }
 </style>
@@ -73,124 +77,204 @@
     <div class="messages" style="height:215px;overflow-x:hidden;overflow-y: auto;">
         <div class="msgs" style="width:95%;overflow-x: hidden;overflow-y: auto;background:yellow;">
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
             <div>
-                hamada1
+                <div>
+                    hamada1
+                </div>
             </div>
             <div>
-                hamada2
+                <div>
+                    hamada2
+                </div>
             </div>
             <div>
-                hamada3
+                <div>
+                    hamada3
+                </div>
             </div>
             <div>
-                hamada4
+                <div>
+                    hamada4
+                </div>
             </div>
         </div>
     </div>
