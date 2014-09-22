@@ -76,6 +76,7 @@
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
         <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
+        <link type='text/css' rel='stylesheet' href='view/slider.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
