@@ -18,16 +18,18 @@
      });
      }) ;
      $('#reemail').on('keyup',function(){
-    var pass=$('#email').val()
-     var repass =$('#reemail').val()
-     if (pass!=repass)
-     $('.v_email').text('email dosent match');
+    var email=$('#email').val()
+     var reemail =$('#reemail').val()
+     if (email!==reemail){
+     $('.v_email').text('email does not match');
+ }
  });
-     $('#repass').on('keyup',function(){
+     $('#repass').keyup(function(){
         var pass=$('#pass').val()
       var repass =$('#repass').val()
-      if (pass!=repass);
-      $('.v_pass').text('password dosent match');
+      if (pass!==repass);{
+      $('.v_pass').text('password does not match');
+  }
  });
  
 /*--------------------------------------------------------------------------------------------------------*/
