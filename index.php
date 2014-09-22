@@ -13,16 +13,24 @@
         <script src="fullcalendar/fullcalendar.js"></script>
         <script>
             function auto_blend(){
-                if($(window).width()<840){
+                if($(window).width()<900){
                     $('.r-sidebar').hide();
                     $('#wrapper').css('float','right');
+                    var l_width=$('.l-sidebar').width();
+                    var w_width=$(window).width();
+                    var width=w_width-l_width;
+                    $('#contain_wrapper').css({'width':width,'float':'right'});
+                    $('#wrapper').css('float','none');
                 }
                 else{
                     $('.r-sidebar').show();
                     $('#wrapper').css('float','none');
+                    $('#contain_wrapper').css({'width':'auto','float':'none'});
                 }
             }
-            $(window).resize(function(){auto_blend();});
+            $(window).resize(function(){
+                auto_blend();
+            });
             $(document).ready(function(){
 //                $('.icon').draggable({axis:'y'},function(){
 //                    $('.icon').addClass('icon_drag');
@@ -157,6 +165,7 @@
             <input type='radio' name='gender' value='f'><lable>Female</lable><br>
             <input type='checkbox' name='agreement'><label>I agree</label>
         </div>-->
+<div id="contain_wrapper">
         <div id="wrapper">
             <div class="post_whole">
                 <div class="post">
@@ -192,6 +201,7 @@
                 </div>
             </div>
         </div>
+</div>
         <?php
         // put your code here
         ?>
