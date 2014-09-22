@@ -30,7 +30,7 @@
      $('#repass').keyup(function(){
         var pass=$('#pass').val();
       var repass =$('#repass').val();
-      if (repass!=pass);{
+      if (repass!=pass){
       $('.v_pass').text('password does not match');
   }
   else{
