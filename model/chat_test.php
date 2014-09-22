@@ -42,8 +42,22 @@
     });
 </script>
 <style>
+    .chat{
+        overflow: hidden;
+        width:250px;
+        box-shadow: -2px -2px 10px ;
+    }
+    .messages{
+         height:215px;
+         overflow-x:hidden;
+         overflow-y: auto;
+    }
     .msgs{
         padding:10px 5px;
+        width:95%;
+        overflow-x:hidden;
+        overflow-y: auto;
+        background:whitesmoke;
     }
     .chat .user_to{
         position:relative;
@@ -69,23 +83,24 @@
         font-size:14px;
         font-weight: 700;
         bottom:0;
+        word-wrap: break-word;
     }
     .msgs .to{
         float:left;
-        background: #ffc8f3;
+        background: rgba(176, 186, 247, 0.6);
         border-radius: 4px 10px 10px 4px ;
     }
     .msgs .from{
         float:right;
-        background: #68c8f2;
+        background: rgba(198, 104, 185, 0.3);
         border-radius: 10px 10px 4px 4px ;
     }
     .chat_input{
         width:100%;
         height: 35px;
-        border:2px groove black;
-        padding: 8px 15px;
+        padding: 8px 12px;
         resize:none;
+        word-break: break-all;
     }
 </style>
 <div style="width:45%;float:left;">
@@ -107,12 +122,12 @@
     <textarea class="view">message</textarea><br>
     <label class="done">!</label>
 </div>
-<div class="chat" style="overflow: hidden;width:220px;background:lightgray;">
+<div class="chat" >
     <div class='user_to'>
         hamada
     </div>
-    <div class="messages" style="height:215px;overflow-x:hidden;overflow-y: auto;">
-        <div class="msgs" style="width:95%;overflow-x: hidden;overflow-y: auto;background:yellow;">
+    <div class="messages">
+        <div class="msgs" >
             <div class='msg_contain'>
                 <div class='from'>
                     hamada1
@@ -125,7 +140,7 @@
             </div>
             <div class='msg_contain'>
                 <div class='from'>
-                    hamada3
+                    hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3
                 </div>
             </div>
             <div class='msg_contain'>
@@ -266,6 +281,6 @@
         </div>
     </div>
     <div class="chat_type" style="overflow:hidden;width:100%;">
-        <textarea placeholder="message" class='chat_input'></textarea>
+        <textarea class='chat_input'></textarea>
     </div>
 </div>
