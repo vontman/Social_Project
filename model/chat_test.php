@@ -34,6 +34,11 @@
         });
         var scroll=$('.msgs').height();
         $('.messages').scrollTop(scroll);
+        $('.chat_input').keypress(function(key){
+            if(key.which == 13) {
+                alert('You pressed enter!');
+            }
+        });
     });
 </script>
 <style>
@@ -75,6 +80,13 @@
         background: #68c8f2;
         border-radius: 10px 10px 4px 4px ;
     }
+    .chat_input{
+        width:100%;
+        height: 35px;
+        border:2px groove black;
+        padding: 8px 15px;
+        resize:none;
+    }
 </style>
 <div style="width:45%;float:left;">
     <input name='user' class="user" align='left' type=text placeholder="send" >
@@ -95,7 +107,7 @@
     <textarea class="view">message</textarea><br>
     <label class="done">!</label>
 </div>
-<div class="chat" style="overflow-x: hidden;overflow-y: hidden;width:240px;background:lightgray;">
+<div class="chat" style="overflow: hidden;width:220px;background:lightgray;">
     <div class='user_to'>
         hamada
     </div>
@@ -253,7 +265,7 @@
             </div>
         </div>
     </div>
-    <div class="chat_type" style="height:20px;width:100%;">
-        <input type="text" placeholder="message" style="width:85%;"><label style="width:14%;background:violet;font-size:18px;height: 100%;">send</label>
+    <div class="chat_type" style="overflow:hidden;width:100%;">
+        <textarea placeholder="message" class='chat_input'></textarea>
     </div>
 </div>
