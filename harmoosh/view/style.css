@@ -15,7 +15,8 @@ a{
 }
 
 .login{
-margin: auto;
+    display: block;
+    margin:auto;
 /*background-color: #c5e9f7;
 border: 2px solid #82d4f4;*/
 background:rgba(253, 255, 254, 0.38);
@@ -28,15 +29,14 @@ max-width: 90%;
 color:midnightblue;
 }
 .login img{
-    margin:10px;
     width: 70%;
     height: 35%;
-    margin-left: 15%;
+margin:10px 62px;
     box-shadow: 4px;
 }
-.text{
+.login .text{
     width: 90%;
-    margin-left: 5%;
+    margin:10px 20px;
     height: 30px;
     padding-left: 10px;
 }

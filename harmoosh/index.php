@@ -67,8 +67,7 @@ $('.password').on('keyup',function(){
     <body>
         <div class="welcome">
         <form action="" method="POST" class="login">
-            <img src="images/logo.png">
-            
+            <img src="images/logo.png"><br>
             <label class="lab">Username<br></label>
             <input type="text" name="username" class="text">
             <label class="lab">Password<br></label>
