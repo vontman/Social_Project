@@ -17,14 +17,15 @@ a{
 
 .login{
 margin: auto;
-background-color: #c5e9f7;
+/*background-color: #c5e9f7;
 border: 2px solid #82d4f4;
-border-radius: 50px;
+border-radius: 50px;*/
 top: 5%;
 position: relative;
 width: 400px;
 max-width: 90%;
 max-height: 90%;
+color:midnightblue;
 }
 .login img{
     margin:10px;
