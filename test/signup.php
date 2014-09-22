@@ -12,13 +12,24 @@
        $.ajax({url:'conn.php',
          data:{email:data},
          success: function (email_ch) {
-                        $('.ali').text(email_ch);
+                        $('.exist').text(email_ch);
                          }
         
      });
      }) ;
-   
-
+     $('#reemail').on('keyup',function(){
+    var pass=$('#email').val()
+     var repass =$('#reemail').val()
+     if (pass!=repass)
+     $('.v_email').text('email dosent match');
+ });
+     $('#repass').on('keyup',function(){
+        var pass=$('#pass').val()
+      var repass =$('#repass').val()
+      if (pass!=repass);
+      $('.v_pass').text('password dosent match');
+ });
+ 
 /*--------------------------------------------------------------------------------------------------------*/
     });
     </script>
@@ -27,16 +38,16 @@
 <div class="login-form">
     <form action="" method="post" enctype="multipart/form-data" class="reg_form">
       Name:<br/>
-    <input type="text" placeholder="First" name="fname"  class="fname" />
+      <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
     Enter your email:<br/>
-    <input type="email" name="email" class="email" id="reg" required/>&nbsp;*<label class="ali"></label><br/>
+    <input type="email" name="email" class="email" required id="email" />&nbsp;*<label class="exist"></label><br/>
     Confirm your email:<br/>
-    <input type="email"  name="reemail"  class="email" id="reg" required/>&nbsp;*<br />
+    <input type="email"  name="reemail"  class="email" id="reemail" required/><label class="v_email"></label>&nbsp;*<br />
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" id="reg" required/>&nbsp;*<br />
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br />
     Confirm your password:<br/>
-    <input type="password"  name="repassword"  class="password" id="reg" required/>&nbsp;*<br />
+    <input type="password"  name="repassword"  class="password" id="repass" required/><label class="v_pass"></label>&nbsp;*<br />
     Birthday:<div class="date"><select name="year">
             <?php for ($i = 1950; $i < 2012; $i++) {
                 ?><option value="<?php echo $i;?>"><?php
