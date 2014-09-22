@@ -9,17 +9,17 @@ a{
 .welcome{
     width: 100%;
     height: 100%;
-    
-    background-image: url('../images/bg.jpg')
-
+    overflow:hidden;
+    background-image: url('../images/bg.jpg');
+    background-size:cover;
 }
-
 
 .login{
 margin: auto;
 /*background-color: #c5e9f7;
-border: 2px solid #82d4f4;
-border-radius: 50px;*/
+border: 2px solid #82d4f4;*/
+background:rgba(253, 255, 254, 0.38);
+border-radius: 12px;
 top: 5%;
 position: relative;
 width: 400px;
