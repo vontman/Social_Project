@@ -11,6 +11,10 @@
            $(".login").css("display","none");
            $(".signup").css("display","block");
     });
+    $(".loginb").click(function(){
+           $(".signup").css("display","none");
+           $(".login").css("display","block");login
+    });
     $('.email').on('keyup',function(){
          var data=$(this).val();
        $.ajax({url:'conn.php',
