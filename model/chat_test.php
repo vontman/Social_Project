@@ -39,11 +39,23 @@
 <style>
     .msgs{
         padding:10px 5px;
-        
+    }
+    .chat .user_to{
+        position:relative;
+        height:22px;
+        font-size: 18px;
+        font-family: cursive;
+        line-height: 100%;
+        left:50%;
+        transform: translateX(-50%);
+        display:inline-block;
+    }
+    .msgs .msg_contain{
+        width:100%;
+        overflow:hidden;
     }
     .msgs div div{
         max-width: 95%;
-        background:red;
         margin:5px 2px;
         padding:5px 2px;
         line-height: 100%;
@@ -52,6 +64,14 @@
         font-size:14px;
         font-weight: 300;
         bottom:0;
+    }
+    .msgs .to{
+        float:left;
+        background: #ffc8f3;
+    }
+    .msgs .from{
+        float:right;
+        background: #68c8f2;
     }
 </style>
 <div style="width:45%;float:left;">
@@ -73,207 +93,135 @@
     <textarea class="view">message</textarea><br>
     <label class="done">!</label>
 </div>
-<div class="chat" style="overflow-x: hidden;overflow-y: hidden;width:240px;height:240px;background:lightgray;">
+<div class="chat" style="overflow-x: hidden;overflow-y: hidden;width:240px;background:lightgray;">
+    <div class='user_to'>
+        hamada
+    </div>
     <div class="messages" style="height:215px;overflow-x:hidden;overflow-y: auto;">
         <div class="msgs" style="width:95%;overflow-x: hidden;overflow-y: auto;background:yellow;">
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada1
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
                     hamada2
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada3
                 </div>
-            </div>
+            </div class='msg_contain'>
             <div>
-                <div>
+                <div class='from'>
                     hamada4
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
+                    hamada5
+                </div>
+            </div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada1
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
                     hamada2
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada3
                 </div>
-            </div>
+            </div class='msg_contain'>
             <div>
-                <div>
+                <div class='from'>
                     hamada4
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
+                    hamada5
+                </div>
+            </div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada1
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
                     hamada2
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada3
                 </div>
-            </div>
+            </div class='msg_contain'>
             <div>
-                <div>
+                <div class='from'>
                     hamada4
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
+                    hamada5
+                </div>
+            </div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada1
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
                     hamada2
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada3
                 </div>
-            </div>
+            </div class='msg_contain'>
             <div>
-                <div>
+                <div class='from'>
                     hamada4
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
+                    hamada5
+                </div>
+            </div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada1
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='to'>
                     hamada2
                 </div>
             </div>
-            <div>
-                <div>
+            <div class='msg_contain'>
+                <div class='from'>
                     hamada3
                 </div>
-            </div>
+            </div class='msg_contain'>
             <div>
-                <div>
+                <div class='from'>
                     hamada4
                 </div>
             </div>
-            <div>
-                <div>
-                    hamada1
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada2
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada3
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada4
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada1
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada2
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada3
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada4
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada1
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada2
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada3
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada4
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada1
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada2
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada3
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada4
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada1
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada2
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada3
-                </div>
-            </div>
-            <div>
-                <div>
-                    hamada4
+            <div class='msg_contain'>
+                <div class='to'>
+                    hamada5
                 </div>
             </div>
         </div>
