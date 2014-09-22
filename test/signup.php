@@ -18,17 +18,23 @@
      });
      }) ;
      $('#reemail').on('keyup',function(){
-    var email=$('#email').val()
-     var reemail =$('#reemail').val()
-     if (email!==reemail){
+    var email=$('#email').val();
+     var reemail =$('#reemail').val();
+     if (reemail!=email){
      $('.v_email').text('email does not match');
- }
- });
+    }
+    else{
+        $('.v_email').text('email match');
+    }
+    });
      $('#repass').keyup(function(){
-        var pass=$('#pass').val()
-      var repass =$('#repass').val()
-      if (pass!==repass);{
+        var pass=$('#pass').val();
+      var repass =$('#repass').val();
+      if (repass!=pass);{
       $('.v_pass').text('password does not match');
+  }
+  else{
+       $('.v_pass').text('password match');
   }
  });
  
