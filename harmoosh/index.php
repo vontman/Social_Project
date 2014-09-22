@@ -85,15 +85,15 @@ $('.password').on('keyup',function(){
       <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
      username:<br/>
-     <input type="text"  name="username"  class="username" required />&nbsp;*<label class="user_msg"></label><br/>
+     <input type="text"  name="username"  class="username" required />&nbsp;*<br/><label class="user_msg"></label><br/>
     Enter your email:<br/>
-    <input type="email" name="email" class="email" required id="email" />&nbsp;*<label class="exist"></label><br/>
+    <input type="email" name="email" class="email" required id="email" />&nbsp;*<br/><label class="exist"></label><br/>
     Confirm your email:<br/>
-    <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br /><label class="v_email"></label>
+    <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br/><label class="v_email"></label><br />
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlength"></label>
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br/><label class="passlength"></label><br />
     Confirm your password:<br/>
-    <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br /><label class="v_pass"></label>
+    <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br/><label class="v_pass"></label><br />
     Birthday:<div class="date"><select name="year">
             <?php for ($i = 1950; $i < 2012; $i++) {
                 ?><option value="<?php echo $i;?>"><?php

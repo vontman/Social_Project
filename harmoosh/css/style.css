@@ -94,7 +94,7 @@ border-radius:12px;
   width:350px;
   font-family: 'Open Sans Condensed', sans-serif;
   padding:15px 20px;
-  height: 638px;
+  height: inherit;
 }
 .form{
     padding: 40px 0;
@@ -204,4 +204,7 @@ margin-left: 62px;
 {
     background:#00ffff;
   color:#FFF
+}
+.signup label{
+    color: red;
 }
