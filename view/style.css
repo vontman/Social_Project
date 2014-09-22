@@ -152,6 +152,9 @@
                 opacity:1;
                 background: red;
             }
+            #contain_wrapper{
+                overflow: hidden;
+            }
 
 
 /*            ::-webkit-scrollbar {
