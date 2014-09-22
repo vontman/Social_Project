@@ -5,18 +5,31 @@
 <script type="text/javascript" src="jquery-ui-1.10.4.custom.js"></script>
        <script>
     $("document").ready(function(){
-         alert("Join us for free");
 /*-----------------------------------------------------------------------------------------------*/  
       $('.email').on('keyup',function(){
          var data=$(this).val();
        $.ajax({url:'conn.php',
          data:{email:data},
          success: function (email_ch) {
-                        $('.exist').text(email_ch);
-                         }
-        
-     });
+                $('.exist').text(email_ch);
+                 }     
+});
      }) ;
+             $('.username').on('keyup',function(){
+                 var data2=$(this).val();
+               $.ajax({url:'conn.php',
+                 data:{username:data2},
+                 success: function (username_ch) {
+                        $('.user_msg').text(username_ch);
+                         }
+        });
+        }) ;
+$('.password').on('keyup',function(){
+                 var length = $('.password').val().length;
+                 if (length<6) {
+                     $('.passlenght').text('password must be more than 6 cahr');  
+            }
+            });
      $('#reemail').on('keyup',function(){
     var email=$('#email').val();
      var reemail =$('#reemail').val();
@@ -48,14 +61,16 @@
       Name:<br/>
       <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
+     username:<br/>
+     <input type="text"  name="username"  class="username" required />&nbsp;*<label class="user_msg"></label><br/>
     Enter your email:<br/>
     <input type="email" name="email" class="email" required id="email" />&nbsp;*<label class="exist"></label><br/>
     Confirm your email:<br/>
-    <input type="email"  name="reemail"  class="email" id="reemail" required/><label class="v_email"></label>&nbsp;*<br />
+    <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br /><label class="v_email"></label>
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br />
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlenght"></label>
     Confirm your password:<br/>
-    <input type="password"  name="repassword"  class="password" id="repass" required/><label class="v_pass"></label>&nbsp;*<br />
+    <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br /><label class="v_pass"></label>
     Birthday:<div class="date"><select name="year">
             <?php for ($i = 1950; $i < 2012; $i++) {
                 ?><option value="<?php echo $i;?>"><?php
