@@ -1,30 +1,81 @@
 <html>
 <head> 
-
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.js"></script>
+       <script>
+    $("document").ready(function(){ 
+      $('.email').on('keyup',function(){
+         var data=$(this).val();
+       $.ajax({url:'conn.php',
+         data:{email:data},
+         success: function (email_ch) {
+                $('.exist').text(email_ch);
+                 }     
+});
+     }) ;
+             $('.username').on('keyup',function(){
+                 var data2=$(this).val();
+               $.ajax({url:'../.php',
+                 data:{username:data2},
+                 success: function (username_ch) {
+                        $('.user_msg').text(username_ch);
+                         }
+        });
+        }) ;
+$('.password').on('keyup',function(){
+                 var length = $('.password').val().length;
+                 if (length<6) {
+                     $('.passlength').text('password must be more than 6 cahr');  
+            }
+            });
+     $('#reemail').on('keyup',function(){
+    var email=$('#email').val();
+     var reemail =$('#reemail').val();
+     if (reemail!=email){
+     $('.v_email').text('email does not match');
+    }
+    else{
+        $('.v_email').text('email match');
+    }
+    });
+     $('#repass').keyup(function(){
+        var pass=$('#pass').val();
+      var repass =$('#repass').val();
+      if (repass!=pass){
+      $('.v_pass').text('password does not match');
+  }
+  else{
+       $('.v_pass').text('password match');
+  }
+ });
+    });
+    </script>
 </head>
     <body>
 <div class="login-form">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data" class="reg_form">
       Name:<br/>
-    <input type="text" placeholder="First" name="fname"  class="fname" />
+      <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
+     username:<br/>
+     <input type="text"  name="username"  class="username" required />&nbsp;*<label class="user_msg"></label><br/>
     Enter your email:<br/>
-    <input type="email" name="email" class="email" />&nbsp;*<br />
+    <input type="email" name="email" class="email" required id="email" />&nbsp;*<label class="exist"></label><br/>
     Confirm your email:<br/>
-    <input type="email"  name="reemail"  class="email" />&nbsp;*<br />
+    <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br /><label class="v_email"></label>
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" />&nbsp;*<br />
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlength"></label>
     Confirm your password:<br/>
-    <input type="password"  name="repassword"  class="password" />&nbsp;*<br />
+    <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br /><label class="v_pass"></label>
     Birthday:<div class="date"><select name="year">
             <?php for ($i = 1950; $i < 2012; $i++) {
-                ?><option value="<?php$i?>"><?php
+                ?><option value="<?php echo $i;?>"><?php
      echo $i;
                 ?></option><?php
 }?>
         </select><select name="month">
             <?php for ($i = 1; $i < 13; $i++) {
-                ?><option value="<?php$i?>"><?php
+                ?><option value="<?php echo $i;?>"><?php
                 if($i<10){
                      echo '0'.$i;
                 }
@@ -36,7 +87,7 @@
 }?>
         </select><select name="day">
             <?php for ($i = 1; $i < 32; $i++) {
-                ?><option value="<?php$i?>"><?php
+                ?><option value="<?php echo $i;?>"><?php
     if($i<10){
                      echo '0'.$i;
                 }
@@ -65,10 +116,3 @@ $date_date= implode('-', $date);
 </div>
         </body>
 </html>
-
-
-<?php
-if(isset($_POST['login'])){
-    print_r($date_date);
-}
-?>
