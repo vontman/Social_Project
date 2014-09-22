@@ -11,7 +11,53 @@
            $(".login").css("display","none");
            $(".signup").css("display","block");
     });
+    $('.email').on('keyup',function(){
+         var data=$(this).val();
+       $.ajax({url:'conn.php',
+         data:{email:data},
+         success: function (email_ch) {
+                $('.exist').text(email_ch);
+                 }     
+});
+     }) ;
+             $('.username').on('keyup',function(){
+                 var data2=$(this).val();
+               $.ajax({url:'../.php',
+                 data:{username:data2},
+                 success: function (username_ch) {
+                        $('.user_msg').text(username_ch);
+                         }
+        });
+        }) ;
+$('.password').on('keyup',function(){
+                 var length = $('.password').val().length;
+                 if (length<6) {
+                     $('.passlength').text('password must be more than 6 cahr');  
+            }
+            });
+     $('#reemail').on('keyup',function(){
+    var email=$('#email').val();
+     var reemail =$('#reemail').val();
+     if (reemail!=email){
+     $('.v_email').text('email does not match');
+    }
+    else{
+        $('.v_email').text('email match');
+    }
     });
+     $('#repass').keyup(function(){
+        var pass=$('#pass').val();
+      var repass =$('#repass').val();
+      if (repass!=pass){
+      $('.v_pass').text('password does not match');
+  }
+  else{
+       $('.v_pass').text('password match');
+  }
+ });
+    });
+    </script>
+      <script>
     </script>
     </head>
     <body>
@@ -29,19 +75,21 @@
         
         </form>
 
-        <div class="signup">
-            <form action="" method="post" enctype="multipart/form-data" class="form">
+        <div class="login-form">
+    <form action="" method="post" class="signup">
       Name:<br/>
-    <input type="text" placeholder="First" name="fname"  class="fname" />
+      <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
+     username:<br/>
+     <input type="text"  name="username"  class="username" required />&nbsp;*<label class="user_msg"></label><br/>
     Enter your email:<br/>
-    <input type="email" name="email" class="email" />&nbsp;*<br />
+    <input type="email" name="email" class="email" required id="email" />&nbsp;*<label class="exist"></label><br/>
     Confirm your email:<br/>
-    <input type="email"  name="reemail"  class="email" />&nbsp;*<br />
+    <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br /><label class="v_email"></label>
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" />&nbsp;*<br />
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlength"></label>
     Confirm your password:<br/>
-    <input type="password"  name="repassword"  class="password" />&nbsp;*<br />
+    <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br /><label class="v_pass"></label>
     Birthday:<div class="date"><select name="year">
             <?php for ($i = 1950; $i < 2012; $i++) {
                 ?><option value="<?php echo $i;?>"><?php
@@ -72,7 +120,12 @@
                 ?></option><?php
 }?>
         </select>
-  
+    <?php
+    $date[]=@$_POST["day"];
+    $date[]=@$_POST["month"];
+    $date[]=@$_POST["year"];
+$date_date= implode('-', $date);
+    ?>
     </div>
     Gender:<br/><br/><div class="gender"><input type="radio" name="gender" value="male"class="male" checked>Male
         <input type="radio" name="gender"class="female" value="female">Female</div><br/>
@@ -80,7 +133,7 @@
     <input type="text" name="num" class="num"><br/>
     Location:<br/>
     <input type="text"name="location"  class="location" /><br/>
-    <input type="submit" value="Sign up" name="signup" class="signupb" />
+    <input type="submit" value="Sign up" name="signup" class="signupb" />OR
     <input type="submit" value="Login" name="login" class="loginb" />		
   </form>
 </div>

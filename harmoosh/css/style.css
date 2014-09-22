@@ -82,17 +82,17 @@ font-weight: bold;
     cursor: pointer;
 }
 *{outline:0;margin:0;padding:0;border: 0;}
+
 .signup 
 {
     display:none;
   position: relative;
-  background-color: #c5e9f7;
+  background:rgba(253, 255, 254, 0.38);
 border: 2px solid #82d4f4;
 border-radius: 50px;
   margin: auto;
   width:350px;
   font-family: 'Open Sans Condensed', sans-serif;
-  background:#c5e9f7;
   padding:15px 20px;
   height: 665px;
 }
@@ -107,6 +107,13 @@ border-radius: 50px;
   margin-bottom:10px
 }
 .signup .lname
+{
+  width:163px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px
+}
+.signup .username
 {
   width:163px;
   height:30px;
