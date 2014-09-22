@@ -1,147 +1,213 @@
 *{
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
 }
 a{
     text-decoration: none;
-    color:lightgrey;
-}
-body{
-    background:rgb(22, 100, 111);
-}
-.sidebar{
-    height: 100%;
-    min-height:352px;
-    background-color: rgba(0,0,0,.25);
-    background-size: cover;
-    position: fixed;
-    border: 1px solid transparent;
-    border-radius: 50px 0px 50px 0px;
-    margin:0;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-.r-sidebar{
-    min-width:15%;
-    max-width:35%;
-    width: 175px;
-    float: right;
-    right:0;
-    overflow-y: hidden;
-}
-.l-sidebar{
-    min-width:20%;
-    max-width:40%;
-    width: 200px;
-    float: left;
-    left:0;
-    
-}
-.logo{
-    text-align: center;
-    height: 6%;
-    max-width: 100%;
-    margin-top:25px;
-}
-.logo h1{
     color:white;
-    font-family: Arial;
-    font-size:18px;
-    text-shadow: 2px 2px 8px black;
 }
-.online{
-    margin-top: 15px;
-    border: 1px solid transparent;
-    border-radius: 10px 10px 0px 0px; 
-    color:white;
-    width:100%;
-}
-.on{
-    width:100%;
-    height: 85%;
-    list-style: none;
-    overflow-y: auto;
-    overflow-x:hidden;
-}
-
-
-.on img{
-    height: 95%;  
-}
-.on li{
-    margin:10px 0;
-    width:100%;
-    height: 50px;
-    overflow: hidden;
-    border-top: 1px;
-    border-bottom:1px;
-    border-left: 0;
-    border-right: 0;
-    border-color:#1d1822;
-    border-style: solid;
-    /*font-family: 'Tangerine', serif;*/
-    font-family: cursive;
-    font-size:18px;
-    font-weight: 300;
-    padding:0 5px 5px 0;
-}
-.on li:hover{
-    background-color:#1d1822;
-    cursor: pointer;
-}
-
-.user{
-    text-align: center;
-   
-}
-.user img{
-    margin-top:35px;
-    width: 80px;
-    position: relative;
-}
-.user h3{
- color:lightgrey;  
- font-family: sans-serif;
-}
-.mains{
-    list-style: none;
-    width: 95%;
-    margin-left: 5px;
-    
-}
-.mains li{
-    margin-top: 10px;
-    padding:0 5px;
-    border: 1px solid transparent;
-    border-radius: 10px 0px 10px 0px; 
-    text-shadow: 2px 2px 8px black;
-    background:  rgba(0,0,0,.25);
-    color: lightgrey;
-}
-.mains li:hover{
-    cursor: pointer;
-    background: white;
-    color: #1d1822;
-}
-.cal{
+.welcome{
     width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.jpg');
+    background-size:cover;
+    overflow: auto;
+}
+
+.login{
+margin: auto;
+/*background-color: #c5e9f7;
+border: 2px solid #82d4f4;*/
+background:rgba(253, 255, 254, 0.38);
+border-radius: 12px;
+top: 5%;
+position: relative;
+width: 400px;
+max-width: 90%;
+/*max-height: 90%;*/
+color:midnightblue;
+}
+.login img{
+    margin:10px;
+    width: 70%;
+    height: 35%;
+    margin-left: 15%;
+    box-shadow: 4px;
+}
+.text{
+    width: 90%;
+    margin-left: 5%;
+    height: 30px;
+    padding-left: 10px;
+}
+.lab{
+    margin-left: 5%;
+    font-family: Arial;
+}
+.check{
+    margin-left: 5%;
+}
+.submit{
+    width: 30%;
+height: 10%;
+margin: 5%;
+margin-left: 65%;
+background-color: #c5e9f7;
+border: 2px solid #82d4f4;
+border-radius: 50px;
+right: 0px;
+font-size: 20px;
+font-family: cursive;
+font-weight: bold;
+}
+.submit:hover{
+    background-color: #82d4f4;
+    cursor: pointer;
+}
+.forget{
+    margin-left: 60%;
+    margin-top: -17px;
+}
+.forget:hover{
+    cursor: pointer;
+}
+.logn h4{
+  margin-left: 5%;
+  margin-top: -17px;
+}
+.join{
+    margin-left: 10%;
+    color: #013a58;
+}
+.join:hover{
+    cursor: pointer;
+}
+*{outline:0;margin:0;padding:0;border: 0;}
+
+.signup 
+{
+    display:none;
+  position: relative;
+  background:rgba(253, 255, 254, 0.38);
+border-radius:12px;
+  margin: auto;
+  width:350px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding:15px 20px;
+  height: inherit;
+}
+.form{
+    padding: 40px 0;
+}
+.signup .fname
+{
+  width:163px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px
+}
+.signup .lname
+{
+  width:163px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px
+}
+.signup .username
+{
+  width:163px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px
+}
+.signup .email
+{
+  width:330px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px;
+}
+.signup  .password
+{
+  width:330px;
+  height:30px;
+  padding-left:10px;
+  margin-bottom:10px
+}
+.signup .date
+{
+    height: 25px;
+    margin-bottom: 10px;
+}
+.signup  .date select{
     position: relative;
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-left: 10px;
 }
-::-webkit-scrollbar {
-    width: 12px;
+.signup  .num,.location
+{
+  width: 168px;
+  height: 25px;   
+  padding-left:10px;
+  margin-bottom:10px;
 }
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
+.signup  .job
+{
+    width: 50px;
+    height: 25px;
+    padding-left: 10px;
+    margin-bottom: 10px;
 }
- 
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+.loginb
+{
+  width:100px;
+  height:35px;
+  border:0;
+  cursor:pointer;
+  margin-top: 20px;
+  background:#99ffff;
+  border-radius:3px;
+  font-size:15px;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+  background-color: #c5e9f7;
+border: 2px solid #82d4f4;
+border-radius: 50px;
 }
-.view-month{
-    background-color: #0c383e;
+.loginb:hover
+{
+  background:#00ffff
+}
+  .signupb
+{
+  width:100px;
+  height:35px;
+  border:0;
+  cursor:pointer;
+  margin-top: 20px;
+  background:#99ffff;
+  border-radius:3px;
+  float: left;
+  font-size:16px;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+  background-color: #c5e9f7;
+border: 2px solid #82d4f4;
+border-radius: 50px;
+margin-left: 62px;
+}
+.signupb:hover
+{
+    background:#00ffff;
+  color:#FFF
+}
+.signup label{
+    color: red;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    font-family: sans-serif;
 }

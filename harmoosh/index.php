@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>union</title>
         <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="view/style.css" rel="stylesheet" type="text/css">
         <script>
     $("document").ready(function(){
         $(".join").click(function(){
