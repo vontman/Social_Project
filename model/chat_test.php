@@ -98,7 +98,7 @@
         box-shadow: 2px 2px 10px;
     }
     .chat_input{
-        width:100%;
+        width:101%;
         height: 35px;
         padding: 8px 12px;
         resize:none;
