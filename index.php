@@ -4,8 +4,15 @@
         <meta charset="UTF-8">
         <title></title>
         <script src="js/jquery-1.11.0.js"></script>
-        <script src="js/jquery-ui.js"></script>
+        <script src="js/jquery-ui.js"></script>        
         <script src='datetimepicker/DateTimePicker.js'></script>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.print.css'/>
+        <script src="fullcalendar/lib/jquery.min.js"></script>
+        <script src="fullcalendar/lib/moment.min.js"></script>
+        <script src="fullcalendar/lib/jquery-ui.custom.min.js"></script>
+        <script src="fullcalendar/fullcalendar.js"></script>
         <script>
             function auto_blend(){
                 if($(window).width()<840){
@@ -54,24 +61,26 @@
 ////                    $('.test').css({"width":"10px","background":"blue"});
 //                    $('.test').toggleClass('color');
 //                });
-                $("#datepicker").datepicker({
-                    dateFormat: 'dd-mm-yy'
+//                $("#datepicker").datepicker({
+//                    dateFormat: 'yy-mm-dd'
+//                });
+                $('.calender').fullCalendar({
+                    weekends: false // will hide Saturdays and Sundays
                 });
             });
         </script>
-        <link type='text/css' rel='stylesheet' href='style.css'/>
-        <link type='text/css' rel='stylesheet' href='sidebar.css'/>
-        <link type='text/css' rel='stylesheet' href='wrapper.css'/>
-        <link type='text/css' rel='stylesheet' href='js/js/jquery-ui.css'/>
+        <link type='text/css' rel='stylesheet' href='view/style.css'/>
+        <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
+        <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
+        <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
-        
     </head>
     <body>
         <?php
-            include_once './sidebar.php';   
+            include_once 'view/sidebar.php';   
         ?>
         <div id="left_notifications">
 
