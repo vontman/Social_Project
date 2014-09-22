@@ -14,6 +14,7 @@ class users {
     }
     public function adduser($user){
         try{
+            $user['created']=$this->date;
             $user_id=$this->functions->insert($user);
             return $user_id;
         } catch (Exception $ex) {
