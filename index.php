@@ -5,10 +5,8 @@
         <title></title>
         <script src="js/jquery-1.11.0.js"></script>
         <script src="js/jquery-ui.js"></script>        
+         <!--Addons !!!-->
         <script src='datetimepicker/DateTimePicker.js'></script>
-        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
-        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
-        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.print.css'/>
         <script src="fullcalendar/lib/jquery.min.js"></script>
         <script src="fullcalendar/lib/moment.min.js"></script>
         <script src="fullcalendar/lib/jquery-ui.custom.min.js"></script>
@@ -64,9 +62,7 @@
 //                $("#datepicker").datepicker({
 //                    dateFormat: 'yy-mm-dd'
 //                });
-                $('.calender').fullCalendar({
-                    weekends: false // will hide Saturdays and Sundays
-                });
+                $('.calender').fullCalendar();
             });
         </script>
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
@@ -76,7 +72,11 @@
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
+        <!--Addons !!!-->
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
+        <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.print.css'/>
     </head>
     <body>
         <?php
