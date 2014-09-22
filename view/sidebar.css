@@ -124,7 +124,15 @@ a{
     position: relative;
     margin-top: 10px;
 }
-
+.calender{
+    border-top:2px groove rgba(52, 30, 105, 0.08);
+    margin:15px auto;
+    text-shadow:1px 1px 15px black;
+}
+.calender h2{
+    color:whitesmoke;
+    text-shadow:2px 2px 10px black;
+}
 ::-webkit-scrollbar {
     width: 12px;
 }
