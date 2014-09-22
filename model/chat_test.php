@@ -89,11 +89,13 @@
         float:left;
         background: rgba(176, 186, 247, 0.6);
         border-radius: 4px 10px 10px 4px ;
+        box-shadow: -2px 2px 10px;
     }
     .msgs .from{
         float:right;
         background: rgba(198, 104, 185, 0.3);
         border-radius: 10px 10px 4px 4px ;
+        box-shadow: 2px 2px 10px;
     }
     .chat_input{
         width:100%;
