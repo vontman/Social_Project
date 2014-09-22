@@ -49,16 +49,16 @@ color:midnightblue;
 }
 .submit{
     width: 30%;
-height: 10%;
-margin: 5%;
-margin-left: 65%;
-background-color: #c5e9f7;
-border: 2px solid #82d4f4;
-border-radius: 50px;
-right: 0px;
-font-size: 20px;
-font-family: cursive;
-font-weight: bold;
+    height: 10%;
+    margin: 5%;
+    margin-left: 65%;
+    background-color: #c5e9f7;
+    border: 2px solid #82d4f4;
+    border-radius: 50px;
+    right: 0px;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
 }
 .submit:hover{
     background-color: #82d4f4;
