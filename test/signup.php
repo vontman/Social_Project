@@ -27,7 +27,7 @@
 $('.password').on('keyup',function(){
                  var length = $('.password').val().length;
                  if (length<6) {
-                     $('.passlenght').text('password must be more than 6 cahr');  
+                     $('.passlength').text('password must be more than 6 cahr');  
             }
             });
      $('#reemail').on('keyup',function(){
@@ -68,7 +68,7 @@ $('.password').on('keyup',function(){
     Confirm your email:<br/>
     <input type="email"  name="reemail"  class="email" id="reemail" required/>&nbsp;*<br /><label class="v_email"></label>
     Enter your password:<br/>
-    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlenght"></label>
+    <input type="password"  name="password"  class="password" required id="pass"/>&nbsp;*<br /><label class="passlength"></label>
     Confirm your password:<br/>
     <input type="password"  name="repassword"  class="password" id="repass" required/>&nbsp;*<br /><label class="v_pass"></label>
     Birthday:<div class="date"><select name="year">
