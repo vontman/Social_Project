@@ -38,6 +38,7 @@ color:midnightblue;
     width: 90%;
     margin-left: 5%;
     height: 30px;
+    padding-left: 10px;
 }
 .lab{
     margin-left: 5%;
@@ -88,13 +89,12 @@ font-weight: bold;
     display:none;
   position: relative;
   background:rgba(253, 255, 254, 0.38);
-border: 2px solid #82d4f4;
-border-radius: 50px;
+border-radius:12px;
   margin: auto;
   width:350px;
   font-family: 'Open Sans Condensed', sans-serif;
   padding:15px 20px;
-  height: 665px;
+  height: 638px;
 }
 .form{
     padding: 40px 0;
@@ -189,7 +189,7 @@ border-radius: 50px;
   margin-top: 20px;
   background:#99ffff;
   border-radius:3px;
-  float: right;
+  float: left;
   font-size:16px;
   -webkit-transition:all 0.5s ease;
   -moz-transition:all 0.5s ease;
@@ -198,6 +198,7 @@ border-radius: 50px;
   background-color: #c5e9f7;
 border: 2px solid #82d4f4;
 border-radius: 50px;
+margin-left: 62px;
 }
 .signupb:hover
 {

@@ -13,7 +13,7 @@
     });
     $(".loginb").click(function(){
            $(".signup").css("display","none");
-           $(".login").css("display","block");login
+           $(".login").css("display","block");
     });
     $('.email').on('keyup',function(){
          var data=$(this).val();
