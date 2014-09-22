@@ -84,7 +84,7 @@ $('.password').on('keyup',function(){
       Name:<br/>
       <input type="text" placeholder="First" name="fname"  class="fname" />
     <input type="text" placeholder="Last" name="lname"  class="lname" /> <br />
-     username:<label class="user_msg"></label><br/>
+     Username:<label class="user_msg"></label><br/>
      <input type="text"  name="username"  class="username" required />&nbsp;*<br/>
     Enter your email:<label class="exist"></label><br/>
     <input type="email" name="email" class="email" required id="email" />&nbsp;*<br/>

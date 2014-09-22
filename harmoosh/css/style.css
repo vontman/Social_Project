@@ -24,7 +24,7 @@ top: 5%;
 position: relative;
 width: 400px;
 max-width: 90%;
-max-height: 90%;
+/*max-height: 90%;*/
 color:midnightblue;
 }
 .login img{
