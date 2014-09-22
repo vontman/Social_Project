@@ -13,5 +13,5 @@ $sql=  mysqli_query($con, $query);
 if( mysqli_affected_rows($con)>0){
    echo "username already exist";                        
  }else{
-     echo" can go";
+     echo" available";
  }
