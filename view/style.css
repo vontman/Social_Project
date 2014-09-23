@@ -9,6 +9,7 @@
                 /*background:radial-gradient(rgb(117, 231, 218),rgb(61, 105, 91));*/
                 background: url(bg.jpg);
                 background-size: cover;
+                background-attachment: fixed;
                 margin:0;
                 padding:0;
             }
