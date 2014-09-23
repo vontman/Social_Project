@@ -1,21 +1,21 @@
 <?php
     include_once 'users.php';
     $users=new users();
-    $data=@$_GET["email"];
-    $data2=@$_GET["username"];
-    $data3=@$_GET["passlog"];
-    $data4=@$_GET["userlog"];
+    $email=@$_GET["email"];
+    $username=@$_GET["username"];
+    $passlog=@$_GET["passlog"];
+    $userlog=@$_GET["userlog"];
     if(isset($_GET["username"])){
-    $query="SELECT * FROM users WHERE username='$data2'";
+    $query="SELECT * FROM users WHERE username='$username'";
 }
 if(isset($_GET["email"])){
-    $query="SELECT * FROM users WHERE email='$data'";
+    $query="SELECT * FROM users WHERE email='$email'";
 }
 if(isset($_GET["passlog"])){
-    $query="SELECT * FROM users WHERE password='$data3'";
+    $query="SELECT * FROM users WHERE password='$passlog'";
 }
 if(isset($_GET["userlog"])){
-        $query="SELECT * FROM users WHERE email='$data4' OR username='$data4'";
+        $query="SELECT * FROM users WHERE email='$userlog' OR username='$userlog'";
 }
 $sql=  mysqli_query($con, $query);
 if( mysqli_affected_rows($con)>0){
