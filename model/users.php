@@ -88,7 +88,7 @@ class users {
                 $user_login['logged_in']='1';
                 $this->functions->update($user_login, $user_id);
                 session_start();
-                $_SESSION['alterwire']='$user_id';
+                $_SESSION['alterwire']=$user_id;
                 if($remember){
                     setcookie('alterwire', $user_id, time()+1000*60*60,'/');
                 }
