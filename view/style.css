@@ -7,7 +7,7 @@
                 /*background: whitesmoke;*/
                 /*background:rgb(202, 223, 243);*/
                 /*background:radial-gradient(rgb(117, 231, 218),rgb(61, 105, 91));*/
-                background: linear-gradient(rgb(234, 235, 246),rgb(82, 255, 39));
+                background: url(bg.jpg);
                 margin:0;
                 padding:0;
             }
