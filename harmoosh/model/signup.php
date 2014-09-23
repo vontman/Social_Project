@@ -2,25 +2,23 @@
     include_once 'users.php';
     $users=new users();
   if(isset($_GET["username"])){
-    $query="SELECT * FROM users WHERE username='$username'";
-        $username=@$_GET["username"];
-        $sql=  mysqli_query($con, $query);
-        if( mysqli_affected_rows($con)>0){
+      $username=@$_GET["username"];
+             $users->check_username($username);
+        if( check_username($username)<0){
            echo "username already exist";                        
          }else{
              echo" available";
          }
         }
-        if(isset($_GET["email"])){
-    $query="SELECT * FROM users WHERE email='$email'";
+   if(isset($_GET["email"])){
         $email=@$_GET["email"];
-        $sql=  mysqli_query($con, $query);
-    if( mysqli_affected_rows($con)>0){
+$users->check_email($email);
+   if( check_username($username)<0){
        echo "email already exist";                        
-     }else{
-         echo" available";
-     }
-    }
+        }else{
+            echo" available";
+        }
+       }
 if(isset($_GET["username"])&&isset($_GET["email"])){
     
 }

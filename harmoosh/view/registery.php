@@ -8,7 +8,7 @@
     });
     $('.email').on('keyup',function(){
          var data=$(this).val();
-       $.ajax({url:'signup.php',
+       $.ajax({url:'model/signup.php',
          data:{email:data},
          success: function (email_ch) {
                 $('.exist').text(email_ch);
@@ -17,7 +17,7 @@
      }) ;
              $('.username').on('keyup',function(){
                  var data2=$(this).val();
-               $.ajax({url:'signup.php',
+               $.ajax({url:'model/signup.php',
                  data:{username:data2},
                  success: function (username_ch) {
                         $('.user_msg').text(username_ch);
@@ -60,8 +60,9 @@ $('.password').on('keyup',function(){
         });
         $('.signupb').click(function(){
             if(email_value&&pass_value&&length){;
-                $.ajax({url:'signup.php',
-                
+                $.ajax({url:'model/signup.php',
+                type:'POST',
+                data:{}
                 });
         
         }
