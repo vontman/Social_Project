@@ -13,7 +13,8 @@
                 /*background: rgba(0,0,0,.15);*/
                 /*background:rgb(156, 180, 202);*/
                 /*background: linear-gradient(rgb(101, 133, 141),rgb(0, 105, 71));*/
-                background: linear-gradient(rgb(91, 167, 142),rgb(44, 155, 39));
+                /*background: linear-gradient(rgb(91, 167, 142),rgb(44, 155, 39));*/
+                background:linear-gradient(rgb(137, 166, 173),rgb(11, 108, 139));
                 width:0px;
                 height:100%;
                 transition:all 1.2s ease;
