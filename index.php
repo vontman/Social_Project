@@ -35,20 +35,26 @@
 //            if(isset($_COOKIE['alterwire'])){
 //                $_SESSION['alterwire']=$_COOKIE['alterwire'];
 //            }
-            include_once 'view/sidebar.php'; 
-            include_once 'view/slider.php';
+            require_once 'view/sidebar.php'; 
+            require_once 'view/slider.php';
         ?>
         <div id="contain_wrapper">
             <div id="wrapper">
                 <?php
-                    include_once 'view/wrapper.php';
+                if(isset($_GET['post'])){
+                    require_once 'view/post.php';
+                }elseif(isset($_GET['user'])){
+                    require_once 'view/user.php';
+                }else{
+                    require_once 'view/wrapper.php';
+                }
                 ?>
             </div>
         </div>
         <?php
 //        }
 //        else{
-//            include_once 'view/home.php';
+//            require_once 'view/home.php';
 //        }
         ?>  
     </body>
