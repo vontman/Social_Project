@@ -60,6 +60,25 @@ $('.password').on('keyup',function(){
   }
  });
     });
+    $('#userlogin').on('keyup',function(){
+                 var data4=$(this).val();
+               $.ajax({url:'conn.php',
+                 data:{userlog:data4},
+                 success: function (user_ch) {
+                        $('.inc_email').text(user_ch);
+                         }
+        });
+        }) ;
+     $('#passlogin').on('keyup',function(){
+                 var data3=$(this).val();
+               $.ajax({url:'conn.php',
+                 data:{passlog:data3},
+                 success: function (pass_ch) {
+                        $('.inc_pass').text(pass_ch);
+                         }
+        });
+        }) ;
+         
     </script>
       <script>
     </script>
@@ -69,9 +88,9 @@ $('.password').on('keyup',function(){
         <form action="" method="POST" class="login">
             <img src="images/logo.png">
             
-            <label class="lab">Username<br></label>
-            <input type="text" name="username" class="text">
-            <label class="lab">Password<br></label>
+            <label class="lab">Username or email:</label><label class="inc_email"></label><br>
+            <input type="text" name="username" class="text" id="userlogin">
+            <label class="lab">Password:</label><label class="inc_pass" id="passlogin"></label><br>
             <input type="password" name="password" class="text">
             <input type="checkbox" name="remember" class="check">  Remember me  <div class="forget">|Forgot my password </div> 
             <input type="submit"  name="login" value="login " class="submit">
