@@ -83,6 +83,7 @@ a{
 }
 .on li:hover{
     background-color:whitesmoke;
+    color:#1d1822;
     cursor: pointer;
 }
 

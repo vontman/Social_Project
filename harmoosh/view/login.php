@@ -35,15 +35,19 @@
                 }else{
                     remember_me=false;
                 }
-                console.log("el3ab");
-                $.ajax({url:'model/login.php',
-                type:'POST',
-                data:{username:login_username,password:login_password,remember:remember_me},
-                success:function(lol){
-                    alert(lol);
-                console.log("el3ab");
-                    }
-                });
+                if(login_username.length>=6&&login_password>=6){
+                    console.log("el3ab");
+                    $.ajax({url:'model/login.php',
+                    type:'POST',
+                    data:{username:login_username,password:login_password,remember:remember_me},
+                    success:function(lol){
+                        alert(lol);
+                    console.log("el3ab");
+                        }
+                    });
+                }else{
+                    alert("Check the errors!!!");
+                }
             }else{
                 alert("Check the errors!!!");
             }
