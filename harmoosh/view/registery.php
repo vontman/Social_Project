@@ -114,9 +114,11 @@ $('.password').on('keyup',function(){
 }?>
         </select>
     <?php
+        $date[]=@$_POST["year"];
+            $date[]=@$_POST["month"];
     $date[]=@$_POST["day"];
-    $date[]=@$_POST["month"];
-    $date[]=@$_POST["year"];
+
+
 $date_date= implode('-', $date);
     ?>
     </div>
