@@ -1,4 +1,73 @@
-
+<head>
+    <script>
+        $("document").ready(function(){
+        //Sign Up!!
+        $(".loginb").click(function(){
+           $(".signup").css("display","none");
+           $(".login").css("display","block");
+    });
+    $('.email').on('keyup',function(){
+         var data=$(this).val();
+       $.ajax({url:'signup.php',
+         data:{email:data},
+         success: function (email_ch) {
+                $('.exist').text(email_ch);
+                 }     
+});
+     }) ;
+             $('.username').on('keyup',function(){
+                 var data2=$(this).val();
+               $.ajax({url:'signup.php',
+                 data:{username:data2},
+                 success: function (username_ch) {
+                        $('.user_msg').text(username_ch);
+                         }
+        });
+        }) ;
+$('.password').on('keyup',function(){
+                 var length = $('.password').val().length;
+                 if (length<6) {
+                     $('.passlength').text('password must be more than 6 cahr');  
+                     length=false;
+            }
+            else{
+               length=true;
+            }
+            });
+     $('#reemail').on('keyup',function(){
+    var email=$('#email').val();
+     var reemail =$('#reemail').val();
+     if (reemail!=email){
+     $('.v_email').text('email does not match');
+     email_value=false;
+    }
+    else{
+        $('.v_email').text('email match');
+        email_value=true;
+    }
+    });
+     $('#repass').keyup(function(){
+        var pass=$('#pass').val();
+      var repass =$('#repass').val();
+      if (repass!=pass){
+      $('.v_pass').text('password does not match');
+      pass_value=false;
+  }
+  else{
+       $('.v_pass').text('password match');
+        pass_value=true;
+  }
+        });
+        $('.signupb').click(function(){
+            if(email_value&&pass_value&&length){;
+                $.ajax({url:'signup.php',
+                type:'POST',
+                data:{username:login_username,password:login_password,remember:remember_me},
+                });
+            }
+    }); 
+    </script>
+</head>
         <div class="registery-form">
     <form action="" method="post" class="signup">
       Name:<br/>

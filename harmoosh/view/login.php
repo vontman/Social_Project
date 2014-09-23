@@ -52,6 +52,10 @@
                 alert("Check the errors!!!");
             }
         });
+               $(".join").click(function(){
+           $(".login").css("display","none");
+           $(".signup").css("display","block");
+    });
     });
 </script>
         <div class="login">
