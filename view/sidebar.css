@@ -79,12 +79,13 @@ a{
     font-size:18px;
     font-weight: 300;
     padding:0 5px 5px 0;
-    transition:all .6s ease;
+    transition:all .4s ease;
 }
 .on li:hover{
     background-color:whitesmoke;
     color:#1d1822;
     cursor: pointer;
+    text-shadow: 0px 1px 18px black;
 }
 
 .user{
@@ -114,6 +115,7 @@ a{
     border-radius: 10px 0px 10px 0px; 
     text-shadow: 2px 2px 8px black;
     background:  rgba(0,0,0,.25);
+    transition: all .3s ease;
     color: #F2FCFF;
 }
 .mains li:hover{
