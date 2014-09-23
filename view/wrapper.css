@@ -37,7 +37,8 @@
                 position: relative;
                 min-height:180px;
                 /*background:rgba(0,0,0,.15);*/
-                background: rgb(199, 210, 221);
+                /*background: rgb(199, 210, 221);*/
+                background: rgb(199, 221, 199);
             }
             .post_whole .post .writer_pic{
                 width:10%;

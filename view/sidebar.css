@@ -79,9 +79,10 @@ a{
     font-size:18px;
     font-weight: 300;
     padding:0 5px 5px 0;
+    transition:all .6s ease;
 }
 .on li:hover{
-    background-color:#1d1822;
+    background-color:whitesmoke;
     cursor: pointer;
 }
 
