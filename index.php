@@ -1,4 +1,7 @@
-
+<?php
+    session_start();
+    ob_start();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -28,9 +31,18 @@
     </head>
     <body>
         <?php
+        if (isset($_COOKIE['alterwire'])||isset($_SESSION['alterwire'])){
+            if(isset($_COOKIE['alterwire'])){
+                $_SESSION['alterwire']=$_COOKIE['alterwire'];
+            }
             include_once 'view/sidebar.php'; 
             include_once 'view/slider.php';
-            include_once './view/wrapper.php';
+            include_once 'view/wrapper.php';
+        }
         ?>
     </body>
 </html>
+
+<?php
+    ob_end_flush();
+?>
