@@ -3,8 +3,7 @@
     $users=new users();
   if(isset($_GET["username"])){
       $username=@$_GET["username"];
-             $users->check_username($username);
-        if( $username<0){
+        if( $users->check_username($username)<0){
            echo "username already exist";                        
          }else{
              echo" available";
@@ -12,8 +11,7 @@
         }
    if(isset($_GET["email"])){
         $email=@$_GET["email"];
-$users->check_email($email);
-   if( $email<0){
+   if( $users->check_email($username)<0){
        echo "email already exist";                        
         }else{
             echo" available";
@@ -22,4 +20,3 @@ $users->check_email($email);
 if(isset($_GET["username"])&&isset($_GET["email"])){
     
 }
-    
