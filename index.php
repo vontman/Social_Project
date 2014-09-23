@@ -42,7 +42,7 @@
             <div id="wrapper">
                 <?php
                     include_once 'view/wrapper.php';
-                ?>         
+                ?>
             </div>
         </div>
         <?php
