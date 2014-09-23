@@ -61,10 +61,11 @@ $('.password').on('keyup',function(){
         $('.signupb').click(function(){
             if(email_value&&pass_value&&length){;
                 $.ajax({url:'signup.php',
-                type:'POST',
-                data:{username:login_username,password:login_password,remember:remember_me},
+                
                 });
-            }
+        
+        }
+        });
     }); 
     </script>
 </head>
