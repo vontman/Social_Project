@@ -37,12 +37,20 @@
 //            }
             include_once 'view/sidebar.php'; 
             include_once 'view/slider.php';
-            include_once 'view/wrapper.php';
+        ?>
+        <div id="contain_wrapper">
+            <div id="wrapper">
+                <?php
+                    include_once 'view/wrapper.php';
+                ?>         
+            </div>
+        </div>
+        <?php
 //        }
 //        else{
 //            include_once 'view/home.php';
 //        }
-        ?>
+        ?>  
     </body>
 </html>
 
