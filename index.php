@@ -31,14 +31,17 @@
     </head>
     <body>
         <?php
-        if (isset($_COOKIE['alterwire'])||isset($_SESSION['alterwire'])){
-            if(isset($_COOKIE['alterwire'])){
-                $_SESSION['alterwire']=$_COOKIE['alterwire'];
-            }
+//        if (isset($_COOKIE['alterwire'])||isset($_SESSION['alterwire'])){
+//            if(isset($_COOKIE['alterwire'])){
+//                $_SESSION['alterwire']=$_COOKIE['alterwire'];
+//            }
             include_once 'view/sidebar.php'; 
             include_once 'view/slider.php';
             include_once 'view/wrapper.php';
-        }
+//        }
+//        else{
+//            include_once 'view/home.php';
+//        }
         ?>
     </body>
 </html>
