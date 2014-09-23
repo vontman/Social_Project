@@ -14,7 +14,6 @@ class users {
     }
     public function adduser($user){
         try{
-            $user['created']=$this->date;
             $user_id=$this->functions->insert($user);
             return $user_id;
         } catch (Exception $ex) {
@@ -57,7 +56,7 @@ class users {
             return mysqli_errno($this->link);
         }
     }
-    public function login($username,$password){   // Function To login and return User Id !!
+    public function login($username,$password,$remember=false){   // Function To login and return User Id !!
 //        try{
 //            $query="SELECT id,username FROM users WHERE username='$username'";
 //            $sql=  mysqli_query($this->link, $query);
@@ -88,6 +87,11 @@ class users {
                 $user_login['last_logged']=$this->date;
                 $user_login['logged_in']='1';
                 $this->functions->update($user_login, $user_id);
+                session_start();
+                $_SESSION['alterwire']=$user_id;
+                if($remember){
+                    setcookie('alterwire', $user_id, time()+1000*60*60,'/');
+                }
                 return $user_id;
             }
             else{
@@ -101,10 +105,10 @@ class users {
         $user_logout['last_logged']=$this->date;
         $user_logout['logged_in']=0;
         try{
+            setcookie('alterwire', $user_id, time()-1, '/');
 //            setcookie($name, $value, $expire, $path);
-//            setcookie($name, $value, $expire, $path);
-//            session_start();
-//            session_destroy();
+            session_start();
+            session_destroy();
             return $this->functions->update($user_logout, $user_id);
         } catch (Exception $ex) {
             return mysqli_errno($this->link);
