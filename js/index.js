@@ -27,20 +27,17 @@
 //                    if($(this).hasClass('icon_drag')){
 //                        $(this).removeClass('icon_drag');
 //                    }
-                    leftslider();
+                    $(this).siblings('.slider').toggleClass('slider_click');
+                    $(this).toggleClass('icon_afterclick');
+                    $('.li_notifications').toggleClass('li_notification_afterclick');
+                    icon_hover=false;
 //                    $('.test').css({"width":"250px"});
 //                  $('.close').toggleClass('close_afterclick');
                 });
                 if(icon_hover===true){
                     $('.icon').hover(function(){
-                       $('.icon').toggleClass('icon_hover'); 
+                       $(this).toggleClass('icon_hover'); 
                     });
-                }
-                function leftslider(){
-                    $('.leftslider').toggleClass('leftslider_click');
-                    $('.icon').toggleClass('icon_afterclick');
-                    $('.li_notifications').toggleClass('li_notification_afterclick');
-                    icon_hover=false;
                 }
 //                $('.icon').hover(function(){
 //                    var newleft =$('.icon').position().left +45;
