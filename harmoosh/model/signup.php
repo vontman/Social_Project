@@ -22,9 +22,9 @@ if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password']))
     $username=@$_POST['username1'];
     $password=@$_POST['password'];
     $email=@$_POST['email1'];
-      $array[]=$username;
-      $array[]=$password;
-       $array[]=$email;
+      $array['username']=$username;
+      $array['password']=$password;
+       $array['email']=$email;
 //    $fname=@$_POST['fname1'];
 //    $lname=@$_POST['lname1'];
 //    $date=@$_POST['date1'];
