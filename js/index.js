@@ -1,6 +1,6 @@
             function auto_blend(){
-                if($(window).width()<900){
-                    $('.r-sidebar').hide();
+                if($(window).width()<980){
+                    $('.r-sidebar').css({"width":'0','min-width':'0'});
                     $('#wrapper').css('float','right');
                     var l_width=$('.l-sidebar').width();
                     var w_width=$(window).width();
@@ -9,7 +9,7 @@
                     $('#wrapper').css('float','none');
                 }
                 else{
-                    $('.r-sidebar').show();
+                    $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('#wrapper').css('float','none');
                     $('#contain_wrapper').css({'width':'auto','float':'none'});
                 }
