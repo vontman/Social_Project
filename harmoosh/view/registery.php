@@ -9,6 +9,7 @@
     $('#email').on('keyup',function(){
          var email=$(this).val();
        $.ajax({url:'model/signup.php',
+           type:'POST',
          data:{email:email},
          success: function (email_ch) {
                 $('.exist').text(email_ch);
@@ -18,6 +19,7 @@
              $('.username').on('keyup',function(){
                  var username=$(this).val();
                $.ajax({url:'model/signup.php',
+                   type:'POST',
                  data:{username:username},
                  success: function (username_ch) {
                         $('.user_msg').text(username_ch);
