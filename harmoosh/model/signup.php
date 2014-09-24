@@ -19,18 +19,18 @@
        }
 if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password'])){
     
-    $username=@$_POST['username1'];
+    $username=@$_POST['username'];
     $password=@$_POST['password'];
-    $email=@$_POST['email1'];
+    $email=@$_POST['email'];
       $array['username']=$username;
       $array['password']=$password;
        $array['email']=$email;
-//    $fname=@$_POST['fname1'];
-//    $lname=@$_POST['lname1'];
-//    $date=@$_POST['date1'];
-//    $gender=@$_POST['gender1'];
-//    $num=@$_POST['num1'];
-//    $location=@$_POST['location1'];
+//    $fname=@$_POST['fname'];
+//    $lname=@$_POST['lname'];
+//    $date=@$_POST['date'];
+//    $gender=@$_POST['gender'];
+//    $num=@$_POST['num'];
+//    $location=@$_POST['location'];
 //    $users->adduser($user);
        $users->adduser($array);
 }
