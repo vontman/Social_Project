@@ -136,8 +136,8 @@ $('.password').on('keyup',function(){
 $date_date= implode('-', $date);
     ?>
     </div>
-    Gender:<br/><br/><div class="gender"><input type="radio" name="gender" value="male"class="male" checked>Male
-        <input type="radio" name="gender"class="female" value="female">Female</div><br/>
+    Gender:<br/><br/><div class="gender"><input type="radio" name="gender" value="m"class="male" checked>Male
+        <input type="radio" name="gender"class="female" value="f">Female</div><br/>
     Mobile Phone:<br/>
     <input type="text" name="num" class="num"><br/>
     Location:<br/>
