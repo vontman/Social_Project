@@ -1,26 +1,30 @@
 <?php
     include_once 'users.php';
     $users=new users();
-  if(isset($_GET["username"])){
-      $username=@$_GET["username"];
+  if(isset($_POST["username"])){
+      $username=@$_POST["username"];
         if( $users->check_username($username)<0){
            echo "username already exist";                        
          }else{
              echo" available";
          }
         }
-   if(isset($_GET["email"])){
-        $email=@$_GET["email"];
+   if(isset($_POST["email"])){
+        $email=@$_POST["email"];
    if( $users->check_email($email)<0){
        echo "email already exist";                        
         }else{
             echo" available";
         }
        }
-if(isset($_GET["username"])&&isset($_GET["email"])&&isset($_GET['password'])){
+if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password'])){
+    
     $username=@$_POST['username1'];
     $password=@$_POST['password'];
     $email=@$_POST['email1'];
+      $array[]=$username;
+      $array[]=$password;
+       $array[]=$email;
 //    $fname=@$_POST['fname1'];
 //    $lname=@$_POST['lname1'];
 //    $date=@$_POST['date1'];
@@ -28,4 +32,5 @@ if(isset($_GET["username"])&&isset($_GET["email"])&&isset($_GET['password'])){
 //    $num=@$_POST['num1'];
 //    $location=@$_POST['location1'];
 //    $users->adduser($user);
+       $users->adduser($array);
 }
