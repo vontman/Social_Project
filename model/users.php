@@ -114,4 +114,18 @@ class users {
             return mysqli_errno($this->link);
         }
     }
+    public function search($key_words){
+        $key_words_edit=  strtolower($key_words);
+        $query="SELECT id,username,firstname,lastname,email FROM $this->table_name WHERE LOWER(username) LIKE '".$key_words_edit."%'";
+        try{
+            $sql=  mysqli_query($this->link, $query);
+            $results=array();
+            while($row=  mysqli_fetch_array($sql)){
+                $results[]=$row;
+            }
+            return $results;
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
 }
