@@ -18,6 +18,7 @@ a{
     overflow-y: auto;
 }
 .r-sidebar{
+    transition: all 1s ease;
     min-width:15%;
     max-width:35%;
     width: 175px;
