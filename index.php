@@ -14,6 +14,9 @@
         <script src="fullcalendar/lib/moment.min.js"></script>
         <script src="fullcalendar/lib/jquery-ui.custom.min.js"></script>
         <script src="fullcalendar/fullcalendar.js"></script>
+        <script src="custom-scrollbar/jquery.custom-scrollbar.js"></script>
+        <script src="custom-scrollbar/jquery.custom-scrollbar.min.js"></script>
+        <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
         <script src="js/index.js"></script>
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
