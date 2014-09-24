@@ -17,15 +17,15 @@
             echo" available";
         }
        }
-if(isset($_GET["username"])&&isset($_GET["email"])&&isset($_POST['password'])){
+if(isset($_GET["username"])&&isset($_GET["email"])&&isset($_GET['password'])){
     $username=@$_POST['username1'];
     $password=@$_POST['password'];
     $email=@$_POST['email1'];
-    $fname=@$_POST['fname1'];
-    $lname=@$_POST['lname1'];
-    $date=@$_POST['date1'];
-    $gender=@$_POST['gender1'];
-    $num=@$_POST['num1'];
-    $location=@$_POST['location1'];
-    $users->adduser($user);
+//    $fname=@$_POST['fname1'];
+//    $lname=@$_POST['lname1'];
+//    $date=@$_POST['date1'];
+//    $gender=@$_POST['gender1'];
+//    $num=@$_POST['num1'];
+//    $location=@$_POST['location1'];
+//    $users->adduser($user);
 }

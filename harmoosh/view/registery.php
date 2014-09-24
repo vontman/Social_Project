@@ -31,6 +31,7 @@ $('.password').on('keyup',function(){
                      length=false;
             }
             else{
+                 $('.passlength').text('');
                length=true;
             }
             });
@@ -71,7 +72,7 @@ $('.password').on('keyup',function(){
                 var location=$('.location').val();
                 $.ajax({url:'model/signup.php',
                 type:'POST',
-                data:{username1=username,password=pass,email1=email,fname1=fname,lname1=lname,date1=date,gender1=gender,num1=num,location1=loacation}
+                data:{username1:username,password:pass,email1:email,fname1:fname,lname1:lname,date1:date,gender1:gender,num1:num,location1:location}
                 });
         
         }
