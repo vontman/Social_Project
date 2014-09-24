@@ -3,7 +3,7 @@
     $users=new users();
   if(isset($_POST["username"])){
       $username=@$_POST["username"];
-        if( $users->check_username($username)<0){
+        if( $users->check_username($username)){
            echo "username already exist";                        
          }else{
              echo" available";
@@ -11,7 +11,7 @@
         }
    if(isset($_POST["email"])){
         $email=@$_POST["email"];
-   if( $users->check_email($email)<0){
+   if( $users->check_email($email)){
        echo "email already exist";                        
         }else{
             echo" available";
