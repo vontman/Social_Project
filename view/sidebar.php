@@ -4,6 +4,9 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     </head>
 <div class="sidebar r-sidebar">
+    <div id="toggle">
+        <image src="png/thick10.png"/>
+    </div>
     <div class="logo">
         <h1> Online friends</h1>
     </div>
@@ -63,7 +66,7 @@
     <div class="sidebar l-sidebar">
         <div class="user">
             <img src="user.png">
-            <h3>User Name</h3>
+            <h3><?php echo $user['username']; ?></h3>
         </div>
         <ul class="mains">
             <li>News Feed</li>

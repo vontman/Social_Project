@@ -35,7 +35,7 @@
                 }else{
                     remember_me=false;
                 }
-                if(login_username.length>=6&&login_password>=6){
+                if(!login_username.length<6&&!login_password<6){
                     console.log("el3ab");
                     $.ajax({url:'model/login.php',
                     type:'POST',

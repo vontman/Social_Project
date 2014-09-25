@@ -38,6 +38,12 @@
 //            if(isset($_COOKIE['alterwire'])){
 //                $_SESSION['alterwire']=$_COOKIE['alterwire'];
 //            }
+        // user definition
+            include_once './model/users.php';
+            $users=new users();
+            $user_id=$_SESSION['alterwire'];
+            $user=$users->view_user($user_id)[0];
+        //end
             require_once 'view/sidebar.php'; 
             require_once 'view/slider.php';
         ?>

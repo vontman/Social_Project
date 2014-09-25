@@ -5,8 +5,8 @@ class messages {
     public $date;
     public $functions;
     public function __construct() {
-        include_once './connect.php';
-        include_once './functions.php';
+        include_once 'connect.php';
+        include_once 'functions.php';
         $this->functions=new db_functions();
         $this->functions->table_name='messages';
         $this->link=$this->functions->link;
@@ -30,7 +30,6 @@ class messages {
         $row['cols']['seen']=0;
         $messages=$this->functions->select($cols, false, array('created'=>'ASC'), false,$row);
         return $messages;
-
     }
     public function view($user_id,$message_id=false){
         $cols[]='id';
@@ -52,5 +51,25 @@ class messages {
             $message=$this->functions->select($cols, false, false, false,$row);
         }
         return $message;
+    }
+    public function check_new($recieved_id){
+        $cols[]='id';
+        $cols[]='user_id';
+        $cols[]='recieved_id';
+        $cols[]='name';
+        $cols[]='body';
+        $cols[]='created';
+        $specific_row=array();
+        $specific_row['cols']['seen']=0;
+        $specific_row['cols']['recieved_id']=$recieved_id;
+        try{
+            $new_messages=$this->functions->select($cols, false, false, false, $specific_row);
+            return $new_messages;
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
+    public function typing($user_id,$recieved_id){
+        $cols[]='id';
     }
 }

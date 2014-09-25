@@ -4,7 +4,7 @@ class db_functions{
      public $link;
      public $table_name;
     function __construct() {
-        include_once './connect.php';
+        include_once 'connect.php';
         $connect= new db_connect();
         $this->link= $connect->connect();
     }

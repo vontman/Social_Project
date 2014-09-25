@@ -24,7 +24,28 @@ a{
     width: 175px;
     float: right;
     right:0;
-    overflow-y: hidden;
+    overflow: visible;
+}
+.r-sidebar #toggle{
+    position:absolute;
+    top:50%;
+    width:22px;
+    height:180px;
+    background: rgba(10,101,10,.5);
+    transform: translateX(-65%) translateY(-50%);
+    z-index: -1;
+    display:block;
+    border-radius: 5px 0 0 5px ;
+}
+#toggle:hover{
+    cursor: pointer;
+}
+#toggle img{
+    opacity: .75;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:100%;
 }
 .l-sidebar{
     min-width:20%;
