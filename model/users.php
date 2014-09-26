@@ -107,7 +107,7 @@ class users {
         try{
             setcookie('alterwire', $user_id, time()-1, '/');
 //            setcookie($name, $value, $expire, $path);
-            session_start();
+            @session_start();
             session_destroy();
             return $this->functions->update($user_logout, $user_id);
         } catch (Exception $ex) {
