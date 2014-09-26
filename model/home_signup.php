@@ -33,10 +33,10 @@ if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password']))
     
        $array['firstname']=$fname;
        $array['lastname']=$lname;
-       $array['birthday']=$date;
+//       $array['birthday']=$date;
        $array['gender']=$gender;
        $array['mobile_number']=$num;
-       $location=@$_POST['location'];
-       $array['country_id']=$location;
+//       $location=@$_POST['location'];
+//       $array['country_id']=$location;
        echo $users->adduser($array);
 }
