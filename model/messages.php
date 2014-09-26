@@ -70,6 +70,22 @@ class messages {
         }
     }
     public function typing($user_id,$recieved_id){
-        $cols[]='id';
+        $input['user_id']=$user_id;
+        $input['recieved_id']=$recieved_id;
+        try{
+            $this->functions->insert($input);
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
+    public function check_typing($user_id,$recieved_id) {
+        $specific_row['cols']['user_id']=$user_id;
+        $specific_row['cols']['recieved_id']=$recieved_id;
+        try{
+            $typing=$this->functions->select(false, false, FALSE, false, $specific_row);
+            return $typing;
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
     }
 }

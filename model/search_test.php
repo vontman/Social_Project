@@ -9,7 +9,7 @@
 //       });
         $('#search_result_wrapper').hide();
         $('#search_input').keyup(function(){
-            $('#search_result_wrapper ul').children('li').remove();
+            $('#search_result_wrapper ul').children('a').remove();
             if($(this).val().length>2){
                 $('#search_result_wrapper').show();
                 var keywords=$(this).val();
