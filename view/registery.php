@@ -74,7 +74,16 @@ $('.password').on('keyup',function(){
                 var location=$('.location').val();
                 $.ajax({url:'model/home_signup.php',
                 type:'POST',
-                data:{username:username,password:pass,email:email,fname:fname,lname:lname,date:date,gender:gender,num:num,location:location}
+                data:{username:username,password:pass,email:email,fname:fname,lname:lname,date:date,gender:gender,num:num,location:location},
+                success:function(signup){
+//                    if(signup){
+//                        alert('Registeration Successfull !!');
+//                        location.reload();
+//                    }else{
+                        alert('Registeration faled !');
+                        $('.registery-form').children().reset();
+                    }
+                }
                 });
         
         }
