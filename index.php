@@ -34,14 +34,15 @@
     </head>
     <body>
         <?php
-//        if (isset($_COOKIE['alterwire'])||isset($_SESSION['alterwire'])){
-//            if(isset($_COOKIE['alterwire'])){
-//                $_SESSION['alterwire']=$_COOKIE['alterwire'];
-//            }
+        if (isset($_COOKIE['alterwire'])||isset($_SESSION['alterwire'])){
+            if(isset($_COOKIE['alterwire'])){
+                $_SESSION['alterwire']=$_COOKIE['alterwire'];
+            }
         // user definition
             include_once './model/users.php';
             $users=new users();
             $user_id=$_SESSION['alterwire'];
+//            $users->logout($user_id);
             $user=$users->view_user($user_id)[0];
         //end
             require_once 'view/sidebar.php'; 
@@ -61,10 +62,10 @@
             </div>
         </div>
         <?php
-//        }
-//        else{
-//            require_once 'view/home.php';
-//        }
+        }
+        else{
+            require_once 'view/home.php';
+        }
         ?>  
     </body>
 </html>

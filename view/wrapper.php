@@ -1,5 +1,4 @@
 
-<script>alert('<?php echo $user['username']; ?>');</script>
             <div class="post_whole">
                 <div class="post">
                     <div class="post_info">
