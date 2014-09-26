@@ -42,7 +42,6 @@
             include_once './model/users.php';
             $users=new users();
             $user_id=$_SESSION['alterwire'];
-//            $users->logout($user_id);
             $user=$users->view_user($user_id)[0];
         //end
             require_once 'view/sidebar.php'; 
@@ -53,6 +52,9 @@
                 <?php
                 if(isset($_GET['post'])){
                     require_once 'view/post.php';
+                }elseif(isset($_GET['logout'])){
+                    $users->logout($user_id);
+                    echo '<script>location.reload();</script>' ;
                 }elseif(isset($_GET['user'])){
                     require_once 'view/user.php';
                 }else{
