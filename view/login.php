@@ -46,8 +46,8 @@
                             location.reload();
                         }else{
                             alert("Username and Password don't match !!");
-                            $('.login_username').text('');
-                            $('.login_password').text('');
+                            $('.login_username').val('');
+                            $('.login_password').val('');
                         }
                     console.log("el3ab");
                         }

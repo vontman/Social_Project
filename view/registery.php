@@ -76,12 +76,12 @@ $('.password').on('keyup',function(){
                 type:'POST',
                 data:{username:username,password:pass,email:email,fname:fname,lname:lname,date:date,gender:gender,num:num,location:location},
                 success:function(signup){
-//                    if(signup){
-//                        alert('Registeration Successfull !!');
-//                        location.reload();
-//                    }else{
+                    if(signup){
+                        alert('Registeration Successfull !!');
+                        location.reload();
+                    }else{
                         alert('Registeration faled !');
-                        $('.registery-form').children().reset();
+                        $('.registery-form').children().val('');
                     }
                 }
                 });
