@@ -17,6 +17,9 @@ a{
     overflow-x: hidden;
     overflow-y: auto;
 }
+.r-sidebar:hover #toggle{
+    visibility: visible;
+}
 .r-sidebar{
     transition: all 1s ease;
     min-width:15%;
@@ -37,6 +40,7 @@ a{
     z-index: -1;
     display:block;
     border-radius: 5px 0 0 5px ;
+    visibility: hidden;
 }
 #toggle:hover{
     cursor: pointer;
