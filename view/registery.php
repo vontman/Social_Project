@@ -12,7 +12,14 @@
            type:'POST',
          data:{email:email},
          success: function (email_ch) {
-                $('.exist').text(email_ch);
+               if(!email_ch){
+                            $('.exist').text('email already exist'); 
+                            $('.exist').css('color','red');
+                        }
+                        else{
+                            $('.exist').text('available'); 
+                            $('.exist').css('color','green');
+                        }
                  }     
 });
      }) ;
@@ -22,7 +29,14 @@
                    type:'POST',
                  data:{username:username},
                  success: function (username_ch) {
-                        $('.user_msg').text(username_ch);
+                        if(!username_ch){
+                            $('.user_msg').text('username already exist'); 
+                            $('.user_msg').css('color','red');
+                        }
+                        else{
+                            $('.user_msg').text('available'); 
+                            $('.user_msg').css('color','green');
+                        }
                          }
         });
         }) ;
@@ -43,10 +57,12 @@ $('.password').on('keyup',function(){
      if (reemail!=email){
      $('.v_email').text('email does not match');
      email_value=false;
+     $(this).css('color',red);
     }
     else{
         $('.v_email').text('email match');
         email_value=true;
+        $(this).css('color',green);
     }
     });
      $('#repass').keyup(function(){
@@ -55,10 +71,12 @@ $('.password').on('keyup',function(){
       if (repass!=pass){
       $('.v_pass').text('password does not match');
       pass_value=false;
+      $(this).css('color',red);
   }
   else{
        $('.v_pass').text('password match');
         pass_value=true;
+        $(this).css('color',green);
   }
         });
         $('.signupb').click(function(){

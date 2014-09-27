@@ -4,9 +4,9 @@
   if(isset($_POST["username"])){
       $username=@$_POST["username"];
         if( $users->check_username($username)){
-           echo "username already exist";                        
+           echo false;                        
          }else{
-             echo" available";
+              echo true;
          }
         }
    if(isset($_POST["email"])){
