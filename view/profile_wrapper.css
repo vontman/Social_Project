@@ -1,10 +1,8 @@
-.contain_wrapper{
+            #contain_wrapper{
                 overflow: hidden;
-                width: 84.9%;
-                height: inherit;
             }
-            .wrapper{
-                width:100%;
+            #wrapper{
+                width:560px;
                 min-height:100%;
                 position:relative;
                 margin:5px auto;
@@ -14,10 +12,8 @@
                 /*background:whitesmoke;*/
                 border-radius: 5px;
                 overflow:hidden;
-                float: left;
-                padding-top: 2%;
             }
-            .wrapper .post_whole{
+            #wrapper .post_whole{
                 width:95%;
                 min-height:240px;
                 /*background:rgba(0,0,0,.15);*/
@@ -27,7 +23,6 @@
                 border-color:rgba(0,0,0,.75);
                 border-style:groove;
                 border-width:1px;
-                margin-top: 1%;
             }
             .post_whole .post{
                 padding:4px;
@@ -42,10 +37,8 @@
                 position: relative;
                 min-height:180px;
                 /*background:rgba(0,0,0,.15);*/
-               /* background: rgb(199, 210, 221);*/
-                background: rgb(226, 240, 255);
+                background: rgb(199, 210, 221);
                 /*background: rgb(199, 221, 199);*/
-                width:100%;
             }
             .post_whole .post .writer_pic{
                 width:10%;
@@ -71,7 +64,7 @@
             }
             .post_whole .post .post_body{
                 overflow:hidden;
-                width:99%;
+                width:100%;
                 margin:0;
                 padding:8px 5px;
             }
@@ -87,23 +80,4 @@
             .post_whole .post .post_functions a{
                 color:#418c96;
                 padding:2px 0px 2px 12px;
-            }
-            .r_post{
-                position: relative;
-                width: 45%;
-                height: inherit;
-                float: right;
-                padding-right: 3.5%;
-            }
-            .l_post{
-               position: relative;
-               width: 45%;
-               height: inherit;
-               padding-left: 3.5%;
-            }
-           .middle_post_whole{
-                position: relative;
-               width: 93%;;
-               height: inherit;
-               margin-left: 3.5%;
             }

@@ -5,7 +5,7 @@
     </head>
 <div class="sidebar r-sidebar">
     <div id="toggle">
-        <image src="png/thick10.png"/>
+        <image class="image" src="png/arrow454.png"/>
     </div>
     <div class="logo">
         <h1> Online friends</h1>

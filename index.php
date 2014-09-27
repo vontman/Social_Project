@@ -18,6 +18,8 @@
         <script src="custom-scrollbar/jquery.custom-scrollbar.min.js"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
         <script src="js/index.js"></script>
+        <script src="js/profile.js"></script>
+        <link type='text/css' rel='stylesheet' href='view/profile.php'/>
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
         <link type='text/css' rel='stylesheet' href='view/message.css'/>
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>

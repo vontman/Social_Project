@@ -1,8 +1,8 @@
 $(document).ready(function(){
-                 $('.message_field').css('visibility','hidden');  
+            $('.message_field').css('visibility','hidden'); 
                 $('.message').click(function(){
-                   $('.m1').css('visibility','visible');
- //                    $('.m1').append('.m1');
+    //               $('.m1').css('visibility','visible');
+                   $('.message_field').append('.message_field');
 //                   if('.m1'){
 //                       $('.m2').css('visibility','visable');
 //                      $('.message_fields').append('.m2');

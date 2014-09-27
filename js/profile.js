@@ -18,7 +18,7 @@
                     $('.header').css({'width':'84.8%','float':'none'});
                     $('.detail').css({'width':'84.8%','float':'none'});
                     $('.message_field').css({'width':'21%','height':'100%'});
-                    $('.message_fields').css({'width':'83.8%','height':'40%','right':'auto'});
+                    $('.message_fields').css({'width':'83.8%','height':'44%','right':'auto'});
                 }
             }
             $(window).resize(function(){
