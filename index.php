@@ -44,7 +44,8 @@
             $user_id=$_SESSION['alterwire'];
             $user=$users->view_user($user_id)[0];
         //end
-            require_once 'view/sidebar.php'; 
+            require_once 'view/r_sidebar.php'; 
+            require_once 'view/l_sidebar.php';
             require_once 'view/slider.php';
         ?>
         <div id="contain_wrapper">
