@@ -1,9 +1,6 @@
             #contain_wrapper{
                 overflow: hidden;
             }
-            #contain_wrapper *{
-                transition:all 1s ease;
-            }
             #wrapper{
                 width:560px;
                 min-height:100%;

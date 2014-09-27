@@ -25,6 +25,7 @@ a{
     float: right;
     right:0;
     overflow: visible;
+    top: 0;
 }
 .r-sidebar #toggle{
     position:absolute;
