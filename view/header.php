@@ -1,3 +1,6 @@
+<head>
+    <link type='text/css' rel='stylesheet' href='header.css'/>
+</head>
 <div class="header">
 <div class="middle_header"><img src="cover.jpg"></div>
 <div class="bottom_header">

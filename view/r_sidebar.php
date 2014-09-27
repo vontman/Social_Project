@@ -12,51 +12,51 @@
     </div>
     <div class="online">
         <ul class="on">
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message"> 
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>
-            <li>
+            <li class="message">
                 <img src="user.png">
                 user name
             </li>

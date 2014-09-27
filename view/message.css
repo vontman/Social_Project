@@ -1,0 +1,127 @@
+.message_field{
+   position: relative;
+    height: 100%;
+    width: 21%;
+    float: right;
+}
+.message_fields{
+    position: fixed;
+    height: 40%;
+    width: 83.8%;
+    bottom: 0%;
+    padding-left: .5%;
+    background: rgba(0,0,0,0);
+    z-index: 899;
+}
+.m2,.m3,.m4{
+    margin-right: .5%;
+}
+/*top_message_field*/
+
+.top_message_field{
+    position: relative;
+    height: 10%;
+    width: 99.5%;
+    background: gray;
+    color: whitesmoke;
+    border: 1px solid black;
+    border-bottom: none;
+}
+ .top_message_field .close{
+    position: relative;
+    width: 10%;
+    height: 100%;
+    float: right;
+}
+.top_message_field .close_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+ .top_message_field .message_caller{
+    position: relative;
+    height: 84%;
+    width: 75%;
+    overflow: hidden;
+    float: left;
+    padding: 2% 0 0 2%;
+}
+
+/*end top_message_field*/
+/*middle_message_field*/
+
+.middle_message_field{
+    position: relative;
+    width: 99.5%;
+    height: 76%;
+    background: darkgray;
+    color: whitesmoke;
+    border: 1px solid black;
+}
+.middle_message_field .sender{
+    position: relative;
+    width: 100%;
+    height: 14%;
+    top: 69%
+}
+.middle_message_field .sender img{
+    position: relative;
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+.middle_message_field .sender .send_text{
+    position: relative;
+    float: left;
+    padding: 2%;
+    background: cadetblue;
+    border-radius: 11px;
+}
+.middle_message_field .receiver{
+   position: relative;
+    width: 100%;
+    height: 14%;
+    top: 66%;
+}
+.middle_message_field .receiver img{
+    position: relative;
+    height: 100%;
+    width: 10%;
+    float: right;
+}
+.middle_message_field .receiver .receive_text{
+   position: relative;
+    float: right;
+    background: brown;
+    padding: 2%;
+    border-radius: 11px;
+}
+
+ /*end middle_message_field*/
+ /*bottom_message_field*/
+ 
+.bottom_message_field{
+    position: relative;
+    height: 14%;
+    width: 99.5%;
+    border: 1px solid black;
+    border-top: none;
+}
+.bottom_message_field .send{
+    position: relative;
+    height: 100%;
+    border: 0;
+    background: burlywood;
+    width: 100%;
+    overflow: hidden;
+    padding: 2%;
+}
+.bottom_message_field textarea{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+
+}
+
+/*end bottom_message_field*/

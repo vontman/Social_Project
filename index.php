@@ -19,6 +19,7 @@
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
         <script src="js/index.js"></script>
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
+        <link type='text/css' rel='stylesheet' href='view/message.css'/>
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
         <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
         <link type='text/css' rel='stylesheet' href='view/slider.css'/>
@@ -27,6 +28,7 @@
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
         <!--Addons !!!-->
+        <script src="js/message.js"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
@@ -47,6 +49,7 @@
             require_once 'view/r_sidebar.php'; 
             require_once 'view/l_sidebar.php';
             require_once 'view/slider.php';
+            require_once 'view/message.php';
         ?>
         <div id="contain_wrapper">
             <div id="wrapper">
