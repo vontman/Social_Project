@@ -1,6 +1,6 @@
             #contain_wrapper{
                 overflow-y: hidden;
-                overflow-x: auto
+                overflow-x: hidden;
             }
             #wrapper{
                 width:560px;

@@ -30,11 +30,11 @@ a{
 }
 .r-sidebar #toggle{
     position:absolute;
-    top:50%;
-    width:22px;
+    top:30%;
+    width:18px;
     height:180px;
     background: rgba(10,101,10,.5);
-    transform: translateX(-65%) translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
     z-index: -1;
     display:block;
     border-radius: 5px 0 0 5px ;
@@ -49,6 +49,7 @@ a{
     top:50%;
     transform: translateY(-50%);
     width:100%;
+    transition: all 1s ease;
 }
 .r-sidebar:hover #toggle{
     opacity:1;
