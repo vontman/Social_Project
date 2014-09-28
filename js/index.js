@@ -71,5 +71,5 @@
 //                $("#datepicker").datepicker({
 //                    dateFormat: 'yy-mm-dd'
 //                });
-                $('.calender').fullCalendar();
+             $('.calender').fullCalendar();
             });

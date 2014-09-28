@@ -25,6 +25,14 @@
      }) ;
              $('.username').on('keyup',function(){
                  var username=$(this).val();
+                 var length = $('.username').val().length;
+                 if (length<6) {
+                     $('.user_msg').text('password must be more than 6 cahr');  
+                     length=false;
+            }
+            else{
+                 $('.user_msg').text('');
+               length=true;
                $.ajax({url:'model/home_signup.php',
                    type:'POST',
                  data:{username:username},
@@ -39,6 +47,7 @@
                         }
                          }
         });
+            }  
         }) ;
 $('.password').on('keyup',function(){
                  var length = $('.password').val().length;
@@ -54,48 +63,46 @@ $('.password').on('keyup',function(){
      $('#reemail').on('keyup',function(){
     var email=$('#email').val();
      var reemail =$('#reemail').val();
-     if (reemail!=email){
+     if (reemail!==email){
      $('.v_email').text('email does not match');
-     email_value=false;
-     $(this).css('color',red);
+     $('.v_email').css('color','red');
     }
     else{
         $('.v_email').text('email match');
-        email_value=true;
-        $(this).css('color',green);
+        $('.v_email').css('color','green');
     }
     });
      $('#repass').keyup(function(){
         var pass=$('#pass').val();
       var repass =$('#repass').val();
-      if (repass!=pass){
+      if (repass!==pass){
       $('.v_pass').text('password does not match');
-      pass_value=false;
-      $(this).css('color',red);
+      $('.v_pass').css('color','red');
   }
   else{
        $('.v_pass').text('password match');
-        pass_value=true;
-        $(this).css('color',green);
+        $('.v_pass').css('color','green');
   }
         });
         $('.signupb').click(function(){
-            if(email_value&&pass_value&&length){;
+            if($('.v_pass').text('password match')&&$('.v_email').text('email match')){;
                 var username=$('.username').val();
                 var pass=$('#pass').val();
                  var email=$('#email').val();
-                var fname=$('.fname').val();
-                var lname=$('.lname').val();
-                var date=$('.date').val();
-                var gender=$('.gender').val();
-                var num=$('.num').val();
-                var location=$('.location').val();
+//                var fname=$('.fname').val();
+//                var lname=$('.lname').val();
+//                var date=$('.date').val();
+//                var gender=$('.gender').val();
+//                var num=$('.num').val();
+//                var country=$('.location').val();
+//                fname:fname,lname:lname,date:date,gender:gender,num:num,location:country
                 $.ajax({url:'model/home_signup.php',
                     type:'POST',
-                    data:{username:username,password:pass,email:email,fname:fname,lname:lname,date:date,gender:gender,num:num,location:location},
+                    data:{username:username,password:pass,email:email},
                     success:function(signup){
                         if(signup){
                             alert('Registeration Successfull !!');
+                            console.log('fdgdfg');
                             location.reload();
                         }else{
                             alert('Registeration faled !');
@@ -104,6 +111,9 @@ $('.password').on('keyup',function(){
                     }
                 });
         
+            }
+            else{
+                 alert('There Are Something Wrong');
             }
         });
     }); 
