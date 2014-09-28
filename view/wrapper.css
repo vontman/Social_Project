@@ -1,5 +1,6 @@
             #contain_wrapper{
-                overflow: hidden;
+                overflow-y: hidden;
+                overflow-x: auto
             }
             #contain_wrapper *{
                 transition:all 1s ease;
@@ -15,6 +16,7 @@
                 /*background:whitesmoke;*/
                 border-radius: 5px;
                 overflow:hidden;
+                z-index:-1;
             }
             #wrapper .post_whole{
                 width:95%;
