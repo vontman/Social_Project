@@ -66,9 +66,8 @@
                     require_once 'view/profile.php';
                     echo' <script src="js/profile.js" type="text/javascript"></script>';
                 }else{
-
-                    require_once 'view/wrapper.php';
                     require_once 'view/l_sidebar.php';
+                    require_once 'view/wrapper.php';
                 }
                 ?>
             </div>
