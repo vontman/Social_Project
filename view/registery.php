@@ -1,4 +1,4 @@
-
+<script src="../js/home_registery.js"></script>
         <div class="registery-form">
     <form action="" method="post" class="signup">
       Name:<br/>
