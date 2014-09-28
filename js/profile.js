@@ -24,7 +24,7 @@
 //            $(window).resize(function(){
 //                auto_blend();
 //            });
-//            $(document).ready(function(){
+            $(document).ready(function(){
 //                auto_blend();
 //                var icon_hover = true;
 //                $('.icon').click(function(){
@@ -38,4 +38,14 @@
 //                       $(this).toggleClass('icon_hover'); 
 //                    });
 //                } 
-//            });
+
+                   $('.r-sidebar').css('top',370);
+            });
+            $(window).scroll(function(){
+               if($(window).scrollTop()<370){
+                   $('.r-sidebar').position.top(370-$(window).scrollTop());
+               } else{
+                   $('.r-sidebar').css('top',0);
+               }
+            });
+
