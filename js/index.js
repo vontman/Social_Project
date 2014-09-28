@@ -1,5 +1,4 @@
-
-                var side_toggle=false;
+var side_toggle=false;
                 var zoom=false;
             function r_sidebar_toggle(){
                 if(side_toggle){
@@ -52,6 +51,7 @@
                 var icon_hover = true;
                 $('#toggle').click(function(){r_sidebar_toggle()});
                 $('.icon').click(function(){
+                console.log('????');
 //                    if($(this).hasClass('icon_drag')){
 //                        $(this).removeClass('icon_drag');
 //                    }

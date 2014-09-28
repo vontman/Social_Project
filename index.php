@@ -6,11 +6,21 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link type='text/css' rel='stylesheet' href='view/style.css'/>
+        <link type='text/css' rel='stylesheet' href='view/message.css'/>
+        <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
+        <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
+        <link type='text/css' rel='stylesheet' href='view/slider.css'/>
+        
+        
+        <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
+        <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
+        <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
+        <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
         <script src="js/jquery-1.11.0.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js" type="text/javascript"></script>        
          <!--Addons !!!-->
          <script src='datetimepicker/DateTimePicker.js' type="text/javascript"></script>
-        <script src="fullcalendar/lib/jquery.min.js" type="text/javascript"></script>
         <script src="fullcalendar/lib/moment.min.js" type="text/javascript"></script>
         <script src="fullcalendar/lib/jquery-ui.custom.min.js" type="text/javascript"></script>
         <script src="fullcalendar/fullcalendar.js" type="text/javascript"></script>
@@ -19,15 +29,6 @@
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
         <script src="js/index.js" type="text/javascript"></script>
         <script src="js/profile.js" type="text/javascript"></script>
-        <link type='text/css' rel='stylesheet' href='view/style.css'/>
-        <link type='text/css' rel='stylesheet' href='view/message.css'/>
-        <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
-        <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
-        <link type='text/css' rel='stylesheet' href='view/slider.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
         <!--Addons !!!-->
         <script src="js/message.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
