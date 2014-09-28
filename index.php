@@ -6,19 +6,21 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <script src="js/jquery-1.11.0.js"></script>
-        <script src="js/jquery-ui.js"></script>        
+        <script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.js" type="text/javascript"></script>        
          <!--Addons !!!-->
-        <script src='datetimepicker/DateTimePicker.js'></script>
-        <script src="fullcalendar/lib/jquery.min.js"></script>
-        <script src="fullcalendar/lib/moment.min.js"></script>
-        <script src="fullcalendar/lib/jquery-ui.custom.min.js"></script>
-        <script src="fullcalendar/fullcalendar.js"></script>
-        <script src="custom-scrollbar/jquery.custom-scrollbar.js"></script>
-        <script src="custom-scrollbar/jquery.custom-scrollbar.min.js"></script>
+         <script src='datetimepicker/DateTimePicker.js' type="text/javascript"></script>
+        <script src="fullcalendar/lib/jquery.min.js" type="text/javascript"></script>
+        <script src="fullcalendar/lib/moment.min.js" type="text/javascript"></script>
+        <script src="fullcalendar/lib/jquery-ui.custom.min.js" type="text/javascript"></script>
+        <script src="fullcalendar/fullcalendar.js" type="text/javascript"></script>
+        <script src="custom-scrollbar/jquery.custom-scrollbar.js" type="text/javascript"></script>
+        <script src="custom-scrollbar/jquery.custom-scrollbar.min.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
-        <script src="js/index.js"></script>
+        <script src="js/index.js" type="text/javascript"></script>
+        <script src="js/profile.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='view/style.css'/>
+        <link type='text/css' rel='stylesheet' href='view/message.css'/>
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
         <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
         <link type='text/css' rel='stylesheet' href='view/slider.css'/>
@@ -27,6 +29,7 @@
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
         <!--Addons !!!-->
+        <script src="js/message.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
@@ -44,8 +47,10 @@
             $user_id=$_SESSION['alterwire'];
             $user=$users->view_user($user_id)[0];
         //end
-            require_once 'view/sidebar.php'; 
+            require_once 'view/r_sidebar.php'; 
+            require_once 'view/l_sidebar.php';
             require_once 'view/slider.php';
+            require_once 'view/message.php';
         ?>
         <div id="contain_wrapper">
             <div id="wrapper">
