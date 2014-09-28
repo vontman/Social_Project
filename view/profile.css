@@ -1,12 +1,8 @@
-body{
-position: relative;
-background: beige;
-background: url(bg.jpg);
-}
+
 .detail{
     position: relative;
     height:165px ;
-    width: 84.9%;
+    width: 100%;
     background: radial-gradient(rgb(3, 226, 181),rgb(118, 141, 135));
     float: left;
     color: whitesmoke;
