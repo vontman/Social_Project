@@ -9,17 +9,21 @@ var side_toggle=false;
                     var width=w_width-l_width;
                     $('#contain_wrapper').css({'width':width,'float':'right'});
                     $('#wrapper').css({'float':'none','min-width':'75%'});
+                    $('#toggle img').css('transform','rotateZ(180deg)');
                     side_toggle=false;
                 }else if(zoom && side_toggle){
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
+                    $('#toggle img').css('transform','rotateZ(180deg)');
                     side_toggle=false;
                 }else if(zoom && !side_toggle){
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                    $('#toggle img').css('transform','rotateZ(0deg)');
                     side_toggle=true;
                 }else{
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
                     $('#contain_wrapper').css({'width':'auto','float':'none'});
+                    $('#toggle img').css('transform','rotateZ(0deg)');
                     side_toggle=true;
                 }
             }
