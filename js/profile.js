@@ -44,10 +44,8 @@
             $(window).scroll(function(){
                if($(window).scrollTop()<370){
                    $('.r-sidebar').css('top',370-$(window).scrollTop());
-                   $('.detail').css('height',370-$(window).scrollTop());
                } else{
                    $('.r-sidebar').css('top',0);
-                   $('.detail').css('height',0);
                }
             });
 
