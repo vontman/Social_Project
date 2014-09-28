@@ -38,14 +38,16 @@
 //                       $(this).toggleClass('icon_hover'); 
 //                    });
 //                } 
-
+                    $('.r-sidebar').css('transition','top 0 ease');
                    $('.r-sidebar').css('top',370);
             });
             $(window).scroll(function(){
                if($(window).scrollTop()<370){
-                   $('.r-sidebar').position.top(370-$(window).scrollTop());
+                   $('.r-sidebar').css('top',370-$(window).scrollTop());
+                   $('.detail').css('height',370-$(window).scrollTop());
                } else{
                    $('.r-sidebar').css('top',0);
+                   $('.detail').css('height',0);
                }
             });
 
