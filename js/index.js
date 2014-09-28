@@ -10,9 +10,12 @@ var side_toggle=false;
                     $('#contain_wrapper').css({'width':width,'float':'right'});
                     $('#wrapper').css({'float':'none','min-width':'75%'});
                     side_toggle=false;
-                }else if(zoom){
-                    $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                }else if(zoom && side_toggle){
+                    $('.r-sidebar').css({"width":'0','min-width':'0'});
                     side_toggle=false;
+                }else if(zoom && !side_toggle){
+                    $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                    side_toggle=true;
                 }else{
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
