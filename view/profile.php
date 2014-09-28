@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link type='text/css' rel='stylesheet' href='profile.css'/>
+        <link type='text/css' rel='stylesheet' href='view/profile.css'/>
          <meta charset="UTF-8">
         <title></title>       
          <!--Addons !!!-->
