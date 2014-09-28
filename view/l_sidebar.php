@@ -1,12 +1,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet" type="text/css">
     </head>
+    <form method="Get" action="view/profile.php">
     <div class="sidebar l-sidebar">
         <div class="user">
             <img src="user.png">
-            <a href="profile.php"><h3><?php echo $user['username']; ?></h3></a>
+            <div name="profile"><h3><?php echo $user['username']; ?></h3></div>
         </div>
         <ul class="mains">
             <li>News Feed</li>
@@ -19,3 +19,4 @@
     
         
     </div>
+    </form>

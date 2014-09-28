@@ -1,36 +1,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link type='text/css' rel='stylesheet' href='view/profile.css'/>
+        <link type='text/css' rel='stylesheet' href='profile.css'/>
          <meta charset="UTF-8">
-        <title></title>
-        <script src="js/jquery-1.11.0.js"></script>
-        <script src="js/jquery-ui.js"></script>        
+        <title></title>       
          <!--Addons !!!-->
-        <script src='datetimepicker/DateTimePicker.js'></script>
-        <script src="fullcalendar/lib/jquery.min.js"></script>
-        <script src="fullcalendar/lib/moment.min.js"></script>
-        <script src="fullcalendar/lib/jquery-ui.custom.min.js"></script>
-        <script src="custom-scrollbar/jquery.custom-scrollbar.js"></script>
-        <script src="custom-scrollbar/jquery.custom-scrollbar.min.js"></script>
-        <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
-        <script src="js/profile.js"></script>
-        <script src="js/message.js"></script>
-        <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
-        <link type='text/css' rel='stylesheet' href='view/style.css'/>
         <link type='text/css' rel='stylesheet' href='view/header.css'/>
-        <link type='text/css' rel='stylesheet' href='view/slider.css'/>
         <link type='text/css' rel='stylesheet' href='view/profile_wrapper.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.structure.css'/>
-        <link type='text/css' rel='stylesheet' href='js/jquery-ui.theme.css'/>
     </head>
     <body>
          <?php
           require_once 'view/header.php';
-         require_once 'view/r_sidebar.php';
-     require_once 'view/slider.php';
     ?>
     <div class="detail"> 
         <div class="about all">

@@ -49,22 +49,26 @@
             $user=$users->view_user($user_id)[0];
         //end
             require_once 'view/r_sidebar.php'; 
-            require_once 'view/l_sidebar.php';
             require_once 'view/slider.php';
             require_once 'view/message.php';
         ?>
-        <div id="contain_wrapper">
-            <div id="wrapper">
+        <div id="contain_wrapper" class="contain_wrapper">
+            <div id="wrapper" class="wrapper">
                 <?php
                 if(isset($_GET['post'])){
+                    require_once 'view/l_sidebar.php';
                     require_once 'view/post.php';
                 }elseif(isset($_GET['logout'])){
+                    require_once 'view/l_sidebar.php';
                     $users->logout($user_id);
                     echo '<script>location.reload();</script>' ;
-                }elseif(isset($_GET['user'])){
-                    require_once 'view/user.php';
+                }elseif(isset($_GET['profile'])){
+                    require_once 'view/profile.php';
+                    echo' <script src="js/profile.js" type="text/javascript"></script>';
                 }else{
+
                     require_once 'view/wrapper.php';
+                    require_once 'view/l_sidebar.php';
                 }
                 ?>
             </div>
