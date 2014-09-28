@@ -52,8 +52,6 @@
             require_once 'view/slider.php';
             require_once 'view/message.php';
         ?>
-        <div id="contain_wrapper" class="contain_wrapper">
-            <div id="wrapper" class="wrapper">
                 <?php
                 if(isset($_GET['post'])){
                     require_once 'view/l_sidebar.php';
@@ -62,16 +60,18 @@
                     require_once 'view/l_sidebar.php';
                     $users->logout($user_id);
                     echo '<script>location.reload();</script>' ;
-                }elseif(isset($_GET['profile'])){
+                }elseif(isset($_GET['user'])){
                     require_once 'view/profile.php';
                     echo' <script src="js/profile.js" type="text/javascript"></script>';
                 }else{
                     require_once 'view/l_sidebar.php';
+                    echo '<div id="contain_wrapper" class="contain_wrapper">';
+                    echo '<div id="wrapper" class="wrapper">';
                     require_once 'view/wrapper.php';
+                    echo'    </div>
+                    </div>';
                 }
                 ?>
-            </div>
-        </div>
         <?php
         }
         else{
