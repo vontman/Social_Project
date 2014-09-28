@@ -7,6 +7,7 @@
          <!--Addons !!!-->
         <link type='text/css' rel='stylesheet' href='view/header.css'/>
         <link type='text/css' rel='stylesheet' href='view/profile_wrapper.css'/>
+        <script src="js/profile.js" type="text/javascript"></script>
     </head>
     <body>
          <?php
