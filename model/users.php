@@ -114,6 +114,9 @@ class users {
             return mysqli_errno($this->link);
         }
     }
+    public function profile_pic($user_id){
+        
+    }
     public function search($key_words){
         $key_words_edit=  strtolower($key_words);
         $query="SELECT id,username,firstname,lastname,email FROM users WHERE LOWER(username) LIKE '".$key_words_edit."%'";
