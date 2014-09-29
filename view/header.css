@@ -44,9 +44,6 @@
 .bottom_header_photo:hover .bottom_header_photo2{
    background:rgba(253, 255, 254, 0.1);
 }
-.bottom_header_photo2:hover{
-    background:rgba(253, 255, 254, 0.5);
-}
 .bottom_header_photo2 img{
     width: 19%;
     height: 100%;
