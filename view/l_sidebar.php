@@ -6,7 +6,7 @@
     <div class="sidebar l-sidebar">
         <div class="user">
             <img src="user.png">
-            <div name="profile"><h3><?php echo $user['username']; ?></h3></div>
+            <a href="?user"><div name="profile"><h3><?php echo $user['username']; ?></h3></div></a>
         </div>
         <ul class="mains">
             <li>News Feed</li>

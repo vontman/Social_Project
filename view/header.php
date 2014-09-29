@@ -10,6 +10,7 @@
     
     <div class="bottom_header_items">
         <ul class="menu">
+            <a href="index.php"> <li class="menu_sub">Home</li></a>
             <li class="menu_sub">Profile</li>
             <li class="menu_sub">About</li>
             <li class="menu_sub">Photo</li>
