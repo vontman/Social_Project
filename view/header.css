@@ -20,7 +20,7 @@
 .bottom_header
 {
     width: 100%;
-    height: 10%;
+    height: 8.8%;
     background: rgb(25, 112, 91);
 }
 .bottom_header_photo{
@@ -34,6 +34,23 @@
 .bottom_header_photo img{
     width: 100%;
     height: 100%;    
+}
+.bottom_header_photo2{
+    position: absolute;
+    top: 0;
+    height: 16%;
+    width: 100%;
+}
+.bottom_header_photo:hover .bottom_header_photo2{
+   background:rgba(253, 255, 254, 0.1);
+}
+.bottom_header_photo2:hover{
+    background:rgba(253, 255, 254, 0.5);
+}
+.bottom_header_photo2 img{
+    width: 19%;
+    height: 100%;
+    padding-left: 41%; 
 }
 .bottom_header_items{
     height: 79%;

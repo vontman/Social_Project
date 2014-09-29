@@ -4,7 +4,10 @@
 <div class="header">
 <div class="middle_header"><img src="cover.jpg"></div>
 <div class="bottom_header">
-    <div class="bottom_header_photo"><img src="profile.JPG"></div>
+    <div class="bottom_header_photo"><img src="profile.JPG">
+    <div class="bottom_header_photo2"><img src="png/cam.png"></div>
+    </div>
+    
     <div class="bottom_header_items">
         <ul class="menu">
             <li class="menu_sub">Profile</li>
