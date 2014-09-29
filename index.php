@@ -21,9 +21,11 @@
         <script src="js/jquery-ui.js" type="text/javascript"></script>        
          <!--Addons !!!-->
          <script src='datetimepicker/DateTimePicker.js' type="text/javascript"></script>
+         <script src="fullcalendar/lib/jquery.min.js" type="text/javascript"></script>
         <script src="fullcalendar/lib/moment.min.js" type="text/javascript"></script>
         <script src="fullcalendar/lib/jquery-ui.custom.min.js" type="text/javascript"></script>
         <script src="fullcalendar/fullcalendar.js" type="text/javascript"></script>
+        <script src="fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
         <script src="custom-scrollbar/jquery.custom-scrollbar.js" type="text/javascript"></script>
         <script src="custom-scrollbar/jquery.custom-scrollbar.min.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
