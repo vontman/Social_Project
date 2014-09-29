@@ -41,7 +41,13 @@
                     success:function(lol){
                         if(lol){
                             alert('Login Successful !');
-                            location.reload();
+//                            location.reload();
+                            $('.welcome').slideUp(1500);
+                            $('body').load('view/l_sidebar.php');
+                            $('body').append('<div id="contain_wrapper" class="contain_wrapper"></div>');
+                            $('#contain_wrapper').append('<div id="wrapper" class="wrapper"></div>');
+                            $('#wraper').load('view/wrapper.php');
+                            $('body').load('view/r_sidebar.php');
                         }else{
                             alert("Username and Password don't match !!");
                             $('.login_username').val('');
