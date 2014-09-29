@@ -43,11 +43,14 @@
                             alert('Login Successful !');
 //                            location.reload();
                             $('.welcome').slideUp(1500);
-                            $('body').load('view/l_sidebar.php');
-                            $('body').append('<div id="contain_wrapper" class="contain_wrapper"></div>');
-                            $('#contain_wrapper').append('<div id="wrapper" class="wrapper"></div>');
-                            $('#wraper').load('view/wrapper.php');
-                            $('body').load('view/r_sidebar.php');
+                            setTimeout(function(){
+                                $('.welcome').prepend();
+                                $('body').load('view/l_sidebar.php');
+                                $('body').append('<div id="contain_wrapper" class="contain_wrapper"></div>');
+                                $('#contain_wrapper').append('<div id="wrapper" class="wrapper"></div>');
+                                $('#wrapper').load('view/wrapper.php',1500);
+                                $('body').load('view/r_sidebar.php',1500);
+                            },1500);
                         }else{
                             alert("Username and Password don't match !!");
                             $('.login_username').val('');
