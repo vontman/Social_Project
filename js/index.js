@@ -88,5 +88,5 @@ var side_toggle=false;
 //                $("#datepicker").datepicker({
 //                    dateFormat: 'yy-mm-dd'
 //                });
-                $('.calender').fullCalendar();
+                $('.calender').fullCalendar('today');
             });
