@@ -1,6 +1,10 @@
             #contain_wrapper{
                 overflow-y: hidden;
-                overflow-x: hidden;
+                overflow-x: auto;
+            }
+            #contain_wrapper *{
+                transition: all 1s ease;
+                overflow: hidden;
             }
             #wrapper{
                 width:560px;
@@ -37,28 +41,29 @@
             }
             .post_whole .post_comment{
                 position: relative;
-                min-height:180px;
+                /*min-height:100px;*/
+                overflow:hidden;
                 /*background:rgba(0,0,0,.15);*/
                 background: rgb(199, 210, 221);
                 /*background: rgb(199, 221, 199);*/
             }
-            .post_whole .post .writer_pic{
+            .post_whole .writer_pic{
                 width:10%;
                 float:left;
             }
-            .post_whole .post .writer_pic img{
+            .post_whole .writer_pic img{
                 height:42px;
                 float:left;
                 position:relative;
             }
-            .post_whole .post .writer{
+            .post_whole .writer{
                 position:relative;
                 float:left;
                 height:28px;
                 font-size:16px;
                 font-weight: bold;
             }
-            .post_whole .post .post_date{
+            .post_whole .post_date{
                 float:right;
                 position:relative;
                 color:#999;
@@ -68,18 +73,34 @@
                 overflow:hidden;
                 width:100%;
                 margin:0;
+                font-size:16px;
+                line-height: 20px;
                 padding:8px 5px;
+                font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
             }
-            .post_whole .post .post_functions{
+            .post_whole .post_functions{
                 float:right;
                 padding:0 15px;
                 margin-bottom: 2px;
                 overflow:hidden;
             }    
-            .post_whole .post .post_functions img{
+            .post_whole .post_functions img{
                 height:15px;
             }    
-            .post_whole .post .post_functions a{
+            .post_whole .post_functions a{
                 color:#418c96;
                 padding:2px 0px 2px 12px;
+            }
+            .post_whole .comment_body{
+                overflow:hidden;
+                width:100%;
+                margin:0;
+                padding:0 4px 10px 50px;
+                font-size:14px;
+                font-weight: 700;
+                font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+                display:inline;
+            }
+            .post_comment{
+                border-bottom: 6px groove rgba(0,0,0,.15);
             }
