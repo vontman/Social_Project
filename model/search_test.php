@@ -13,12 +13,17 @@
             if($(this).val().length>2){
                 $('#search_result_wrapper').show();
                 var keywords=$(this).val();
+                var newli;
+                var newli_edit;
                $.ajax({url:'search.php',
                    data:{keywords:keywords},
-                   success:function(results){
-                      $('#search_result_wrapper ul').append('<a href="?user="><li>'+results+'</li></a>');
+                   success:function(srch_results){
+                            newli='<a href="?user='+srch_results+'"><li>';
+                           newli_edit=newli+srch_results+'</li></a>';
+                            $('#search_result_wrapper ul').append(newli_edit);
+                       }
                    }
-                });
+                );
             }
         });
     });

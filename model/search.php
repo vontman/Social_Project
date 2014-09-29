@@ -5,9 +5,8 @@ if(isset($_GET['keywords'])){
     $users=new users();
     $results=$users->search($keywords);
     foreach ($results as $k=>$v){
-        foreach($v as $k2=>$v2){
-            echo $v2;
-        }
+        echo $v['id'];
+        echo $v['username'];
     }
 }
     
