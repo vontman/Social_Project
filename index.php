@@ -27,8 +27,8 @@
         <script src="custom-scrollbar/jquery.custom-scrollbar.js" type="text/javascript"></script>
         <script src="custom-scrollbar/jquery.custom-scrollbar.min.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
-        <script src="js/index.js" type="text/javascript"></script>
         <!--Addons !!!-->
+        <script src="js/index.js" type="text/javascript"></script>
         <script src="js/message.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>

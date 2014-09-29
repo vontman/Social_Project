@@ -1,5 +1,4 @@
         
-<script src="../js/home_login.js"></script>
         <div class="login">
             <img src="images/logo.png"><br>
             <label class="login_lable">Username</label> <label class="login_error login_username_error"></label><br>
