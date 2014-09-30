@@ -45,21 +45,25 @@
                });
             }
         });
-        $('.add_friend').click(function(){
-            console.log('test');
-            friend_id=$(this).attr('user').val();
-            console.log(friend_id+'asdasd');
-           $.ajax({url:'search.php',
-                data:{friend_id:friend_id},
-                success:function(addfriend){
-                    if(addfriend){
-                        $('.add_friend').text('Request Send');
-                    }else{
-                        $('.add_friend').text('Request Failed');
+//        if($('#search_result_wrapper table .add_friend').length){
+//            console.log('shit');
+            $('#search_result_wrapper').delegate('.add_friend','click',function(){
+                console.log('test');
+                var friend_id=$(this).attr('user');
+                var selected_div=$(this);
+                console.log(friend_id+'asdasd');
+               $.ajax({url:'search.php',
+                    data:{friend_id:friend_id},
+                    success:function(addfriend){
+                        if(addfriend){
+                            selected_div.text('Request Send');
+                        }else{
+                            selected_div.text('Request Failed');
+                        }
                     }
-                }
+                });
             });
-        });
+//        }
     });
 </script>
 <style>
@@ -157,7 +161,31 @@
         color:whitesmoke;
         background: #ac52c2;
     }
-    #search_result_wrapper td img{
+    .friend{
+        position: absolute;
+        width: 85px;
+        padding: 2px;
+        text-align: center;
+        background: #bce8f1;
+        color: #0070a3;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 0 10px;
+        box-shadow: 2px 2px 10px black;
+        z-index: 99;
+        font-size: 14px;
+        font-weight: bold;
+        left: 250px;
+        margin-top: 15px;
+    }
+    .friend img{
+        height:15px;
+    }
+    .friend:hover{
+        color:whitesmoke;
+        background: #ac52c2;
+    }
+    .srch_user_pic{
         float:left;
         height:100%;
     }
@@ -168,6 +196,5 @@
 <input type="text" id='search_input'>
 <div id='search_result_wrapper'>
     <table>
-        
     </table>
 </div>

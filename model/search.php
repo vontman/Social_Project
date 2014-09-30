@@ -1,6 +1,8 @@
 <?php
 include_once 'friends.php';
 $friends=new friends();
+//    $user_id=$_SESSION['alterwire'];
+    $user_id=2;
 if(isset($_GET['keywords'])){
     $keywords=$_GET['keywords'];
     include_once './users.php';
@@ -9,7 +11,7 @@ if(isset($_GET['keywords'])){
     foreach ($results as $k=>$v){
         ?><tr>
             <td>
-                <img src='../user.png'/>
+                <img class='srch_user_pic' src='../user.png'/>
             </td>
             <td>
                 <a href='?user=<?php echo $v['id'];?>'>
@@ -17,15 +19,23 @@ if(isset($_GET['keywords'])){
                         <div class="search_username"><?php echo $v['username']; ?></div>
                     </div>    
                 </a>
-                        <div class="add_friend" user='<?php echo $v['id']; ?>'>Add Friend</div>
+                <?php
+                    $already_friends=$friends->check_friends($user_id,$v['id']);
+                ?>
+                        <?php
+                            if(!$already_friends){?>
+                                <div class="add_friend" user='<?php echo $v['id']; ?>'>Add Friend</div>
+                                <?php
+                            }else{?>
+                                <div class="friend"><img src='../png/profile11.png'/>Friends</div><?php
+                            }
+                        ?>
             </td>
         </tr>
             <?php
     }
 }elseif (isset($_GET['friend_id'])) {
     $friend_id=$_GET['friend_id'];
-//    $user_id=$_SESSION['alterwire'];
-    $user_id=2;
     echo $friends->add_friend($user_id,$friend_id);
 }
     
