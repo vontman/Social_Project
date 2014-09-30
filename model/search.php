@@ -26,7 +26,9 @@ if(isset($_GET['keywords'])){
                             if(!$already_friends){?>
                                 <div class="add_friend" user='<?php echo $v['id']; ?>'>Add Friend</div>
                                 <?php
-                            }else{?>
+                            }elseif($already_friends==1){?>
+                                <div class="friend"><img src='../png/spinner4.png'/>Request Sent</div><?php
+                            }elseif($already_friends==2){?>
                                 <div class="friend"><img src='../png/profile11.png'/>Friends</div><?php
                             }
                         ?>

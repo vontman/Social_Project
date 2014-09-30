@@ -142,20 +142,21 @@
     }
     .add_friend{
         position: absolute;
-        width: 85px;
+        min-width: 85px;
         padding: 2px;
         text-align: center;
         background: #bce8f1;
         color: #0070a3;
         border-radius: 4px;
         overflow: hidden;
-        margin: 0 10px;
+        margin: 0 15px;
         box-shadow: 2px 2px 10px black;
         z-index: 99;
         font-size: 14px;
         font-weight: bold;
-        left: 250px;
+        left: 230px;
         margin-top: 15px;
+        padding:0 4px;
     }
     .add_friend:hover{
         color:whitesmoke;
@@ -163,23 +164,25 @@
     }
     .friend{
         position: absolute;
-        width: 85px;
+        min-width: 85px;
         padding: 2px;
         text-align: center;
         background: #bce8f1;
         color: #0070a3;
         border-radius: 4px;
         overflow: hidden;
-        margin: 0 10px;
+        margin: 0 15px;
         box-shadow: 2px 2px 10px black;
         z-index: 99;
         font-size: 14px;
         font-weight: bold;
-        left: 250px;
+        left: 230px;
         margin-top: 15px;
+        padding:0 4px;
     }
     .friend img{
         height:15px;
+        margin:0 4px;
     }
     .friend:hover{
         color:whitesmoke;
