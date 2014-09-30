@@ -32,6 +32,7 @@
         <!-- END Addons !!!-->
         <script src="js/index.js" type="text/javascript"></script>
         <script src="js/message.js" type="text/javascript"></script>
+        <script src="js/search.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
@@ -54,6 +55,7 @@
             require_once 'view/slider.php';
             require_once 'view/message.php';
             require_once 'view/main_header.php';
+            require_once './model/search.php';
         ?>
                 <?php
                 if(isset($_GET['post'])){

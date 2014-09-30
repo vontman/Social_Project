@@ -1,17 +1,17 @@
 <?php
-include_once 'friends.php';
+include_once 'model/friends.php';
 $friends=new friends();
 //    $user_id=$_SESSION['alterwire'];
     $user_id=2;
 if(isset($_GET['keywords'])){
     $keywords=$_GET['keywords'];
-    include_once './users.php';
+    include_once 'model/users.php';
     $users=new users();
     $results=$users->search($keywords);
     foreach ($results as $k=>$v){
         ?><tr>
             <td>
-                <img class='srch_user_pic' src='../user.png'/>
+                <img class='srch_user_pic' src='user.png'/>
             </td>
             <td>
                 <a href='?user=<?php echo $v['id'];?>'>
@@ -27,9 +27,9 @@ if(isset($_GET['keywords'])){
                                 <div class="add_friend" user='<?php echo $v['id']; ?>'>Add Friend</div>
                                 <?php
                             }elseif($already_friends==1){?>
-                                <div class="friend"><img src='../png/spinner4.png'/>Request Sent</div><?php
+                                <div class="friend"><img src='png/spinner4.png'/>Request Sent</div><?php
                             }elseif($already_friends==2){?>
-                                <div class="friend"><img src='../png/profile11.png'/>Friends</div><?php
+                                <div class="friend"><img src='png/profile11.png'/>Friends</div><?php
                             }
                         ?>
             </td>
