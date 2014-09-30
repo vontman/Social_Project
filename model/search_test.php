@@ -11,15 +11,16 @@
         var srch_click=false;
         $('#search_input_img').click(function(){
             if(!srch_click){
+                $('#search_input_img img').css('box-shadow','0');
                 $('#search_input').css('width','240px');
                 $('#search_input').css('padding','4px 8px 4px 32px');
                 $('#search_input').focus();
-                $(this).css('transform','rotate(360deg)');
+                $('#search_input_img img').css('transform','rotate(360deg)');
                 srch_click=true;
             }else{
                 $('#search_input').css('padding','0');
                 $('#search_input').css('width','30px');
-                $(this).css('transform','rotate(-360deg)');
+                $('#search_input_img img').css('transform','rotate(-360deg)');
                 srch_click=false;
             }
         });
@@ -37,11 +38,27 @@
                                 $('#search_result_wrapper').slideDown('fast');
                             }
                             $i++;
-                        } 
+                        }else{
+                            $i=0;
                        }
                    }
-                );
+               });
             }
+        });
+        $('.add_friend').click(function(){
+            console.log('test');
+            friend_id=$(this).attr('user').val();
+            console.log(friend_id+'asdasd');
+           $.ajax({url:'search.php',
+                data:{friend_id:friend_id},
+                success:function(addfriend){
+                    if(addfriend){
+                        $('.add_friend').text('Request Send');
+                    }else{
+                        $('.add_friend').text('Request Failed');
+                    }
+                }
+            });
         });
     });
 </script>
@@ -56,11 +73,21 @@
         transition:all .45s ease;
         box-shadow: 2px 2px 8px;
         border-color: #dedff6;
+        background:whitesmoke;
     }
     #search_input_img img{
+        transform: none;
         position: absolute;
         height:30px;
         cursor: pointer;
+        transition:all .45s ease;
+        border-radius: 50%;
+        background:#dedff6;
+        box-shadow:0;
+    }    
+    #search_input_img img:hover{
+        background:white;
+        box-shadow: 2px 2px 5px black;
     }
     #search_result_wrapper{
         display: none;
@@ -109,7 +136,7 @@
     #search_result_wrapper table tr:hover .search_username{
         color:whitesmoke;
     }
-    .add_friend_sbmt{
+    .add_friend{
         position: absolute;
         width: 85px;
         padding: 2px;
@@ -126,7 +153,7 @@
         left: 250px;
         margin-top: 15px;
     }
-    .add_friend_sbmt:hover{
+    .add_friend:hover{
         color:whitesmoke;
         background: #ac52c2;
     }
@@ -136,7 +163,7 @@
     }
 </style>
 <div id='search_input_img'>
-    <img src='../png/search2.png'/>
+    <img src='../png/search3.png'/>
 </div>
 <input type="text" id='search_input'>
 <div id='search_result_wrapper'>
