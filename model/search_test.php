@@ -48,6 +48,7 @@
     }
     #search_result_wrapper{
         display: none;
+        margin-top:15px;
     }
     #search_result_wrapper table{
         width:350px;
