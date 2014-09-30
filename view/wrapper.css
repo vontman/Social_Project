@@ -1,6 +1,7 @@
             #contain_wrapper{
                 overflow-y: hidden;
                 overflow-x: auto;
+                margin-top: 3.5%;
             }
             #contain_wrapper *{
                 transition: all 1s ease;

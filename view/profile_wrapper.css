@@ -8,14 +8,14 @@
                 min-height:100%;
                 position:relative;
                 margin:5px auto;
-                margin-top:0;
+                margin-top:5%;
                 padding:0;
                 /*background:rgba(0,0,0,.45);*/
                 /*background:whitesmoke;*/
                 border-radius: 5px;
                 overflow:hidden;
                 float: left;
-                padding-top: 2%;
+                padding: 0;
             }
             .wrapper .post_whole{
                 width:95%;

@@ -11,7 +11,7 @@
         <link type='text/css' rel='stylesheet' href='view/sidebar.css'/>
         <link type='text/css' rel='stylesheet' href='view/wrapper.css'/>
         <link type='text/css' rel='stylesheet' href='view/slider.css'/>
-        
+        <link type='text/css' rel='stylesheet' href='view/main_header.css'/>
         
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.css'/>
         <link type='text/css' rel='stylesheet' href='js/jquery-ui.min.css'/>
@@ -53,6 +53,7 @@
             require_once 'view/r_sidebar.php'; 
             require_once 'view/slider.php';
             require_once 'view/message.php';
+            require_once 'view/main_header.php';
         ?>
                 <?php
                 if(isset($_GET['post'])){
