@@ -1,5 +1,5 @@
 $(document).ready(function(){
-            $('.message_field').css('visibility','hidden'); 
+            $('.message_fields').css('visibility','hidden'); 
                 $('.message').click(function(){
                    $('.m1').css('visibility','visible');
     //               $('.message_field').append('.message_field');
