@@ -29,7 +29,7 @@
         <script src="custom-scrollbar/jquery.custom-scrollbar.js" type="text/javascript"></script>
         <script src="custom-scrollbar/jquery.custom-scrollbar.min.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
-        <!--Addons !!!-->
+        <!-- END Addons !!!-->
         <script src="js/index.js" type="text/javascript"></script>
         <script src="js/message.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
