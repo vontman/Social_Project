@@ -8,9 +8,20 @@
 //           }
 //       });
         $('#search_result_wrapper').hide();
-        $('#search_input').click(function(){
-           $(this).css('padding','4px 24px');
-           $(this).css('width','240px')
+        var srch_click=false;
+        $('#search_input_img').click(function(){
+            if(!srch_click){
+                $('#search_input').css('width','240px');
+                $('#search_input').css('padding','4px 8px 4px 32px');
+                $('#search_input').focus();
+                $(this).css('transform','rotate(360deg)');
+                srch_click=true;
+            }else{
+                $('#search_input').css('padding','0');
+                $('#search_input').css('width','30px');
+                $(this).css('transform','rotate(-360deg)');
+                srch_click=false;
+            }
         });
         $i=0;
         $('#search_input').keyup(function(){
@@ -45,6 +56,11 @@
         transition:all .45s ease;
         box-shadow: 2px 2px 8px;
         border-color: #dedff6;
+    }
+    #search_input_img img{
+        position: absolute;
+        height:30px;
+        cursor: pointer;
     }
     #search_result_wrapper{
         display: none;
@@ -119,6 +135,9 @@
         height:100%;
     }
 </style>
+<div id='search_input_img'>
+    <img src='../png/search2.png'/>
+</div>
 <input type="text" id='search_input'>
 <div id='search_result_wrapper'>
     <table>
