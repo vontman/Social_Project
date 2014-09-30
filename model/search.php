@@ -10,9 +10,12 @@ if(isset($_GET['keywords'])){
                 <img src='../user.png'/>
             </td>
             <td>
-                <div>
-                    <a href='?user=<?php echo $v['id'];?>'><?php echo $v['username']; ?></a>
-                </div>
+                <a href='?user=<?php echo $v['id'];?>'>
+                    <div class="search_results">
+                        <div class="search_username"><?php echo $v['username']; ?></div>
+                    </div>    
+                </a>
+                        <div class="add_friend_sbmt">Add Friend</div>
             </td>
         </tr>
             <?php

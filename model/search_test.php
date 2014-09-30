@@ -37,9 +37,9 @@
 <style>
     #search_input{
         border-radius:15px; 
-        background:url('../png/search.png');
+/*        background:url('../png/search.png');
         background-size: contain;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;*/
         height:30px;
         width:30px;
         transition:all .45s ease;
@@ -51,7 +51,6 @@
         margin-top:15px;
     }
     #search_result_wrapper table{
-        width:350px;
         background:lightgrey;
         padding: 0;
         border-radius:4px;
@@ -62,6 +61,7 @@
     }
     #search_result_wrapper table tr{
         background:#dedff6;
+        width:350px;
         height:48px;
         display:block;
         cursor:pointer;
@@ -70,9 +70,6 @@
     }
     #search_result_wrapper table tr:hover{
         background:#6367de;
-    }
-    #search_result_wrapper table tr:hover a{
-        color:whitesmoke;
     }
     #search_result_wrapper table td{
         height:48px;
@@ -83,11 +80,39 @@
         text-decoration: none;
         color:#000383;
         font-size:18px;
+        height:100%;
     }
-    #search_result_wrapper td div{
-        display:block;
-        min-width:75%;
+    .search_results{
+        width:300px;
         overflow:hidden;
+    }
+    .search_username{
+        float:left;
+        max-width:60%;
+    }
+    #search_result_wrapper table tr:hover .search_username{
+        color:whitesmoke;
+    }
+    .add_friend_sbmt{
+        position: absolute;
+        width: 85px;
+        padding: 2px;
+        text-align: center;
+        background: #bce8f1;
+        color: #0070a3;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 0 10px;
+        box-shadow: 2px 2px 10px black;
+        z-index: 99;
+        font-size: 14px;
+        font-weight: bold;
+        left: 250px;
+        margin-top: 15px;
+    }
+    .add_friend_sbmt:hover{
+        color:whitesmoke;
+        background: #ac52c2;
     }
     #search_result_wrapper td img{
         float:left;
