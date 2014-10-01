@@ -7,6 +7,6 @@
             <input type="password" name="password" class="txtbox login_password">
             <input type="checkbox" name="remember" class="remember_me">  Remember me  <div class="forget">|Forgot my password </div> 
             <input type="submit"  name="login" value="login " class="login_submit">
-            <h4> Not registered yet <div class="join">JOIN US NOW</div></h4>
+            <h4> Not registered yet </h4><div class="join">JOIN US NOW</div>
         
         </div>

@@ -13,7 +13,14 @@ a{
     background-size:cover;
     overflow: auto;
 }
-
+.remember_me{
+    margin-left: 5%;
+}
+h4{
+    width: 31%;
+    margin-left: 5%;
+    float: left;
+}
 .login{
     display: block;
     margin:auto;
@@ -27,6 +34,7 @@ width: 400px;
 max-width: 90%;
 /*max-height: 90%;*/
 color:midnightblue;
+min-height: 480px;
 }
 .login img{
     width: 65%;
@@ -87,8 +95,12 @@ margin:10px 70px;
   margin-top: -17px;
 }
 .join{
-    margin-left: 10%;
+    margin-left: 1%;
     color: #013a58;
+    position: relative;
+    color: #013a58;
+    width: 26%;
+    float: left;
 }
 .join:hover{
     cursor: pointer;
