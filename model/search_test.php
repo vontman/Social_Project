@@ -1,43 +1,72 @@
-.main_header{
-    left: 20%;
-    position: fixed;
-    top: 0;
-    width: 65%;
-    height: 6%;
-    background: rgb(25, 112, 91);
-    z-index: 555;
-}
-.search{
-    position: relative;
-    width: 19%;
-    float: left;
-    height: 90%;
-    top: 10%;
-}
-.button_header{
-    position: relative;
-    float: right;
-    height: 100%;
-    text-align: center;
-    width: 15%;
-    right: 0;
-}
-.button_header ul{
-    list-style-type: none;
-    height: 100%;
-    width: 100%;
-}
-.button_header li{
-    float: left;
-    width: 35%;
-    height: 50%;
-    background: rgb(9, 185, 150);
-    padding: 7%;
-    border-left: 1px black solid;
-}
-.button_header li:hover{
-    background: rgb(83, 238, 195);
-}
+<script src='../js/jquery-1.11.0.js'></script>
+<script>
+    $(document).ready(function(){
+        console.log('hi');
+//       $('#search_input').keypress(function(key){
+//           if(key.which==13){
+//               alert($(this).val());
+//           }
+//       });
+        $('#search_result_wrapper').hide();
+        var srch_click=false;
+        $('#search_input_img').click(function(){
+            if(!srch_click){
+                $('#search_input_img img').css('box-shadow','0');
+                $('#search_input').css('width','240px');
+                $('#search_input').css('padding','4px 8px 4px 32px');
+                $('#search_input').focus();
+                $('#search_input_img img').css('transform','rotate(360deg)');
+                srch_click=true;
+            }else{
+                $('#search_input').css('padding','0');
+                $('#search_input').css('width','30px');
+                $('#search_input_img img').css('transform','rotate(-360deg)');
+                srch_click=false;
+            }
+        });
+        $i=0;
+        $('#search_input').keyup(function(){
+            $('#search_result_wrapper table').children().children('tr').remove();
+            if($(this).val().length>2){
+                var keywords=$(this).val();
+               $.ajax({url:'search.php',
+                   data:{keywords:keywords},
+                   success:function(srch_results){
+                        if(srch_results){
+                            $('#search_result_wrapper table').append(srch_results);
+                            if($i==0){
+                                $('#search_result_wrapper').slideDown('fast');
+                            }
+                            $i++;
+                        }else{
+                            $i=0;
+                       }
+                   }
+               });
+            }
+        });
+//        if($('#search_result_wrapper table .add_friend').length){
+//            console.log('shit');
+            $('#search_result_wrapper').delegate('.add_friend','click',function(){
+                console.log('test');
+                var friend_id=$(this).attr('user');
+                var selected_div=$(this);
+                console.log(friend_id+'asdasd');
+               $.ajax({url:'search.php',
+                    data:{friend_id:friend_id},
+                    success:function(addfriend){
+                        if(addfriend){
+                            selected_div.text('Request Send');
+                        }else{
+                            selected_div.text('Request Failed');
+                        }
+                    }
+                });
+            });
+//        }
+    });
+</script>
+<style>
     #search_input{
         border-radius:15px; 
 /*        background:url('../png/search.png');
@@ -91,7 +120,6 @@
     }
     #search_result_wrapper table td{
         height:48px;
-        background: transparent !important;
     }
     #search_result_wrapper td a{
         float:left;
@@ -136,7 +164,7 @@
     }
     .friend{
         position: absolute;
-        min-width: 105px;
+        min-width: 85px;
         padding: 2px;
         text-align: center;
         background: #bce8f1;
@@ -148,7 +176,7 @@
         z-index: 99;
         font-size: 14px;
         font-weight: bold;
-        left: 215px;
+        left: 230px;
         margin-top: 15px;
         padding:0 4px;
     }
@@ -164,3 +192,12 @@
         float:left;
         height:100%;
     }
+</style>
+<div id='search_input_img'>
+    <img src='../png/search3.png'/>
+</div>
+<input type="text" id='search_input'>
+<div id='search_result_wrapper'>
+    <table>
+    </table>
+</div>

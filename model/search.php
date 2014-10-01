@@ -1,11 +1,12 @@
 <?php
-include_once 'model/friends.php';
+@session_start();
+include_once 'friends.php';
 $friends=new friends();
-//    $user_id=$_SESSION['alterwire'];
-    $user_id=2;
+    $user_id=$_SESSION['alterwire'];
+//    $user_id=2;
 if(isset($_GET['keywords'])){
     $keywords=$_GET['keywords'];
-    include_once 'model/users.php';
+    include_once 'users.php';
     $users=new users();
     $results=$users->search($keywords);
     foreach ($results as $k=>$v){
