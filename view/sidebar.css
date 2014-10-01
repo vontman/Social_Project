@@ -9,7 +9,7 @@ a{
 .sidebar{
     height: 100%;
     min-height:352px;
-    background-color: rgba(0,0,0,.25);
+    background-color: rgba(0,0,0,.1);
     position: fixed;
     border: 1px solid transparent;
     /*border-radius: 50px 0px 50px 0px;*/
