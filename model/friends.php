@@ -55,7 +55,7 @@ class friends {
         }
 
     }
-    public function accept($friend_row,$accept){
+    public function add_ignore($friend_row,$accept=true){
         if($accept){
             $input['accepted']=1;
             $input['relationship']='friends';
