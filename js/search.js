@@ -24,7 +24,7 @@
         });
         $i=0;
         $('#search_input').keyup(function(){
-            $('#search_result_wrapper table').children().children('tr').remove();
+            $('#search_result_wrapper table tr').remove();
             if($(this).val().length>2){
                 var keywords=$(this).val();
                $.ajax({url:'model/search.php',
