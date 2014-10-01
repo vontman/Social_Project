@@ -38,6 +38,8 @@ if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password']))
  //      $array['mobile_number']=$num;
 
 //       $array['country_id']=$location;
-       echo $users->adduser($array);
- 
+       $new=$users->adduser($array);
+              session_start();
+              $_SESSION['alterwire']=$new;
+              echo $new;
 }

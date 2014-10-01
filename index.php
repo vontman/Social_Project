@@ -62,7 +62,6 @@
                     require_once 'view/l_sidebar.php';
                     require_once 'view/post.php';
                 }elseif(isset($_GET['logout'])){
-                    require_once 'view/l_sidebar.php';
                     $users->logout($user_id);
                     echo '<script>location.reload();</script>' ;
                 }elseif(isset($_GET['user'])){

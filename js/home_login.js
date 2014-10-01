@@ -4,7 +4,7 @@
         var password_valid=false;
         $('.login_username').keyup(function(){
            if($(this).val().length<6){
-               $('.login_username_error').text("User name is too short")
+               $('.login_username_error').text("User name is too short");
                username_valid=false;
            }else{
                $('.login_username_error').text("");
@@ -13,7 +13,7 @@
         });
         $('.login_password').keyup(function(){
            if($(this).val().length<6){
-               $('.login_password_error').text("Password is too short")
+               $('.login_password_error').text("Password is too short");
                password_valid=false;
            }else{
                $('.login_password_error').text("");
