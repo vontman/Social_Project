@@ -25,7 +25,7 @@
                  var username=$(this).val();
                  var length = $('.username').val().length;
                  if (length<6) {
-                     $('.user_msg').text('password must be more than 6 cahr');  
+                     $('.user_msg').text('username must be more than 6 cahr');  
                      length=false;
             }
             else{

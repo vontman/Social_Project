@@ -17,13 +17,13 @@
             echo TRUE;
         }
        }
-if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['pass'])){
+if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password'])){
 //    $username=@$_POST['username'];
 //    $password=@$_POST['pass'];
 //    $email=@$_POST['email'];
-    $array[]=@$_POST['username'];
-    $array[]=@$_POST['pass'];
-    $array[]=@$_POST['email'];
+    $array['username']=@$_POST['username'];
+    $array['password']=md5($_POST['password']);
+    $array['email']=@$_POST['email'];
        
    // $fname=@$_POST['fname'];
    // $lname=@$_POST['lname'];
@@ -38,7 +38,6 @@ if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['pass'])){
  //      $array['mobile_number']=$num;
 
 //       $array['country_id']=$location;
-          session_start;
        echo $users->adduser($array);
  
 }
