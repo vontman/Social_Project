@@ -19,11 +19,11 @@
                 $friend=$users->view_user($v)[0];
                 $friend_username=$friend['username'];
                     ?>
-                <li class="message <?php if($friend['logged_in']){
+                <li user='<?php echo $friend['id']; ?>' class="message <?php if($friend['logged_in']){
                     echo 'on';
                 }
                 ?>">
-                    <img src="user.png">
+                    <img src="user.png"/>
                     <?php
                         echo $friend_username;
                     ?>
@@ -31,50 +31,6 @@
                     <?php
             }
         ?>
-<!--            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message"> 
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>-->
         </ul>
     </div>
 </div>
