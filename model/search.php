@@ -22,8 +22,6 @@ if(isset($_GET['keywords'])){
                     </a>
                     <?php
                         $already_friends=$friends->check_friends($user_id,$v['id']);
-                    ?>
-                            <?php
                                 if(!$already_friends){?>
                                     <div class="add_friend" user='<?php echo $v['id']; ?>'>Add Friend</div>
                                     <?php
