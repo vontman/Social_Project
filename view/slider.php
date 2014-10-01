@@ -18,12 +18,23 @@
                                         <div class='notification'>
                                             <font><?php  echo $request_user['username']; ?> added you as a friend</font>
                                             <div class='friend_request_btns'>
-                                                <input type='submit' class='accept' value='Accept'/>
                                                 <input type='submit' class='ignore' value='Ignore'/>
+                                                <input type='submit' class='accept' value='Accept'/>
                                             </div>
                                         </div>
                                         <div id='notification_date'>
-                                            <?php echo time()-$v['created']; ?> ago ....
+                                            <?php 
+                                                $ago=1.0;
+                                                if((time()-$v['created'])/1000/60/60/60/60>1){
+                                                $ago=ceil((time()-$v['created'])/1000/60/60/60); 
+                                                echo $ago;
+                                                    echo ' hours';
+                                                }else{
+                                                $ago=ceil((time()-$v['created'])/1000/60/60/60); 
+                                                echo $ago;
+                                                    echo ' minutes';
+                                                }
+                                            ?> ago ....
                                         </div>
                                     </li>
                                     <?php
