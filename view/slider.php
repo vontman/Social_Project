@@ -5,15 +5,32 @@
                 </div>-->
                 <div>
                     <ul>
-                        <li>
-                            <image src="user.png"/>
-                            <div class='notification'>
-                                <font>user has commented on your post</font>
-                            </div>
-                            <div id='notification_date'>
-                                3 hours ago..
-                            </div>
-                        </li>
+                        <?php
+                            include_once 'model/friends.php';
+                            $friends=new friends();
+                            $requests=$friends->check_requests($user_id);
+                            if($requests){
+                                foreach($requests as $k=>$v){
+                                    $request_user=$users->view_user($v['user_id'])[0];
+                                    ?>
+                                    <li>
+                                        <image src="user.png"/>
+                                        <div class='notification'>
+                                            <font><?php  echo $request_user['username']; ?> added you as a friend</font>
+                                            <div class='friend_request_btns'>
+                                                <input type='submit' class='accept' value='Accept'/>
+                                                <input type='submit' class='ignore' value='Ignore'/>
+                                            </div>
+                                        </div>
+                                        <div id='notification_date'>
+                                            <?php echo time()-$v['created']; ?> ago ....
+                                        </div>
+                                    </li>
+                                    <?php
+                                }
+                            }
+                            
+                        ?>
                         <li>
                             <image src="user.png" height="50px"/>
                             <div class='notification'>
