@@ -9,7 +9,7 @@ if(isset($_GET['keywords'])){
     $users=new users();
     $results=$users->search($keywords);
     foreach ($results as $k=>$v){
-        if($v['id']==$user_id){?>
+        if($v['id']!=$user_id){ ?>
             <tr>
                 <td>
                     <img class='srch_user_pic' src='user.png'/>
