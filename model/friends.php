@@ -33,11 +33,10 @@ class friends {
         }
     }
     public function add_friend($user_id,$friend_id){
-        $query="SELECT id,user_id,friend_id FROM friends WHERE user_id='$user_id' AND friend_id='$friend_id'";
         try{
-            $sql=  mysqli_query($this->link, $query);
-            $aff_rows=  mysqli_affected_rows($this->link);
-            if($aff_rows<1){
+            $specific_row['cols']['user_id']=$user_id;
+            $specific_row['cols']['friend_id']=$friend_id;
+            if( $this->functions->select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row)<1){
                 $add_friend['user_id']=$user_id;
                 $add_friend['friend_id']=$friend_id;
                 $add_friend['accepted']=0;
@@ -49,7 +48,7 @@ class friends {
                 }
             }
             else{
-                die("ERROR !!");
+                die("You are already friends !!");
             }
         } catch (Exception $ex) {
             return mysqli_errno($this->link);
@@ -94,6 +93,16 @@ class friends {
             }else{
                 return 0;
             }
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
+    public function check_requests($user_id){
+        $row['cols']['friend_id']=$user_id;
+        $row['cols']['accepted']=0;
+        try{
+            $friend_requests=$this->functions->select(false, false, false,false,$row);
+            return $friend_requests;
         } catch (Exception $ex) {
             return mysqli_errno($this->link);
         }
