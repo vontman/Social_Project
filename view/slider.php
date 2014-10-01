@@ -1,3 +1,4 @@
+<script src='js/notifications.js'></script>
         <div class="slider_container left_slider">
             <div class="slider leftslider">
 <!--                <div class="close">
@@ -17,7 +18,7 @@
                                         <image src="user.png"/>
                                         <div class='notification'>
                                             <font><?php  echo $request_user['username']; ?> added you as a friend</font>
-                                            <div class='friend_request_btns'>
+                                            <div request_id='<?php echo $v['id']; ?>' user='<?php echo $v['user_id']; ?>' class='friend_request_btns'>
                                                 <input type='submit' class='ignore' value='Ignore'/>
                                                 <input type='submit' class='accept' value='Accept'/>
                                             </div>
