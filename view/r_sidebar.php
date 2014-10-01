@@ -1,4 +1,3 @@
-<html>
     <head>
         <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -6,9 +5,6 @@
 <div class="sidebar r-sidebar">
     <div id="toggle">
         <image class="image" src="png/arrow454.png"/>
-    </div>
-    <div class="logo">
-        <h1> Online friends</h1>
     </div>
     <div class="online">
         <ul class="on">
