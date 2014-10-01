@@ -25,10 +25,14 @@
                                         </div>
                                         <div id='notification_date'>
                                             <?php 
-                                                $ago=1.0;
-                                                if((time()-$v['created'])/1000/60/60/60/60>1){
-                                                $ago=ceil((time()-$v['created'])/1000/60/60/60); 
+                                                $ago=0;
+                                                if((time()-$v['created'])/1000/60/60/60/60/24>1){
+                                                $ago=ceil((time()-$v['created'])/1000/60/60/60/24); 
                                                 echo $ago;
+                                                    echo ' days';
+                                                }elseif((time()-$v['created'])/1000/60/60/60/60>1){
+                                                    $ago=ceil((time()-$v['created'])/1000/60/60/60); 
+                                                    echo $ago;
                                                     echo ' hours';
                                                 }else{
                                                 $ago=ceil((time()-$v['created'])/1000/60/60/60); 
