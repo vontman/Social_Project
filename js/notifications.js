@@ -4,7 +4,7 @@ $(document).ready(function(){
        var selected_btn=$(this);
        var request_id=$(this).parent().attr('request_id');
        $.ajax({url:'model/friend_request.php',
-       data:{user_id_ignored:user_id,request_id:request_id},
+       data:{user_id_accepted:user_id,request_id:request_id},
        success:function(result){
            if(result){
                selected_btn.val('Added');

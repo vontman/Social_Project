@@ -55,33 +55,31 @@ class friends {
         }
 
     }
-    public function add_ignore($friend_row,$accept=true){
-        if($accept){
-            $input['accepted']=1;
-            $input['relationship']='friends';
-            try{
-                return $this->functions->update($input,$friend_row);
-            } catch (Exception $ex) {
-                return mysqli_errno($this->link);
-            }
+    public function accept_request($friend_row){
+        $input['accepted']=true;
+        $input['relationship']='friends';
+        try{
+            return $this->functions->update($input,$friend_row);
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
         }
-        else{
+    }
+    public function ignore_request($friend_row){
             try{
                 return $this->functions->delete($friend_row);
             } catch (Exception $ex) {
                 return mysqli_errno($this->link);
             }
-        }
     }
     public function view_friends($user_id){
         $row=array();
         $row['cols']['user_id']=$user_id;
         $row['cols']['friend_id']=$user_id;
-        $row['cols']['accepted']=1;
+        $row['cols']['accepted']='1';
         $row['relation'][]='OR';
         $row['relation'][]='AND';
         try{
-            $ids=$this->functions->select(array('id','user_id','friend_id'), false, false,false,$row);
+            $ids=$this->functions->select(false, false, false,false,$row);
             if($ids){
                 foreach($ids as $k=>$v){
                     if ($v['user_id']==$user_id){

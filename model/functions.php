@@ -23,7 +23,10 @@ class db_functions{
             $i=0;
             if($id){
                 $query.=" id=".$id." AND (";
+            }else{
+                $query.=" ( ";
             }
+            $count=count($specific_row['cols']);
             foreach($specific_row['cols'] as $k=>$v){
                 if($i>0){
                     if(@$specific_row['relation']){
@@ -32,13 +35,17 @@ class db_functions{
                     else{
                         $query.=" AND ";
                     }
+                if($i%2==0 && $i>1){
+                    $query.=' ( ';
+                }
                 }
                 $query.=" ".$k."='".$v."' ";
                 $i++;
+                if($i%2==0 && $i>1 && $i<$count){
+                    $query.=' ) ';
+                }
             }
-            if($id){
-                $query.=" ) ";
-            }
+            $query.=" ) ";
         }
         elseif($id){
            $query.="WHERE id=$id ";
@@ -65,6 +72,7 @@ class db_functions{
 
         try{
             $sql= mysqli_query($this->link, $query);
+//            echo $query;
             if(mysqli_affected_rows($this->link)>0){
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;

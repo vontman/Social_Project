@@ -6,8 +6,8 @@
     $friend_row=$_GET['request_id'];
     if(isset($_GET['user_id_accepted'])){
         $request_id=$_GET['user_id_accepted'];
-        echo $friends->add_ignore($friend_row);
+        echo $friends->accept_request($friend_row);
     }elseif(isset($_GET['user_id_ignored'])){
         $request_id=$_GET['user_id_ignored'];
-        echo $friends->add_ignore($friend_row,0);
+        echo $friends->ignore_request($friend_row);
     }
