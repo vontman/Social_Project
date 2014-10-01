@@ -2,6 +2,7 @@
                 overflow-y: hidden;
                 overflow-x: auto;
                 margin-top: 3.5%;
+                z-index:5;
             }
             #contain_wrapper *{
                 transition: all 1s ease;
@@ -19,6 +20,7 @@
                 border-radius: 5px;
                 overflow:hidden;
                 z-index:-1;
+                z-index:6;
             }
             #wrapper .post_whole{
                 width:95%;
