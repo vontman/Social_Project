@@ -13,7 +13,7 @@ class friends {
         $this->date=date('Y/m/d h:i:s', time());
     }
     public function check_friends($user_id,$friend_id){
-        $query="SELECT id,user_id,friend_id,accepted FROM friends WHERE user_id='$user_id' AND friend_id='$friend_id'";
+        $query="SELECT * FROM friends WHERE (user_id='$user_id' OR friend_id='$user_id') AND (friend_id='$friend_id' OR user_id='$friend_id')";
         try{
             $sql=  mysqli_query($this->link, $query);
             $aff_rows=  mysqli_affected_rows($this->link);
