@@ -1,11 +1,5 @@
-<html>
-    <head>
-         <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         <div class="message_fields">
-        <div class="message_field m1">
+            <div class="message_field" user='<?php $_POST['user_id'] ?>'>
             <div class="top_message_field">
                 <div class="message_caller">Omar Abd Elbaset</div>
             <div class="close">
@@ -28,9 +22,4 @@
             </div>
             </form>
         </div>
-            <div class="message_field m2"></div>
-            <div class="message_field m3"></div>
-            <div class="message_field m4"></div>
-        </div>
-        </body>
-</html>
+        </div>      
