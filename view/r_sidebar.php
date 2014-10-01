@@ -10,12 +10,28 @@
         <h1> Online friends</h1>
     </div>
     <div class="online">
-        <ul class="on">
-            <li class="message">
-                <img src="user.png">
-                user name
-            </li>
-            <li class="message">
+        <ul class="user_friends">
+        <?php
+            include_once 'model/friends.php';
+            $friends=new friends();
+            $user_friends=$friends->view_friends($user_id);
+            foreach($user_friends as $k=>$v){
+                $friend=$users->view_user($v)[0];
+                $friend_username=$friend['username'];
+                    ?>
+                <li class="message <?php if($friend['logged_in']){
+                    echo 'on';
+                }
+                ?>">
+                    <img src="user.png">
+                    <?php
+                        echo $friend_username;
+                    ?>
+                </li>
+                    <?php
+            }
+        ?>
+<!--            <li class="message">
                 <img src="user.png">
                 user name
             </li>
@@ -58,7 +74,7 @@
             <li class="message">
                 <img src="user.png">
                 user name
-            </li>
+            </li>-->
         </ul>
     </div>
 </div>
