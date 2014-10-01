@@ -1,4 +1,5 @@
-        <div class="message_fields">
+       <?php echo '<div class="message_fields">'; ?>
+
             <div class="message_field" user='<?php $_POST['user_id'] ?>'>
             <div class="top_message_field">
                 <div class="message_caller">Omar Abd Elbaset</div>
@@ -22,4 +23,4 @@
             </div>
             </form>
         </div>
-        </div>      
+        <?php echo '</div>';?>      

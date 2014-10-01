@@ -1,6 +1,6 @@
 $(document).ready(function(){
             $('.message_fields').css('visibility','hidden'); 
-                $('.message').click(function(){
+                $('.message').click(function(){                                      
                     var user_id=$(this).attr('user');
                     $(this).attr();
                     $.ajax({url:'model/message.php',
