@@ -24,6 +24,8 @@
             });
             $(document).ready(function(){
                 auto_blend();
+                $('.main_header').css({"left":'0','width':'85%'});
+                $('.button_header').css({'width':'12%'});
                 var icon_hover = true;
                 $('.icon').click(function(){
                     $(this).siblings('.slider').toggleClass('slider_click');

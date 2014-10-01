@@ -1,8 +1,8 @@
 .main_header{
-    left: 0;
+    left: 20%;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 65%;
     height: 6%;
     background: rgb(25, 112, 91);
     z-index: 555;
@@ -19,8 +19,8 @@
     float: right;
     height: 100%;
     text-align: center;
-    width: 10%;
-    right: 15%
+    width: 15%;
+    right: 0;
 }
 .button_header ul{
     list-style-type: none;

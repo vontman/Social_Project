@@ -7,11 +7,10 @@
     <div class="bottom_header_photo"><img src="profile.JPG">
     <div class="bottom_header_photo2"><img src="png/cam.png"></div>
     </div>
-    /////
     <div class="bottom_header_items">
         <ul class="menu">
             <a href="index.php"> <li class="menu_sub">Home</li></a>
-            <li class="menu_sub">Profile</li>
+            <a href="?user"><li class="menu_sub">Profile</li></a>
             <li class="menu_sub">About</li>
             <li class="menu_sub">Photo</li>
             <li class="menu_sub">Friend</li>

@@ -26,7 +26,7 @@ a{
     float: right;
     right:0;
     overflow: visible;
-    top: 6%;
+    top: 0;
 }
 .r-sidebar #toggle{
     position:absolute;
@@ -60,7 +60,7 @@ a{
     width: 200px;
     float: left;
     left:0;
-    top: 6%;
+    top: 0;
     
 }
 .logo{
