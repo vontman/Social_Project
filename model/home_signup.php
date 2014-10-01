@@ -18,25 +18,17 @@
         }
        }
 if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['password'])){
-//    $username=@$_POST['username'];
-//    $password=@$_POST['pass'];
-//    $email=@$_POST['email'];
     $array['username']=@$_POST['username'];
     $array['password']=md5($_POST['password']);
     $array['email']=@$_POST['email'];
        
-   // $fname=@$_POST['fname'];
-   // $lname=@$_POST['lname'];
-   // $date=@$_POST['date'];
-   // $gender=@$_POST['gender'];
-  //  $num=@$_POST['num'];
+    $array['firstname']=@$_POST['fname'];
+    $array['lastname']=@$_POST['lname'];
+    $array['gender']=@$_POST['gender'];
+    $array['mobile_number']=@$_POST['num'];
     //$location=@$_POST['country'];
-  //     $array['firstname']=$fname;
- //      $array['lastname']=$lname;
+      // $date=@$_POST['date'];
 //       $array['birthday']=$date;
-//       $array['gender']=$gender;
- //      $array['mobile_number']=$num;
-
 //       $array['country_id']=$location;
        $new=$users->adduser($array);
               session_start();
