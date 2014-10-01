@@ -100,7 +100,7 @@ $('.password').on('keyup',function(){
                     success:function(signup){
                         if(signup){
                             alert('Registeration Successfull !!');
-                            console.log('fdgdfg');
+                            console.log('good job');
                             location.reload();
                         }else{
                             alert('Registeration faled !');

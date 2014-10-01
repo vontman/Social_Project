@@ -1,5 +1,4 @@
 <?php
-session_start();
     include_once '../model/users.php';
     $users=new users();
   if(isset($_POST["username"])){
@@ -19,12 +18,12 @@ session_start();
         }
        }
 if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['pass'])){
-    $username=@$_POST['username'];
-    $password=@$md5($_POST['pass']);
-    $email=@$_POST['email'];
-    $array['username']=$username;
-    $array['pass']=$password;
-    $array['email']=$email;
+//    $username=@$_POST['username'];
+//    $password=@$_POST['pass'];
+//    $email=@$_POST['email'];
+    $array[]=@$_POST['username'];
+    $array[]=@$_POST['pass'];
+    $array[]=@$_POST['email'];
        
    // $fname=@$_POST['fname'];
    // $lname=@$_POST['lname'];
@@ -39,5 +38,7 @@ if(isset($_POST["username"])&&isset($_POST["email"])&&isset($_POST['pass'])){
  //      $array['mobile_number']=$num;
 
 //       $array['country_id']=$location;
+          session_start;
        echo $users->adduser($array);
+ 
 }

@@ -56,7 +56,7 @@ var side_toggle=false;
 //                    $('.icon').addClass('icon_drag');
 //                });
                 var icon_hover = true;
-                $('#toggle').click(function(){r_sidebar_toggle()});
+                $('#toggle').click(function(){r_sidebar_toggle();});
                 $('.icon').click(function(){
                 console.log('????');
 //                    if($(this).hasClass('icon_drag')){
@@ -88,5 +88,5 @@ var side_toggle=false;
 //                $("#datepicker").datepicker({
 //                    dateFormat: 'yy-mm-dd'
 //                });
-                $('.calender').fullCalendar();
+    //            $('.calender').fullCalendar();
             });
