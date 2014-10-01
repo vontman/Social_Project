@@ -47,7 +47,7 @@ class users {
     }
 
     public function view_user($user_id){
-        $cols=array("id","username","email","firstname","lastname","mobile_number","job","gender","country_id","image","cover","created");
+        $cols=array("id","username","email","firstname","lastname","mobile_number","job","gender","country_id","logged_in","image","cover","created");
         try{
             $user=$this->functions->select($cols, $user_id);
             return $user;
