@@ -77,7 +77,9 @@ class friends {
         $row=array();
         $row['cols']['user_id']=$user_id;
         $row['cols']['friend_id']=$user_id;
+        $row['cols']['accepted']=1;
         $row['relation'][]='OR';
+        $row['relation'][]='AND';
         try{
             $ids=$this->functions->select(array('id','user_id','friend_id'), false, false,false,$row);
             if($ids){
