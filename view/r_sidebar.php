@@ -6,26 +6,33 @@
     <div id="toggle">
         <image class="image" src="png/arrow454.png"/>
     </div>
-<!--     <div class="logo">
-        <h1> Online friends</h1>
-    </div>-->
     <div class="online">
         <ul class="user_friends">
         <?php
             include_once 'model/friends.php';
             $friends=new friends();
-            $user_friends=$friends->view_friends($user_id);
+            $user_friends_ids=$friends->view_friends($user_id);
+            foreach($user_friends_ids as $k=>$v){
+                $li_friend=$users->view_user($v)[0]['logged_in'];
+                if($li_friend=='1'){
+                    $user_friends[]=$users->view_user($v)[0];
+                }
+            }
+            foreach($user_friends_ids as $k=>$v){                
+                $li_friend=$users->view_user($v)[0]['logged_in'];
+                if($li_friend=='0'){
+                    $user_friends[]=$users->view_user($v)[0];
+                }
+            }
             foreach($user_friends as $k=>$v){
-                $friend=$users->view_user($v)[0];
-                $friend_username=$friend['username'];
-                    ?>
-                <li user='<?php echo $friend['id']; ?>' class="message <?php if($friend['logged_in']){
+                   ?>
+                <li user='<?php echo $v['id']; ?>' class="message <?php if($v['logged_in']){
                     echo 'on';
                 }
                 ?>">
                     <img src="user.png"/>
                     <?php
-                        echo $friend_username;
+                        echo $v['username'];
                     ?>
                 </li>
                     <?php
