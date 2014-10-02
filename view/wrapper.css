@@ -124,7 +124,7 @@
             }
             .add_post_input textArea{
                 overflow-y:auto !important;
-                transition:none;
+                transition:none !important;
             }
             #permission_select{
                 float:right;
@@ -175,19 +175,18 @@
                 top:1px;
             }
             #add_post_toggle{
-                z-index:10;
-                position:relative;
-                margin-top:15px;
-                height:25px;
-                width:150px;
-                left:50%;
-                transform: translateX(-50%) translateY(50%);
-                overflow:visible;
-                z-index:8;
+                z-index: 10;
+                position: absolute;
+                height: 18px;
+                width: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                overflow: visible;
+                z-index: 8;
                 border-radius: 0 0 8px 8px;
-                background:rgba(10,101,10,.25);
+                background: rgba(10,101,10,.25);
                 cursor: pointer;
-                transition:all .4s ease;
+                transition: all .4s ease;
             }
             #add_post_toggle:hover{
                 background:rgba(10,101,10,.5);
