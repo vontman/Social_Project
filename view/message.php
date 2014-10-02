@@ -1,8 +1,9 @@
-       <?php echo '<div class="message_fields">'; 
+       <div class="message_fields"> 
+<?php 
        $user_id2=@$_GET['user_id2'];
        ?>
 
-            <div class="message_field" user='<?php echo $user_id2 ;?>'>
+           <?php echo "<div class='message_field' user='<?php echo $user_id2 ;?>'>"; ?>
             <div class="top_message_field">
                 <div class="message_caller">Omar Abd Elbaset</div>
             <div class="close">
@@ -24,5 +25,5 @@
                 <textarea  type="text"  name="send" class="send" maxlength="255" min="1" ></textarea>
             </div>
             </form>
-        </div>
-        <?php echo '</div>';?>      
+       <?php echo ' </div>'; ?>
+ </div>     
