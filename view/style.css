@@ -33,6 +33,27 @@
             textarea:focus{
                 background:white;
             }
+            select{
+                font-family: Georgia;
+                font-weight: bold;
+                font-size: 80%;
+                font-weight: bold;
+                padding: 8px 6px;
+                width: 135px;
+                height: 35px;
+                background: rgb(213, 245, 205);
+                border-radius: 8px;
+                color: rgb(20, 63, 128);
+                transition: none;
+            }
+            select *{
+                font-family: Georgia;
+                font-weight: bold;
+                font-size: 80%;
+                font-weight: bold;
+                padding:4px;
+                transition: none;
+            }
             
 
 

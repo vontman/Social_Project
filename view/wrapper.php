@@ -1,12 +1,20 @@
         <div id='add_post_wrapper'>
-            <div class='add_post_functions'>
-                
-            </div>
             <div class='add_post_input'>
                 <textarea id='add_post' placeholder="Add Status Update Here ............"></textarea>
             </div>
-            <div class='add_post_btn'>
+            <div class='add_post_functions'>
                 <input type='submit' id='add_post_sbmt' value='Add Post' />
+                <select name="add_post_permission" id="permission_select">
+                    <option value="2">
+                        Friends Only
+                    </option>
+                    <option value="3">
+                        Public
+                    </option>
+                    <option value="1">
+                        Only Me
+                    </option>
+                </select>
             </div>
         </div>
 

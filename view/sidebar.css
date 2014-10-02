@@ -39,6 +39,7 @@ a{
     display:block;
     border-radius: 5px 0 0 5px ;
     opacity:.3;
+    z-index:3;
 }
 #toggle:hover{
     cursor: pointer;
