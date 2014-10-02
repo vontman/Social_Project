@@ -3,7 +3,7 @@ $(document).ready(function(){
                 $('.message').click(function(){                                      
                     var user_id=$(this).attr('user');
                     $(this).attr();
-                    $.ajax({url:'model/message.php',
+                    $.ajax({url:'view/message.php',
                     type:'POST',
                   data:{user_id:user_id},
                   success: function (lol){
