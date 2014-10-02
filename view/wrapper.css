@@ -109,7 +109,11 @@
             }
             /*Input POst !!*/
             #add_post_wrapper{
-                overflow:hidden;
+                height:auto;
+                transition:all 1s ease;
+            }
+            #add_post_wrapper *{
+                transition:all 1s ease;
             }
             .add_post_functions{
                 
@@ -119,14 +123,14 @@
             }
             #permission_select{
                 float:right;
-                margin:0 15px;
+                margin:0 4px;
             }
             #add_post_sbmt{
-                float:right;
-                margin:0 15px;
-                padding: 8px 10px;
+                float: right;
+                margin: 0 8px;
+                padding: 5px 10px;
                 width: 85px;
-                height: 35px;
+                height: 28px;
                 -moz-box-shadow: 0px 10px 14px -7px #276873;
                 -webkit-box-shadow: 0px 10px 14px -7px #276873;
                 box-shadow: 0px 10px 14px -7px #276873;
@@ -145,7 +149,7 @@
                 cursor: pointer;
                 color: #ffffff;
                 font-family: Georgia;
-                font-size: 90%;
+                font-size: 85%;
                 font-weight: bold;
                 text-decoration: none;
                 text-shadow: 10px 10px 12px #3d768a;

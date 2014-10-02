@@ -25,10 +25,11 @@
                 min-width: 95%;
                 min-height: 120px;
                 border: 3px solid #cccccc;
-                padding: 5px;
+                padding: 8px;
                 background:#f6f8e3;
                 margin:5px 2%;
                 font-family: Tahoma, sans-serif;
+                font-size:15px;
             }
             textarea:focus{
                 background:white;
@@ -38,9 +39,9 @@
                 font-weight: bold;
                 font-size: 80%;
                 font-weight: bold;
-                padding: 8px 6px;
+                padding: 3px 6px;
                 width: 135px;
-                height: 35px;
+                height: 28px;
                 background: rgb(213, 245, 205);
                 border-radius: 8px;
                 color: rgb(20, 63, 128);
