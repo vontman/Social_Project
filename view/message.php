@@ -1,6 +1,8 @@
-       <?php echo '<div class="message_fields">'; ?>
+       <?php echo '<div class="message_fields">'; 
+       $user_id2=@$_GET['user_id2'];
+       ?>
 
-            <div class="message_field" user='<?php $_POST['user_id'] ?>'>
+            <div class="message_field" user='<?php echo $user_id2 ;?>'>
             <div class="top_message_field">
                 <div class="message_caller">Omar Abd Elbaset</div>
             <div class="close">
