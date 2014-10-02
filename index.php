@@ -53,7 +53,6 @@
         //end
             require_once 'view/r_sidebar.php'; 
             require_once 'view/slider.php';
-            require_once 'view/message.php';
             require_once 'view/main_header.php';
             require_once './model/search.php';
         ?>
@@ -77,6 +76,7 @@
                 ?>
                         </div>
                     </div>
+        <div class="message_fields"></div>
                 <?php
                     }
                 ?>

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-            $('.message_fields').css('visibility','hidden'); 
                 $('.message').click(function(){                                      
                     var user_id2=$(this).attr('user');
                     $.ajax({url:'view/message.php',
@@ -11,6 +10,5 @@ $(document).ready(function(){
                   });
                 });
                 $('.close').click(function(){
-                 $('.message_field').css('visibility','hidden');
                 });
  });
