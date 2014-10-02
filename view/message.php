@@ -1,4 +1,4 @@
-       <div class="message_fields"> 
+
 <?php 
        $user_id2=@$_GET['user_id2'];
        ?>
@@ -26,4 +26,3 @@
             </div>
             </form>
        <?php echo ' </div>'; ?>
- </div>     
