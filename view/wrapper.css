@@ -109,8 +109,12 @@
             }
             /*Input POst !!*/
             #add_post_wrapper{
+                z-index:9;
                 height:auto;
                 transition:all 1s ease;
+                border-radius: 0 0 15px 15px;
+                border:2px groove rgba(0,0,0,.25);
+                overflow:visible;
             }
             #add_post_wrapper *{
                 transition:all 1s ease;
@@ -168,4 +172,29 @@
             #add_post_sbmt:active {
                 position:relative;
                 top:1px;
+            }
+            #add_post_toggle{
+                z-index:10;
+                position:relative;
+                margin-top:15px;
+                height:25px;
+                width:150px;
+                left:50%;
+                transform: translateX(-50%) translateY(50%);
+                overflow:visible;
+                z-index:8;
+                border-radius: 0 0 8px 8px;
+                background:rgba(10,101,10,.25);
+                cursor: pointer;
+                transition:all .4s ease;
+            }
+            #add_post_toggle:hover{
+                background:rgba(10,101,10,.5);
+            }
+            #add_post_toggle img{
+                position:absolute;
+                height:100%;
+                background:transparent;
+                left:50%;
+                transform: translateX(-50%);
             }

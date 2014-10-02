@@ -16,7 +16,7 @@
                     </option>
                 </select>
             </div>
-            <div id="toggle"></div>
+            <div id="add_post_toggle"><img src="png/arrow451.png"/></div>
         </div>
 
 
