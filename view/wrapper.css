@@ -122,8 +122,9 @@
             .add_post_functions{
                 
             }
-            .add_post_input{
-                
+            .add_post_input textArea{
+                overflow-y:auto !important;
+                transition:none;
             }
             #permission_select{
                 float:right;
