@@ -23,11 +23,22 @@ class posts{
             echo mysqli_errno($this->link);
         }
     }
-    public function view_posts($set_no){
+    public function view_posts($set_no,$user_id){
+        include_once './friends.php';
+        $friends=new friends();
+        $user_friends=$friends->view_friends($user_id);
+        $i=0;
+        foreach($user_friends as $k=>$v){
+            $specific_row['cols']['user_id']=$v;
+            if($i<count($user_friends)){
+                $specific_row['relation'][]='OR';
+            }
+            $i++;
+        }
         $order['created']='DESC';
         $limit[$set_no]=15;
         try{
-            $posts=$this->functions->select(array('id','user_id','body','created','last_edit','permission'), FALSE, $order, $limit);
+            $posts=$this->functions->select(array('id','user_id','body','created','last_edit','permission'), FALSE, $order, $limit,$specific_row);
             return $posts;
         } catch (Exception $ex) {
             echo mysqli_errno($this->link);
