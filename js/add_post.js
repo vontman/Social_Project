@@ -20,6 +20,7 @@ $(document).ready(function(){
         var post_body=$('#add_post_body').val();
         var post_length=post_body.length;
         var post_permission=$('#permission_select').val();
+//        var post_image=$('#add_post_image').val();
         if(post_length<4){
             alert('The post is too short !');
         }else{
