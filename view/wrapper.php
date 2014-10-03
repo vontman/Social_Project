@@ -2,6 +2,7 @@
         <div id='add_post_wrapper'>
             <div class="add_post">
                 <div class='add_post_input'>
+                    <!--<input type="file" id="add_post_image"/>-->
                     <textarea id='add_post_body' placeholder="Add Status Update Here ............"></textarea>
                 </div>
                 <div class='add_post_functions'>
