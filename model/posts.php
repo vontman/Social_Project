@@ -11,11 +11,15 @@ class posts{
         $this->link=$this->functions->link;
         $this->date=date('Y/m/d h:i:s', time());
     }
-    public function add_post($user_id,$post_body,$permission){
-        $post_body=  mysqli_real_escape_string($post_body);
+    public function add_post($user_id,$post_body,$permission,$image_name=false){
+        $post_body= mysqli_real_escape_string($this->link,$post_body);
         $post['body']=  htmlentities($post_body);
         $post['user_id']=$user_id;
         $post['permission']=$permission;
+        $post['created']=$this->date;
+        if($image_name){
+            $post['image']=$image_name;
+        }
         try{
             $post_id=$this->functions->insert($post);
             return $post_id;
@@ -23,8 +27,8 @@ class posts{
             echo mysqli_errno($this->link);
         }
     }
-    public function view_posts($set_no,$user_id){
-        include_once './friends.php';
+    public function view_posts($user_id,$set_no){
+        include_once 'friends.php';
         $friends=new friends();
         $user_friends=$friends->view_friends($user_id);
         $i=0;
@@ -49,7 +53,7 @@ class posts{
         try{
             $post=$this->functions->select(false, $post_id, false, false, $specific_row);
             if($post){
-                $post_update_body=  mysqli_real_escape_string($post_update_body);
+                $post_update_body=mysqli_real_query($this->link, $post_update_body);
                 $post_update['body']=  htmlentities($post_update_body);
                 $post_update_body['last_edit']=$this->date;
                 return $this->functions->update($post_update, $post_id);
