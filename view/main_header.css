@@ -194,7 +194,7 @@
         overflow:hidden;
     }
     .add_post_functions{
-
+        margin:10px 0;
     }
     .add_post_input textArea{
         overflow-y:auto !important;
