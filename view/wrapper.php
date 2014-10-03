@@ -1,30 +1,3 @@
-<script src="js/add_post.js"></script>
-        <div id='add_post_wrapper'>
-            <div class="add_post">
-                <div class='add_post_input'>
-                    <!--<input type="file" id="add_post_image"/>-->
-                    <textarea id='add_post_body' placeholder="Add Status Update Here ............"></textarea>
-                </div>
-                <div class='add_post_functions'>
-                    <input type='submit' id='add_post_sbmt' value='Add Post' />
-                    <select name="add_post_permission" id="permission_select">
-                        <option value="2">
-                            Friends Only
-                        </option>
-                        <option value="3">
-                            Public
-                        </option>
-                        <option value="1">
-                            Only Me
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <div id="add_post_toggle"><img src="png/arrow451.png"/></div>
-        </div>
-
-
-
 
             <?php
                 for($i=0;$i<15;$i++){

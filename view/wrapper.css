@@ -1,12 +1,11 @@
             #contain_wrapper{
                 overflow-y: hidden;
                 overflow-x: auto;
-                margin-top: 3.5%;
+                margin-top: 200px;
                 z-index:5;
             }
             #contain_wrapper *{
                 transition: all 1s ease;
-                overflow: hidden;
             }
             #wrapper{
                 width:560px;
@@ -107,94 +106,4 @@
             .post_comment{
                 border-bottom: 6px groove rgba(0,0,0,.15);
             }
-            /*Input POst !!*/
-            #add_post_wrapper{
-                z-index:9;
-                height:auto;
-                transition:all 1s ease;
-                border-radius: 0 0 15px 15px;
-                border:2px groove rgba(0,0,0,.25);
-                overflow:visible;
-            }
-            #add_post_wrapper *{
-                transition:all 1s ease;
-            }
-            .add_post_functions{
-                
-            }
-            .add_post_input textArea{
-                overflow-y:auto !important;
-                transition:none !important;
-            }
-            #permission_select{
-                float:right;
-                margin:0 4px;
-            }
-            #add_post_sbmt{
-                float: right;
-                margin: 0 8px;
-                padding: 5px 10px;
-                width: 85px;
-                height: 28px;
-                -moz-box-shadow: 0px 10px 14px -7px #276873;
-                -webkit-box-shadow: 0px 10px 14px -7px #276873;
-                box-shadow: 0px 10px 14px -7px #276873;
-                background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
-                background: -moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
-                background: -webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
-                background: -o-linear-gradient(top, #599bb3 5%, #408c99 100%);
-                background: -ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
-                background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
-                background-color: #599bb3;
-                -moz-border-radius: 8px;
-                -webkit-border-radius: 8px;
-                border-radius: 8px;
-                display: inline-block;
-                cursor: pointer;
-                color: #ffffff;
-                font-family: Georgia;
-                font-size: 85%;
-                font-weight: bold;
-                text-decoration: none;
-                text-shadow: 10px 10px 12px #3d768a;
-                border-color: transparent;
-            }
-            #add_post_sbmt:hover {
-                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
-                background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
-                background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
-                background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
-                background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
-                background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
-                background-color:#408c99;
-            }
-            #add_post_sbmt:active {
-                position:relative;
-                top:1px;
-            }
-            #add_post_toggle{
-                z-index: 10;
-                position: absolute;
-                height: 18px;
-                width: 150px;
-                left: 50%;
-                transform: translateX(-50%);
-                overflow: visible;
-                z-index: 8;
-                border-radius: 0 0 8px 8px;
-                background: rgba(10,101,10,.25);
-                cursor: pointer;
-                transition: all .4s ease;
-            }
-            #add_post_toggle:hover{
-                background:rgba(10,101,10,.5);
-            }
-            #add_post_toggle img{
-                position:absolute;
-                height:100%;
-                background:transparent;
-                left:50%;
-                transform: translateX(-50%);
-            }
+            
