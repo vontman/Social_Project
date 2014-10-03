@@ -17,16 +17,17 @@ $(document).ready(function(){
         addpost_toggle();
     });
     $('#add_post_sbmt').click(function(){
-        var post_length=$('#add_post_body').val().length;
         var post_body=$('#add_post_body').val();
+        var post_length=post_body.length;
+        var post_permission=$('#permission_select').val();
         if(post_length<4){
             alert('The post is too short !');
         }else{
             $.ajax({url:'controller/add_post.php',
-                data:{post_body:post_body},
+                data:{post_body:post_body,post_permission:post_permission},
                 success:function(add_post){
                     if(add_post){
-                        alert('Post has been added !');
+                        alert(add_post+'Post has been added !');
                     }else{
                         alert('Error !!');
                     }
