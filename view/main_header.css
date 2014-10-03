@@ -1,39 +1,47 @@
 .main_header{
-    left: 20%;
     position: fixed;
+    left: 20%;
     top: 0;
-    width: 65%;
+    width:65%;
     height: 35px;
     background: rgb(25, 112, 91);
-    z-index: 555;
+    z-index: 11;
 }
 .search{
-    position: relative;
-    width: 19%;
+    position: relative; 
     float: left;
     height: 90%;
-    top: 10%;
+    top: 3px;
 }
 .button_header{
-    position: relative;
-    float: right;
-    height: 100%;
+    position: absolute;
+    /*float: right;*/
+    right:0;
+    height: 35px;
     text-align: center;
-    width: 15%;
     right: 0;
+    width:30%;
 }
 .button_header ul{
     list-style-type: none;
-    height: 100%;
-    width: 100%;
+    height: 35px;
+    overflow:hidden;
+}
+.button_header a{
+    position:relative;
+    font-size:95%;
+    height:100%;
+    display:inline-block;
+    padding: 0 5px;
 }
 .button_header li{
-    float: left;
-    width: 35%;
-    height: 50%;
+    text-align: center;
+    position:relative;
+    height:100%;
+    width:100%;     
     background: rgb(9, 185, 150);
-    padding: 7%;
     border-left: 1px black solid;
+    padding: 8px 5px ;
 }
 .button_header li:hover{
     background: rgb(83, 238, 195);
