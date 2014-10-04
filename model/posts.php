@@ -80,7 +80,10 @@ class posts{
         try{
             $post=$this->functions->select(false, $post_id, false, false, $specific_row);
             if($post){
-                return $this->functions->delete($post_id);
+                $this->functions->delete($post_id);
+//                include_once 'comments.php';
+//                $comments=new comments();
+//                $comments->delete_post($post_id);
             }else{
                 die("Error !!");
             }
