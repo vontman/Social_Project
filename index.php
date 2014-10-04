@@ -72,8 +72,9 @@
                     <div id="contain_wrapper" class="contain_wrapper">
                         <div id="wrapper" class="wrapper">
                 <?php
-                    require_once 'view/wrapper.php';
+//                    require_once 'view/wrapper.php';
                 ?>
+                            <script>$('.wrapper').load('view/wrapper.php');</script>
                         </div>
                     </div>
         <div class="message_fields"></div>
