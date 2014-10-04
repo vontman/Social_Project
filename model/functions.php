@@ -8,16 +8,25 @@ class db_functions{
         $connect= new db_connect();
         $this->link= $connect->connect();
     }
-    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row=false){
+    public function select($cols=FALSE,$id=FALSE,$order=FALSE,$limit=false,$specific_row=false,$table_join=false){
         $query="SELECT ";
-        if($cols){
+        if($cols && $table_join){
+            foreach ($cols as $k=>$v){
+                $cols_input=$k.".".$v;
+            }
+            $query.=" $cols_input ";
+        }elseif($cols){
             $cols_input=  implode(",", $cols);
             $query.="$cols_input ";
-        }
-        else {
+        }elseif($table_join){
+            $query.="$this->table_name.*";
+        }else {
             $query.="* ";
         }
         $query.="FROM $this->table_name ";
+        if($table_join){
+            $query.=" JOIN ".$table_join." ";
+        }
         if($specific_row){
             $query.=" WHERE ";
             $i=0;
@@ -35,9 +44,9 @@ class db_functions{
                     else{
                         $query.=" AND ";
                     }
-                if($i%2==0 && $i>1){
-                    $query.=' ( ';
-                }
+                    if($i%2==0 && $i>1){
+                        $query.=' ( ';
+                    }
                 }
                 $query.=" ".$k."='".$v."' ";
                 $i++;
@@ -72,7 +81,7 @@ class db_functions{
 
         try{
             $sql= mysqli_query($this->link, $query);
-//            echo $query;
+            echo $query;
             if(mysqli_affected_rows($this->link)>0){
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;
