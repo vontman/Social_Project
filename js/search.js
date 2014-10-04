@@ -27,7 +27,7 @@
             $('#search_result_wrapper table tr').remove();
             if($(this).val().length>2){
                 var keywords=$(this).val();
-               $.ajax({url:'model/search.php',
+               $.ajax({url:'controller/search.php',
                    data:{keywords:keywords},
                    success:function(srch_results){
                         if(srch_results){
@@ -50,7 +50,7 @@
                 var friend_id=$(this).attr('user');
                 var selected_div=$(this);
                 console.log(friend_id+'asdasd');
-               $.ajax({url:'model/search.php',
+               $.ajax({url:'controller/search.php',
                     data:{friend_id:friend_id},
                     success:function(addfriend){
                         if(addfriend){
