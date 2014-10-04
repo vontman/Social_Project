@@ -3,7 +3,7 @@ $(document).ready(function(){
        var user_id=$(this).parent('.friend_request_btns').attr('user');
        var selected_btn=$(this);
        var request_id=$(this).parent().attr('request_id');
-       $.ajax({url:'model/friend_request.php',
+       $.ajax({url:'controller/friend_request.php',
        data:{user_id_accepted:user_id,request_id:request_id},
        success:function(result){
            if(result){
@@ -19,7 +19,7 @@ $(document).ready(function(){
        var user_id=$(this).parent('.friend_request_btns').attr('user');
        var selected_btn=$(this);
        var request_id=$(this).parent().attr('request_id');
-       $.ajax({url:'model/friend_request.php',
+       $.ajax({url:'controller/friend_request.php',
        data:{user_id_ignored:user_id,request_id:request_id},
        success:function(result){
            if(result){

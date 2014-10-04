@@ -184,6 +184,7 @@
         border-top:0;
         overflow: visible;
         width: 560px;
+        min-width: 50%;
         max-width: 95%;
         background: mediumaquamarine;
         transform: translateX(-50%);

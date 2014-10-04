@@ -1,7 +1,7 @@
 $(document).ready(function(){
                 $('.message').click(function(){                                      
                     var user_id2=$(this).attr('user');
-                    $.ajax({url:'view/message.php',
+                    $.ajax({url:'controller/message.php',
                     type:'get',
                   data:{user_id2:user_id2},
                   success: function (lol){

@@ -54,7 +54,7 @@
             require_once 'view/r_sidebar.php'; 
             require_once 'view/slider.php';
             require_once 'view/main_header.php';
-            require_once './model/search.php';
+//            require_once 'model/search.php';
         ?>
                 <?php
                 if(isset($_GET['post'])){

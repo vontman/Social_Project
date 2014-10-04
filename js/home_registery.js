@@ -17,7 +17,7 @@
              $('.exist').css('color','red');
          }
          else{
-       $.ajax({url:'model/home_signup.php',
+       $.ajax({url:'controller/home_signup.php',
            type:'POST',
          data:{email:email},
          success: function (email_ch) {
@@ -61,7 +61,7 @@
             else{
                  $('.user_msg').text('');
                length_user=true;
-               $.ajax({url:'model/home_signup.php',
+               $.ajax({url:'controller/home_signup.php',
                    type:'POST',
                  data:{username:username},
                  success: function (username_ch) {
@@ -114,7 +114,7 @@ $('.password').on('keyup',function(){
                 var num=$('.num').val();
 //                var country=$('.location').val();
 //                date:date,location:country
-                $.ajax({url:'model/home_signup.php',
+                $.ajax({url:'controller/home_signup.php',
                     type:'POST',
                     data:{username:username,password:pass,email:email,fname:fname,lname:lname,gender:gender,num:num},
                     success:function(signup){
