@@ -7,7 +7,7 @@ function addpost_toggle(){
             add_post_toggle=true;
         }else{
 //            $('.add_post').show(1000);
-            $('.add_post').css('height','auto');
+            $('.add_post').css('height','180px');
             $('#add_post_toggle img').css('transform','translateX(-50%) rotateZ(0deg)');
             add_post_toggle=false;
         }

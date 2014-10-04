@@ -1,11 +1,12 @@
 .main_header{
     position: fixed;
-    left: 20%;
+    right: 15%;
     top: 0;
     width:65%;
     height: 35px;
     background: rgb(25, 112, 91);
     z-index: 11;
+    transition: all 1s ease;
 }
 .search{
     position: relative; 
@@ -175,7 +176,7 @@
     /*Input POst !!*/
     #add_post_wrapper{
         z-index: 9;
-        position: fixed;
+        position: absolute;
         height: auto;
         transition: all 1s ease;
         border-radius: 0 0 15px 15px;
@@ -192,6 +193,9 @@
     #add_post_wrapper *{
         transition:all 1s ease;
         overflow:hidden;
+    }
+    .add_post{
+        height:180px;
     }
     .add_post_functions{
         margin:10px 0;
