@@ -87,10 +87,11 @@ $user_id=2;
 $set_no=1;
         $link=  mysqli_connect("localhost", 'root', '', 'social_project');
 //        $query="SELECT posts.* ,comments.* ,users.username FROM posts LEFT JOIN comments LEFT JOIN friends LEFT JOIN users WHERE (friends.user_id=$user_id OR friends.friend_id=$user_id) AND (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id LIMIT ".($set_no-1).",15";
-        $query="SELECT posts.*,users.username "
+        $query="SELECT posts.*,users.username,users.created,comments.body AS comment_body,comments.created AS comment_created "
                 . "FROM posts "
                 . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
-                . "LEFT JOIN users ON users.id=posts.user_id "
+                . "LEFT JOIN comments ON comments.post_id=posts.id "
+                . "LEFT JOIN users ON users.id=posts.user_id OR users.id=comments.user_id "
                 . "WHERE (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id)";
 
         try{
@@ -103,11 +104,10 @@ $set_no=1;
             echo $query;
             echo "<table border>";
             foreach ($posts as $k=>$v){
-                echo "<tr><th>$k</th><tr>";
+                echo "<tr><th style='font-size:22px;background:cyan;'>$k</th></tr>";
                 foreach ($v as $k2=>$v2){
-                    echo "<tr><td>$k2<td><td>$v2<td></tr>";
+                    echo "<tr><th>$k2</th></tr><tr><td>$v2</td></tr>";
                 }
-                echo "</tr></tr>";
             }
             echo "</table>";
         } catch (Exception $ex) {
