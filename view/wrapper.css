@@ -1,7 +1,8 @@
             #contain_wrapper{
                 overflow-y: hidden;
                 overflow-x: auto;
-                margin-top: 200px;
+                margin-top: 210px;
+                margin-left:65px;
                 z-index:5;
             }
             #contain_wrapper *{
@@ -62,6 +63,7 @@
                 position:relative;
                 float:left;
                 height:28px;
+                width:85%;
                 font-size:16px;
                 font-weight: bold;
             }

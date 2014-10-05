@@ -45,14 +45,18 @@ class db_functions{
                 else{
                     $set_no=($key*$value)-$key;
                 }
-                $query.="LIMIT $set_no , $items_no";
+                $query.="LIMIT $set_no , $items_no ";
 //                $query.="LIMIT 1,1";
              }
 //             $i=0;
             foreach ($table_join as $v){
                 $query.=" JOIN ".$v." ";
-                for($i2=1;$i2<count($limit);$i2++){
+//                print_r($limit);
+                for($i2=1;$i2<count($table_join);$i2++){
                     foreach ($limit[$i2] as $key => $value) {
+                        if(empty($value)){
+                            continue;
+                        }
                         $items_no=$key;
                         if($value==1){
                             $set_no=0;
@@ -69,7 +73,7 @@ class db_functions{
 //                    $query.=' , ';
 //                }
             }
-        }elseif($limit){
+        }elseif($limit && !$table_join){
             foreach ($limit as $key => $value) {
                 $items_no=$key;
                 if($value==1){
@@ -123,7 +127,7 @@ class db_functions{
 
         try{
             $sql= mysqli_query($this->link, $query);
-            echo $query;
+//            echo $query;
             if(mysqli_affected_rows($this->link)>0){
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;

@@ -23,19 +23,21 @@ $functions=new db_functions();
 //$functions->update($update,2);
 ////end update test!!
 ////Start join table test !!
-$cols['users'][]="username";
-$cols['friends'][]='user_id';
-$cols['friends'][]='friend_id';
-$cols['posts'][]='id';
-$specific_row['cols']['friends.user_id']=2;
-$specific_row['cols']['friends.friend_id']=2;
-$specific_row['cols']['users.id!']=2;
-$specific_row['relation'][]='OR';
-$specific_row['relation'][]='AND';
-$functions->table_name="users";
-$limit[][2]=1;
-//$limit[][1]=4;
-print_r($functions->select($cols, false, false, false, $specific_row,array('friends','posts')));
+//$cols['users'][]="username";
+//$cols['friends'][]='user_id';
+//$cols['friends'][]='friend_id';
+//$cols['posts'][]='id';
+//$specific_row['cols']['friends.user_id']=2;
+//$specific_row['cols']['friends.friend_id']=2;
+//$specific_row['cols']['users.id!']=2;
+//$specific_row['relation'][]='OR';
+//$specific_row['relation'][]='AND';
+//$functions->table_name="users";
+//$limit[][1]='1 ';
+//$limit[][1]='2 ';
+//$limit[][1]='3 ';
+////print_r($limit);
+//print_r($functions->select($cols, false, false, $limit, $specific_row,array('friends','posts')));
 ////end join table test
 //// END DB_FUNCTIONS TEST
 
@@ -77,3 +79,37 @@ print_r($functions->select($cols, false, false, false, $specific_row,array('frie
 //end check test!!
 //print_r($messages->view(2, 5));
 //end view test !!
+
+
+
+////manual
+$user_id=2;
+$set_no=1;
+        $link=  mysqli_connect("localhost", 'root', '', 'social_project');
+//        $query="SELECT posts.* ,comments.* ,users.username FROM posts LEFT JOIN comments LEFT JOIN friends LEFT JOIN users WHERE (friends.user_id=$user_id OR friends.friend_id=$user_id) AND (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id LIMIT ".($set_no-1).",15";
+        $query="SELECT posts.*,users.username "
+                . "FROM posts "
+                . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
+                . "LEFT JOIN users ON users.id=posts.user_id "
+                . "WHERE (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id)";
+
+        try{
+            $sql= mysqli_query($link, $query);
+            $posts=array();
+            while($row=  mysqli_fetch_array($sql)){
+                $posts[]=$row;
+            }
+            echo mysqli_error($link);
+            echo $query;
+            echo "<table border>";
+            foreach ($posts as $k=>$v){
+                echo "<tr><th>$k</th><tr>";
+                foreach ($v as $k2=>$v2){
+                    echo "<tr><td>$k2<td><td>$v2<td></tr>";
+                }
+                echo "</tr></tr>";
+            }
+            echo "</table>";
+        } catch (Exception $ex) {
+            echo mysqli_errno($link);
+        }
