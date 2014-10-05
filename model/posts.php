@@ -47,17 +47,38 @@ class posts{
 //        } catch (Exception $ex) {
 //            echo mysqli_errno($this->link);
 //        }
-        $query="SELECT posts.* FROM posts JOIN friends WHERE (friends.user_id=$user_id OR friends.friend_id=$user_id) AND (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) LIMIT ".($set_no-1).",15";
-        try{
-            $sql= mysqli_query($this->link, $query);
-            $posts=array();
-            while($row=  mysqli_fetch_array($sql)){
-                $posts[]=$row;
-            }
-            return $posts;
-        } catch (Exception $ex) {
-            echo mysqli_errno($this->link);
-        }
+        
+        
+        
+//        $query="SELECT posts.* FROM posts JOIN friends WHERE (friends.user_id=$user_id OR friends.friend_id=$user_id) AND (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) LIMIT ".($set_no-1).",15";
+//        try{
+//            $sql= mysqli_query($this->link, $query);
+//            $posts=array();
+//            while($row=  mysqli_fetch_array($sql)){
+//                $posts[]=$row;
+//            }
+//            return $posts;
+//        } catch (Exception $ex) {
+//            echo mysqli_errno($this->link);
+//        }
+        $table_join[]='comments';
+        $table_join[]='users';
+        $cols['posts']='id';
+        $cols['posts']='body';
+        $cols['posts']='user_id';
+        $cols['posts']='created';
+        $cols['users']='username';
+        $cols['comments']='id';
+        $cols['comments']='body';
+        $cols['comments']='user_id';
+        $cols['comments']='created';
+        $order['posts.created DESC comments.created']='DESC';
+        $limit[1]=15;
+        $specific_row['cols']['users.user_id']='posts.user_id';
+        $specific_row['cols']['users.user_id']='comments.user_id';
+        $specific_row['relation'][]='OR';
+        $posts=$this->functions->select($cols, false, $order, $limit, $specific_row, $table_join);
+        return $posts;
     }
     public function edit_post($user_id,$post_id,$post_update_body){
         $specific_row['cols']['user_id']=$user_id;

@@ -23,14 +23,19 @@ $functions=new db_functions();
 //$functions->update($update,2);
 ////end update test!!
 ////Start join table test !!
-//$cols['users']="username";
-//$specific_row['cols']['friends.user_id']=2;
-//$specific_row['cols']['friends.friend_id']=2;
-//$specific_row['cols']['users.id!']=2;
-//$specific_row['relation'][]='OR';
-//$specific_row['relation'][]='AND';
-//$functions->table_name="users";
-//print_r($functions->select($cols, false, false, FALSE, $specific_row,"friends"));
+$cols['users'][]="username";
+$cols['friends'][]='user_id';
+$cols['friends'][]='friend_id';
+$cols['posts'][]='id';
+$specific_row['cols']['friends.user_id']=2;
+$specific_row['cols']['friends.friend_id']=2;
+$specific_row['cols']['users.id!']=2;
+$specific_row['relation'][]='OR';
+$specific_row['relation'][]='AND';
+$functions->table_name="users";
+$limit[][2]=1;
+//$limit[][1]=4;
+print_r($functions->select($cols, false, false, false, $specific_row,array('friends','posts')));
 ////end join table test
 //// END DB_FUNCTIONS TEST
 

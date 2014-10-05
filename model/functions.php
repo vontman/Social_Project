@@ -12,20 +12,75 @@ class db_functions{
         $query="SELECT ";
         if($cols && $table_join){
             foreach ($cols as $k=>$v){
-                $cols_input=$k.".".$v;
+                foreach ($v as $key => $value) {
+                    $cols_input[]=$k.".".$value;
+                }
             }
+            $cols_input=  implode(',', $cols_input);
             $query.=" $cols_input ";
+        }elseif($table_join && !$cols){
+            $query.="$this->table_name.*";
         }elseif($cols){
             $cols_input=  implode(",", $cols);
             $query.="$cols_input ";
-        }elseif($table_join){
-            $query.="$this->table_name.*";
         }else {
             $query.="* ";
         }
         $query.="FROM $this->table_name ";
-        if($table_join){
-            $query.=" JOIN ".$table_join." ";
+        if($table_join && !$limit){
+//            $i=0;
+            foreach ($table_join as $v){
+                $query.=" JOIN ".$v." ";
+//                $i++;
+//                if($i<  count($table_join)){
+//                    $query.=' , ';
+//                }
+            }
+        }elseif($table_join && $limit){
+            foreach ($limit[0] as $key => $value) {
+                $items_no=$key;
+                if($value==1){
+                    $set_no=0;
+                }
+                else{
+                    $set_no=($key*$value)-$key;
+                }
+                $query.="LIMIT $set_no , $items_no";
+//                $query.="LIMIT 1,1";
+             }
+//             $i=0;
+            foreach ($table_join as $v){
+                $query.=" JOIN ".$v." ";
+                for($i2=1;$i2<count($limit);$i2++){
+                    foreach ($limit[$i2] as $key => $value) {
+                        $items_no=$key;
+                        if($value==1){
+                            $set_no=0;
+                        }
+                        else{
+                            $set_no=($key*$value)-$key;
+                        }
+                        $query.="LIMIT  $set_no , $items_no";
+        //                $query.="LIMIT 1,1";
+                    }
+                }
+//                $i++;
+//                if($i<  count($table_join)){
+//                    $query.=' , ';
+//                }
+            }
+        }elseif($limit){
+            foreach ($limit as $key => $value) {
+                $items_no=$key;
+                if($value==1){
+                    $set_no=0;
+                }
+                else{
+                    $set_no=($key*$value)-$key;
+                }
+                $query.="LIMIT  $set_no , $items_no";
+//                $query.="LIMIT 1,1";
+             }
         }
         if($specific_row){
             $query.=" WHERE ";
@@ -65,33 +120,19 @@ class db_functions{
                $query.=$key." ".$value." ";
             }
         }
-         if($limit){
-            foreach ($limit as $key => $value) {
-                $items_no=$key;
-                if($value==1){
-                    $set_no=0;
-                }
-                else{
-                    $set_no=($key*$value)-$key;
-                }
-                $query.="LIMIT  $set_no , $items_no";
-//                $query.="LIMIT 1,1";
-             }
-        }
 
         try{
             $sql= mysqli_query($this->link, $query);
-//            echo $query;
+            echo $query;
             if(mysqli_affected_rows($this->link)>0){
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;
                 }
                 return $array;
 //                return $query;
-            }
-            else {                      
-                return mysqli_affected_rows($this->link);
-//                return $query;
+            }else {                      
+//                return mysqli_affected_rows($this->link);
+                return mysqli_errno($this->link);
             }
         } catch (Exception $ex) {
                 return mysqli_errno($this->link);
