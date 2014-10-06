@@ -27,7 +27,7 @@ class posts{
             echo mysqli_errno($this->link);
         }
     }
-    public function view_posts($user_id,$set_no){
+    public function view_posts($user_id,$limit){
 //        include_once 'friends.php';
 //        $friends=new friends();
 //        $user_friends=$friends->view_friends($user_id);
@@ -46,20 +46,36 @@ class posts{
 //            return $posts;
 //        } catch (Exception $ex) {
 //            echo mysqli_errno($this->link);
-//        }
-        
-        
-        
-        $query="SELECT posts.* comments.* users.username FROM posts JOIN friends JOIN users WHERE (friends.user_id=$user_id OR friends.friend_id=$user_id) AND (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) LIMIT ".($set_no-1).",15";
+//        }        
+        foreach ($limit as $key=>$value){
+            $items_no=$key;
+            if($value==1){
+                $set_no=0;
+            }
+            else{
+                $set_no=($key*$value)-$key;
+            }
+        }
+        $query="SELECT posts.*,users.username,users.id AS users_id "
+        . "FROM posts "
+        . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
+        . "LEFT JOIN users ON users.id=posts.user_id "
+        . "WHERE (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) "
+        . "ORDER BY posts.created DESC "
+        . "LIMIT $set_no,$items_no";
         try{
             $sql= mysqli_query($this->link, $query);
-            $posts=array();
-            while($row=  mysqli_fetch_array($sql)){
-                $posts[]=$row;
+            if(mysqli_affected_rows($this->link)>0){
+                $posts=array();
+                while($row=  mysqli_fetch_array($sql)){
+                    $posts[]=$row;
+                }
+                return $posts;
+            }else{
+                return mysqli_affected_rows($this->link);
             }
-            return $posts;
-        } catch (Exception $ex) {
-            echo mysqli_errno($this->link);
+        }catch(Exception $ex){
+            echo mysqli_error($this->link);
         }
     }
     public function edit_post($user_id,$post_id,$post_update_body){

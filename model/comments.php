@@ -63,17 +63,46 @@ class comments {
             echo mysqli_errno($this->link);
         }
     }
-    public function view_comments($post_id,$set_no){
-        $order['date']='DESC';
-        $limit[$set_no]=5;
-        $specific_row['cols']['post_id']=$post_id;
-        try{
-            $comments=$this->functions->select(false, false, $order, $limit, $specific_row);
-            if($comments!=0){
-                return $comments;
+    public function view_comments($post_id,$limit){
+//        $order['date']='DESC';
+//        $limit[$set_no]=5;
+//        $specific_row['cols']['post_id']=$post_id;
+//        try{
+//            $comments=$this->functions->select(false, false, $order, $limit, $specific_row);
+//            if($comments!=0){
+//                return $comments;
+//            }
+//        } catch (Exception $ex) {
+//            echo mysqli_errno($this->link);
+//        }
+        foreach ($limit as $key=>$value){
+            $items_no=$key;
+            if($value==1){
+                $set_no=0;
             }
-        } catch (Exception $ex) {
-            echo mysqli_errno($this->link);
+            else{
+                $set_no=($key*$value)-$key;
+            }
+        }
+        $query="SELECT comments.*,users.username,users.id AS users_id "
+        . "FROM comments "
+        . "LEFT JOIN users ON users.id=comments.user_id "
+        . "WHERE comments.post_id=$post_id "
+        . "ORDER BY comments.created DESC "
+        . "LIMIT $set_no,$items_no";
+        try{
+            $sql= mysqli_query($this->link, $query);
+            if(mysqli_affected_rows($this->link)>0){
+                $comments=array();
+                while($row=mysqli_fetch_array($sql)){
+                    $comments[]=$row;
+                }
+                return $comments;
+            }else{
+                return mysqli_affected_rows($this->link);
+            }
+        }catch(Exception $ex){
+            echo mysqli_error($this->link);
         }
     }
 }
