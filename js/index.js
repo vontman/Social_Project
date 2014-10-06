@@ -7,7 +7,7 @@ var side_toggle=false;
                     var l_width=$('.l-sidebar').width();
                     var w_width=$(window).width();
                     var width=w_width-l_width;
-                    $('#contain_wrapper').css({'width':width,'float':'right'});
+//                    $('#contain_wrapper').css({'width':width,'float':'right'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('#wrapper').css({'float':'none','min-width':'80%'});
                     $('.main_header').css({'min-width':width,'right':0});
@@ -25,13 +25,18 @@ var side_toggle=false;
                 }else{
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
-                    $('#contain_wrapper').css({'width':'auto','float':'none'});
+//                    $('#contain_wrapper').css({'width':'auto','float':'none'});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':'65%','right':'15%'});
                     side_toggle=true;
                 }
             }
             function auto_blend(){
+                var b_width=$(window).width();
+                var sidebars_width=$('.l-sidebar').width()+$('.r-sidebar').width();
+                console.log(b_width+'  '+sidebars_width);
+                var c_w=b_width-sidebars_width;
+                $('#contain_wrapper').css({'width':c_w+"px",'margin-left':$('.l-sidebar').width()});
                 if($(window).width()<980){
                     side_toggle=true;
                     r_sidebar_toggle();
