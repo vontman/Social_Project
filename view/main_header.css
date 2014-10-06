@@ -4,8 +4,10 @@
     top: 0;
     width:65%;
     height: 35px;
-    background: rgb(25, 112, 91);
-    z-index: 11;
+    /*background: rgb(25, 112, 91);*/
+    /*background-color: #719CD3;*/
+    background: #96B89F;
+    z-index: 12;
     transition: all 1s ease;
 }
 .search{
@@ -186,7 +188,7 @@
         width: 560px;
         min-width: 50%;
         max-width: 95%;
-        background: mediumaquamarine;
+        background: #96B89F;
         transform: translateX(-50%);
         left: 50%;
         overflow:visible;

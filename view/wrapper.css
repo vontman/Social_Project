@@ -1,9 +1,12 @@
             #contain_wrapper{
+                position:absolute;
                 overflow-y: hidden;
                 overflow-x: auto;
                 margin-top: 210px;
-                margin-left:65px;
+                margin-left:0;
                 z-index:5;
+                width:0;
+                transition: all 1s ease;
             }
             #contain_wrapper *{
                 transition: all 1s ease;

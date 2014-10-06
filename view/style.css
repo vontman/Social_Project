@@ -7,7 +7,8 @@
                 /*background: whitesmoke;*/
                 /*background:rgb(202, 223, 243);*/
                 /*background:radial-gradient(rgb(117, 231, 218),rgb(61, 105, 91));*/
-                background: url(bg.jpg);
+                /*background: url(bg.jpg);*/
+                background: #FFF4F5;
                 background-size: cover;
                 background-attachment: fixed;
                 margin:0;
