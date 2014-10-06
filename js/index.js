@@ -36,9 +36,10 @@
                 }else{
                     console.log('4');
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                    $('#contain_wrapper').css('margin-left',l_width);
                     setTimeout(function(){
                         r_width=$('.r-sidebar').width();
-                        $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px",'margin-left':l_width});
+                        $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px"});
                         console.log('hamada');
                     },1000);
                     r_width=$('.r-sidebar').width();
