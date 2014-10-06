@@ -6,7 +6,7 @@
     height: 35px;
     /*background: rgb(25, 112, 91);*/
     /*background-color: #719CD3;*/
-    background: #96B89F;
+    background: #68C280;
     z-index: 12;
     transition: all 1s ease;
 }
@@ -188,7 +188,7 @@
         width: 560px;
         min-width: 50%;
         max-width: 95%;
-        background: #96B89F;
+        background: #68C280;
         transform: translateX(-50%);
         left: 50%;
         overflow:visible;
