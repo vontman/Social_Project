@@ -1,51 +1,60 @@
-var side_toggle=false;
+                var side_toggle=false;
                 var zoom=false;
             function r_sidebar_toggle(){
-                if(side_toggle){
-                    $('.r-sidebar').css({"width":'0','min-width':'0'});
-                    $('#wrapper').css('float','right');
+                    w_width=$(window).width();
                     var l_width=$('.l-sidebar').width();
+                    var r_width=$('.r-sidebar').width();
                     var w_width=$(window).width();
                     var width=w_width-l_width;
+                if(side_toggle){
+                    console.log(side_toggle);
+                    $('.r-sidebar').css({"width":'0','min-width':'0'});
+                    r_width=$('.r-sidebar').width();
+//                    $('#wrapper').css('float','right');
 //                    $('#contain_wrapper').css({'width':width,'float':'right'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
-                    $('#wrapper').css({'float':'none','min-width':'80%'});
+//                    $('#wrapper').css({'float':'none','min-width':'80%'});
+                    $('#contain_wrapper').css({'width':(w_width-l_width)+"px",'margin-left':l_width+"px"});
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
                 }else if(zoom && side_toggle){
+                    console.log(side_toggle);
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
+                    r_width=$('.r-sidebar').width();
+                    $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px",'margin':"0 "+l_width});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
                 }else if(zoom && !side_toggle){
+                    console.log(side_toggle);
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                    r_width=$('.r-sidebar').width();
+                    $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px",'margin-left':l_width});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=true;
                 }else{
+                    console.log(l_width +' '+r_width + "=" +w_width);
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
-                    $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
+                    r_width=$('.r-sidebar').width();
+//                    $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
 //                    $('#contain_wrapper').css({'width':'auto','float':'none'});
+                    $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px",'margin-left':l_width});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':'65%','right':'15%'});
                     side_toggle=true;
                 }
             }
             function auto_blend(){
-                var b_width=$(window).width();
-                var sidebars_width=$('.l-sidebar').width()+$('.r-sidebar').width();
-                console.log(b_width+'  '+sidebars_width);
-                var c_w=b_width-sidebars_width;
-                $('#contain_wrapper').css({'width':c_w+"px",'margin-left':$('.l-sidebar').width()});
                 if($(window).width()<980){
                     side_toggle=true;
-                    r_sidebar_toggle();
                     zoom=true;
+                    r_sidebar_toggle();
                 }
                 else{
-                    side_toggle=false;
-                    r_sidebar_toggle();
+                    side_toggle=true;
                     zoom=false;
+                    r_sidebar_toggle();
                 }
             }
             function sidetoggle_zoom(){
