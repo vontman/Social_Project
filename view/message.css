@@ -52,6 +52,7 @@
     .msgs .msg_contain{
         width:100%;
         overflow:hidden;
+        display:table-footer-group;
     }
     .msgs .msg_contain div{
         max-width: 95%;
