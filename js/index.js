@@ -18,22 +18,7 @@
                     $('#contain_wrapper').css({'padding-left':l_width/2});
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
-                }else if(zoom && side_toggle){
-                    console.log('2');
-                    $('.r-sidebar').css({"width":'0','min-width':'0'});
-//                    r_width=$('.r-sidebar').width();
-                    $('#contain_wrapper').css({'padding-left':l_width/2});
-                    $('#toggle img').css('transform','rotateZ(180deg)');
-                    $('.main_header').css({'min-width':width,'right':0});
-                    side_toggle=false;
-                }else if(zoom && !side_toggle){
-                    console.log('3');
-                    $('.r-sidebar').css({"width":'175px','min-width':'15%'});
-                    $('#toggle img').css('transform','rotateZ(0deg)');
-                    $('#contain_wrapper').css({'padding-left':l_width/2});
-                    $('.main_header').css({'min-width':width,'right':0});
-                    side_toggle=true;
-                }else{
+                }else if(!zoom && !side_toggle){
                     console.log('4');
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
 //                        r_width=$('.r-sidebar').width();
@@ -48,6 +33,21 @@
 //                    $('#contain_wrapper').css({'width':'auto','float':'none'});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':'65%','right':'15%'});
+                    side_toggle=true;
+                }else if(zoom && side_toggle){
+                    console.log('2');
+                    $('.r-sidebar').css({"width":'0','min-width':'0'});
+//                    r_width=$('.r-sidebar').width();
+                    $('#contain_wrapper').css({'padding-left':l_width/2});
+                    $('#toggle img').css('transform','rotateZ(180deg)');
+                    $('.main_header').css({'min-width':width,'right':0});
+                    side_toggle=false;
+                }else if(zoom && !side_toggle){
+                    console.log('3');
+                    $('.r-sidebar').css({"width":'175px','min-width':'15%'});
+                    $('#toggle img').css('transform','rotateZ(0deg)');
+                    $('#contain_wrapper').css({'padding-left':l_width/2});
+                    $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=true;
                 }
             }
