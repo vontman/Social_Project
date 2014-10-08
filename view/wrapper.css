@@ -6,6 +6,7 @@
                 margin-left:0;
                 z-index:5;
                 min-width: 560px;
+                width:100%;
                 transition: all 1s ease;
             }
             #contain_wrapper *{

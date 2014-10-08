@@ -12,20 +12,28 @@ a{
     /*background-color:#E50000;*/
     /*background-color: rgba(0,0,0,.1);*/
     /*background-color: #719CD3;*/
-    background: #68C280;
-    position: fixed;
-    border: 1px solid transparent;
+    position: relative;
     /*border-radius: 50px 0px 50px 0px;*/
     margin:0;
     overflow-x: hidden;
     overflow-y: auto;
 }
-
-.r-sidebar{
-    transition: all 1s ease;
+.sidebar_wrapper{
+    position:fixed;
     min-width:15%;
     max-width:35%;
     width: 175px;
+    height: inherit;
+    background: #68C280;
+    border: 1px solid transparent;
+}
+.l-sidebar .sidebar_wrapper{
+    min-width:20%;
+    max-width:40%;
+    width: 200px;
+}
+.r-sidebar{
+    transition: all 1s ease;
     float: right;
     right:0;
     overflow: visible;
@@ -33,7 +41,7 @@ a{
     z-index:11;
 }
 .r-sidebar #toggle{
-    position:absolute;
+    position:fixed;
     top:30%;
     width:18px;
     height:180px;
@@ -60,9 +68,6 @@ a{
     opacity:1;
 }
 .l-sidebar{
-    min-width:20%;
-    max-width:40%;
-    width: 200px;
     float: left;
     left:0;
     top: 0;
@@ -118,7 +123,7 @@ a{
    margin: 0;
 }
 .user_friends .on{
-    background-color:#acd591;
+    background-color:#B8E6C0;
     text-shadow: 0px 1px 10px black;
 }
 .user_friends li:hover{
