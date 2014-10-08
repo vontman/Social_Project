@@ -8,7 +8,7 @@
                 /*background:rgb(202, 223, 243);*/
                 /*background:radial-gradient(rgb(117, 231, 218),rgb(61, 105, 91));*/
                 /*background: url(bg.jpg);*/
-                background: #FFF4F5;
+                background: #E4FCE6;
                 background-size: cover;
                 background-attachment: fixed;
                 margin:0;
@@ -19,22 +19,6 @@
                 float:none;
                 width:auto;
                 height:auto;
-            }
-            textarea{
-                position:relative;
-                width: 95%;
-                max-width: 95%;
-                min-width: 95%;
-                min-height: 120px;
-                border: 3px solid #cccccc;
-                padding: 8px;
-                background:#f6f8e3;
-                margin:5px 2%;
-                font-family: Tahoma, sans-serif;
-                font-size:15px;
-            }
-            textarea:focus{
-                background:white;
             }
             select{
                 font-family: Georgia;
@@ -81,8 +65,8 @@
 
 
 ::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
+    width: 6px;
+    height: 25px;
 }
 ::-webkit-scrollbar-corner {
     background-image: url(http://i.stack.imgur.com/FguQn.png?corner.png);
@@ -112,8 +96,8 @@
 ::-webkit-scrollbar-thumb:horizontal {
     -webkit-border-image: url(http://i.stack.imgur.com/YQRD7.png?horizontal-thumb.png) 0 15 0 15;
     border-color: transparent;
-    border-width: 0 15px;
-    min-width: 20px;
+    border-width: 0 5px;
+    min-width: 10px;
 }
 ::-webkit-scrollbar-track-piece:horizontal:start {
     margin-left: 6px;

@@ -1,20 +1,102 @@
-.message_field{
-   position: relative;
-    height: 100%;
-    width: 21%;
-    float: right;
-}
-.message_fields{
+    .message_fields{
     position: fixed;
-    height: 44%;
-    width: 83.8%;
-    bottom: 0%;
-    padding-left: .5%;
+    height: 0px;
+    width: 100%;
+    bottom: 272px;
     background: rgba(0,0,0,0);
-    z-index: 899;
+    z-index: 20;
     overflow:visible;
+    }
+    .message_field{
+        position:relative;
+        margin:0 20px;
+        overflow: hidden;
+        width:250px;
+        box-shadow: -2px -2px 10px ;
+        background: #19ab76;
+        float:right;
+        z-index:15;
+    }
+    .message_field .chat_close{
+        position:absolute;
+        height:12px;
+        top:4px;
+        right:4px;
+        cursor: pointer;
+    }
+    .chat_close img{
+        height:100%;
+    }
+    .messages{
+         height:215px;
+         overflow-x:hidden;
+         overflow-y: auto;
+    }
+    .msgs{
+        padding:10px 5px;
+        width:95%;
+        overflow-x:hidden;
+        overflow-y: auto;
+        background:whitesmoke;
+    }
+    .message_field .user_to{
+        position:relative;
+        height:22px;
+        font-size: 18px;
+        font-family: cursive;
+        line-height: 100%;
+        left:50%;
+        transform: translateX(-50%);
+        display:inline-block;
+    }
+    .msgs .msg_contain{
+        width:100%;
+        overflow:hidden;
+    }
+    .msgs .msg_contain div{
+        max-width: 95%;
+        margin:5px 2px;
+        padding:10px 5px;
+        line-height: 100%;
+        display: inline-block;
+        font-family: sans-serif;
+        font-size:14px;
+        font-weight: 700;
+        bottom:0;
+        word-wrap: break-word;
+    }
+    .msgs .to{
+        float:left;
+        background: rgba(176, 186, 247, 0.6);
+        border-radius: 4px 10px 10px 4px ;
+        box-shadow: -2px 2px 10px;
+    }
+    .msgs .from{
+        float:right;
+        background: rgba(198, 104, 185, 0.3);
+        border-radius: 10px 10px 4px 4px ;
+        box-shadow: 2px 2px 10px;
+    }
+    .chat_input{
+        width:253px;
+        height: 35px;
+        padding: 8px 12px;
+        resize:none;
+        word-break: break-all;
+    }
+
+
+
+/*.message_field{
+   position: relative;
+    height: 250px;
+    width: 240px;
+    float: right;
+    bottom:0;
+    margin:0 20px;  
 }
-/*top_message_field*/
+
+top_message_field
 
 .top_message_field{
     position: relative;
@@ -46,8 +128,8 @@
     padding: 2% 0 0 2%;
 }
 
-/*end top_message_field*/
-/*middle_message_field*/
+end top_message_field
+middle_message_field
 
 .middle_message_field{
     position: relative;
@@ -96,8 +178,8 @@
     border-radius: 11px;
 }
 
- /*end middle_message_field*/
- /*bottom_message_field*/
+ end middle_message_field
+ bottom_message_field
  
 .bottom_message_field{
     position: relative;
@@ -133,4 +215,7 @@
                 background:white;
             }
 
-/*end bottom_message_field*/
+end bottom_message_field*/
+
+
+

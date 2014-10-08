@@ -38,7 +38,7 @@ $(document).ready(function(){
     });
 });
 $(window).scroll(function(){
-    if($(window).scrollTop()>150){
+    if($(window).scrollTop()>50){
         add_post_toggle=false;
         addpost_toggle();
     }else{

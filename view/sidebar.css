@@ -17,6 +17,7 @@ a{
     margin:0;
     overflow-x: hidden;
     overflow-y: auto;
+    z-index:7;
 }
 .sidebar_wrapper{
     position:fixed;
