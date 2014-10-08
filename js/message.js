@@ -1,10 +1,17 @@
 //chat auto scroll to last message
 
     $(document).ready(function(){
-        $('.message_field').delegate('.chat_input','keypress',function(key){
-            if(key.which == 13) {
+        // disable skip line on keydown enter, and allowing shift+enter too skipline :D
+        $('.message_fields').delegate('.message_field .chat_input','keypress',function(key){
+            if(key.which == 13 && !key.shiftKey) {
+                key.preventDefault();
                 alert('You pressed enter!');
             }
+        });
+        // Remove Chat window !
+        $('.message_fields').delegate('.message_field .chat_close','click',function(){
+            $(this).parent('.message_field').remove();
+            console.log("okasodkaposjd");
         });
     });
 
@@ -19,14 +26,7 @@ $(document).ready(function(){
          $('.message_fields').append(lol); 
         var scroll=$('.msgs').height();
         $('.messages').scrollTop(scroll);
-        $('.chat_input').keypress(function(key){
-            if(key.which == 13) {
-                alert('You pressed enter!');
-            }
-        }); 
       }
       });
-    });
-    $('.close').click(function(){
     });
  });
