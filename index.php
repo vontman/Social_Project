@@ -62,6 +62,7 @@
                     require_once 'view/post.php';
                 }elseif(isset($_GET['logout'])){
                     $users->logout($user_id);
+                    unset($_GET['logout']);
                     echo '<script>location.reload();</script>' ;
                 }elseif(isset($_GET['user'])){
                     require_once 'view/profile.php';

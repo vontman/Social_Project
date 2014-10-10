@@ -13,6 +13,7 @@
         <!--<ul>-->
             <a href="index.php">Home</a>
             <a href="?user">Profile</a>
+            <a href="?logout">Logout</a>
         <!--</ul>-->
     </div>
         <script src="js/add_post.js"></script>

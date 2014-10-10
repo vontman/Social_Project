@@ -10,7 +10,7 @@
         $('#search_input_img').click(function(){
             if(!srch_click){
                 $('#search_input_img img').css('box-shadow','0');
-                $('#search_input').css('width','240px');
+                $('#search_input').css('width','310px');
                 $('#search_input').css('padding','4px 8px 4px 32px');
                 $('#search_input').focus();
                 $('#search_input_img img').css('transform','rotate(360deg)');
