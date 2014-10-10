@@ -36,7 +36,7 @@
         $('.messages').scrollTop(scroll);
         $('.chat_input').keypress(function(key){
             if(key.which == 13) {
-                alert('You pressed enter!');
+                
             }
         });
     });

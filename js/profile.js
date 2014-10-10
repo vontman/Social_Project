@@ -7,6 +7,7 @@
                     var width=w_width-l_width;
                     $('.contain_wrapper,.header').css({'width':width,'float':'right'});
                     $('.wrapper').css('float','none');
+                    $('.header').css({'width':'100%','float':'none'});
                     //$('.message_field').css({'width':'21%','height':'100%'});
                     //$('.message_fields').css({'width':'88.8%','height':'45%','right':'5.5%'});
                 }
