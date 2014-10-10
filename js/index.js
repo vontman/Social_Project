@@ -86,6 +86,7 @@
                     r_sidebar_toggle();
                 }else{
                     side_toggle=true;
+                    super_zoom=false;
                     zoom=false;
                     r_sidebar_toggle();
                 }
