@@ -5,7 +5,6 @@
         $('.message_fields').delegate('.message_field .chat_input','keypress',function(key){
             if(key.which == 13 && !key.shiftKey) {
                 key.preventDefault();
-                alert('You pressed enter!');
             }
         });
         // Remove Chat window !

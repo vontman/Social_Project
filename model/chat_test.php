@@ -36,7 +36,13 @@
         $('.messages').scrollTop(scroll);
         $('.chat_input').keypress(function(key){
             if(key.which == 13) {
-                
+                 $.ajax({url:'chat.php',
+                Type:'POST',
+                data:{msg:msg},
+                    success:function(){
+                        alert('done');
+                    }
+            });
             }
         });
     });
