@@ -56,11 +56,11 @@ class posts{
                 $set_no=($key*$value)-$key;
             }
         }
-        $query="SELECT posts.*,users.username,users.id AS users_id "
+        $query="SELECT posts.*,users.username,users.id AS user_id "
         . "FROM posts "
         . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
         . "LEFT JOIN users ON users.id=posts.user_id "
-        . "WHERE ((posts.user_id=friends.user_id) OR (posts.user_id=friends.friend_id)) "
+        . "WHERE user_id=$user_id OR ((posts.user_id=friends.user_id) OR (posts.user_id=friends.friend_id)) "
         . "ORDER BY posts.created DESC "
         . "LIMIT $set_no,$items_no";
         try{
