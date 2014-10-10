@@ -60,7 +60,7 @@ class posts{
         . "FROM posts "
         . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
         . "LEFT JOIN users ON users.id=posts.user_id "
-        . "WHERE user_id=$user_id OR ((posts.user_id=friends.user_id) OR (posts.user_id=friends.friend_id)) "
+        . "WHERE (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) "
         . "ORDER BY posts.created DESC "
         . "LIMIT $set_no,$items_no";
         try{
@@ -72,6 +72,7 @@ class posts{
                 }
                 return $posts;
             }else{
+                echo mysqli_error($this->link);
                 return mysqli_affected_rows($this->link);
             }
         }catch(Exception $ex){
