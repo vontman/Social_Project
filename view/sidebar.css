@@ -49,7 +49,7 @@ a{
     left:0;
     top: 0;
     overflow: visible;
-    z-index:5;
+    z-index:8;
 }
 .r-sidebar #toggle{
     position:fixed;
