@@ -52,12 +52,15 @@
     .msgs .msg_contain{
         width:100%;
         overflow:hidden;
-        display:table-footer-group;
+        /*display:table-footer-group;*/
     }
-    .msgs .msg_contain div{
-        max-width: 95%;
-        margin:5px 2px;
-        padding:10px 5px;
+    .msgs .msg_contain img{
+        height:36px;
+    }
+    .msgs .msg_contain div span{
+        max-width: 75%;
+        margin:8px 5px;
+        padding:6px 5px;
         line-height: 100%;
         display: inline-block;
         font-family: sans-serif;
@@ -66,17 +69,23 @@
         bottom:0;
         word-wrap: break-word;
     }
-    .msgs .to{
+    .msgs .to span{
         float:left;
         background: rgba(176, 186, 247, 0.6);
         border-radius: 4px 10px 10px 4px ;
         box-shadow: -2px 2px 10px;
     }
-    .msgs .from{
+    .to img{
+        float:left;
+    }
+    .msgs .from span{
         float:right;
         background: rgba(198, 104, 185, 0.3);
         border-radius: 10px 10px 4px 4px ;
         box-shadow: 2px 2px 10px;
+    }
+    .from img{
+        float:right;
     }
     .chat_input{
         width:253px;

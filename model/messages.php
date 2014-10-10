@@ -12,9 +12,9 @@ class messages {
         $this->link=$this->functions->link;
         $this->date=date("Y/m/d h:m:s",time());
     }
-    public function send($user_id,$recieved_id,$message_name=FALSE,$message_body){
-        $input['from']=$user_id;
-        $input['to']=$recieved_id;
+    public function send($user_id,$recieved_id,$message_body){
+        $input['user_id']=$user_id;
+        $input['recieved_id']=$recieved_id;
        // $input['name']=$message_name;
         $input['message']=$message_body;
         $input['seen']=0;

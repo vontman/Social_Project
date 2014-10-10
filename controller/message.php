@@ -14,152 +14,83 @@
                 <div class="msgs" >
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada1
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='to'>
-                            hamada2
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3
+                            <img src='user.png'/>
+                            <span>
+                                hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada4
+                            <img src='user.png'/>
+                            <span>
+                                hamada4
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='to'>
-                            hamada5
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
+                    
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada1
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='to'>
-                            hamada2
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada3
+                            <img src='user.png'/>
+                            <span>
+                                hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3 hamada3
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='from'>
-                            hamada4
+                            <img src='user.png'/>
+                            <span>
+                                hamada4
+                            </span>
                         </div>
                     </div>
                     <div class='msg_contain'>
                         <div class='to'>
-                            hamada5
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada1
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada2
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada3
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada4
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada5
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada1
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada2
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada3
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada4
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada5
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada1
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada2
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada3
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada4
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada5
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada1
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada2
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada3
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='from'>
-                            hamada4
-                        </div>
-                    </div>
-                    <div class='msg_contain'>
-                        <div class='to'>
-                            hamada5
+                            <img src='user.png'/>
+                            <span>
+                                hamada5
+                            </span>
                         </div>
                     </div>
                 </div>
