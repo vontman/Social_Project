@@ -20,6 +20,7 @@ a{
     z-index:7;
 }
 .sidebar_wrapper{
+    transition: all 1s ease;
     position:fixed;
     min-width:15%;
     max-width:35%;
@@ -27,6 +28,7 @@ a{
     height: inherit;
     background: #68C280;
     border: 1px solid transparent;
+    overflow:hidden;
 }
 .l-sidebar .sidebar_wrapper{
     min-width:20%;
@@ -40,6 +42,14 @@ a{
     overflow: visible;
     top: 0;
     z-index:11;
+}
+.l-sidebar{
+    transition: all 1s ease;
+    float: left;
+    left:0;
+    top: 0;
+    overflow: visible;
+    z-index:5;
 }
 .r-sidebar #toggle{
     position:fixed;
@@ -67,12 +77,6 @@ a{
 }
 .r-sidebar:hover #toggle{
     opacity:1;
-}
-.l-sidebar{
-    float: left;
-    left:0;
-    top: 0;
-    
 }
 .logo{
     text-align: center;

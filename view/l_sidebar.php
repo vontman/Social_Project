@@ -2,7 +2,6 @@
     <head>
         <meta charset="UTF-8">
     </head>
-    <form method="Get" action="view/profile.php">
     <div class="sidebar l-sidebar">
         <div class="sidebar_wrapper">
             <div class="user">
@@ -19,4 +18,3 @@
             </ul>
         </div>
     </div>
-    </form>
