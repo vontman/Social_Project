@@ -1,5 +1,37 @@
 
             <?php
+                @session_start();
+                $user_id=$_SESSION['alterwire'];
+                include_once '../model/posts.php';
+                $posts=new posts();
+                $limit[15]=1;
+                $view_posts=$posts->view_posts($user_id, $limit);
+                foreach($view_posts as $k=>$v){
+                    ?>  
+                    <div class='post_whole'>
+                        <div class="post" post='<?php echo $v['id'] ;?>'>
+                            <div class="post_info">
+                                <div class="writer_pic">
+                                    <img src="user.png"/>
+                                </div>
+                                <div class="writer">
+                                    <?php echo $v['username'];?>
+                                </div>
+                                <div class="post_date">
+                                    5 hours ago
+                                </div>
+                            </div>
+                            <div class="post_body">
+                                <?php echo $v['body'];?>
+                            </div>
+                            <div class="post_functions">
+                                <img src="png/thumbs23.png"/>23 
+                                <a href="" >Comment</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
                 for($i=0;$i<15;$i++){
                     ?>
                 <div class="post_whole">
