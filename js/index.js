@@ -15,7 +15,7 @@
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('#contain_wrapper').css({'padding-left':0});
                     $('.main_header').css({'min-width':'100%','right':0});
-                    side_toggle=false;
+                    side_toggle=true;
                 }else if(super_zoom && side_toggle){
                     console.log('6');
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
@@ -24,7 +24,7 @@
                     $('#contain_wrapper').css({'padding-left':0});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('.main_header').css({'min-width':'100%','right':0});
-                    side_toggle=true;
+                    side_toggle=false;
                 }else if(!zoom && side_toggle){
                     console.log("1");
                     $('.l-sidebar .sidebar_wrapper').css({"width":'200','min-width':'20%'});

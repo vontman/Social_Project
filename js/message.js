@@ -14,16 +14,19 @@
                 $.ajax({url:'controller/chat.php',
                     data:{msg_body:msg_body,recieved_id:recieved_id},
                     success:function(sent){
-                            if(sent){
-                                selected_chat.val('');
-                                selected_parent.children('.messages').children('.msgs').append(sent);
-                                selected_parent.children('.messages').scrollTop(selected_parent.children('.messages').children('.msgs').height());
-                            }else{
-                                alert("Error : Message not sent !");
-                            }
+                        if(sent){
+                            selected_chat.val('');
+                            selected_parent.children('.messages').children('.msgs').append(sent);
+                            selected_parent.children('.messages').scrollTop(selected_parent.children('.messages').children('.msgs').height());
+                        }else{
+                            alert("Error : Message not sent !");
+                        }
                     }
                 });
             }
+            setInterval(function(){
+                
+            },500);
         });
         // Remove Chat window !
         $('.message_fields').delegate('.message_field .chat_close','click',function(){
