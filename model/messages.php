@@ -26,13 +26,30 @@ class messages {
         $cols[]='id';
         $cols[]='seen';
         $cols[]='to';
-        $row['cols']['from']=$user_id;
+        $row['cols']['recieved_id']=$user_id;
         $row['cols']['seen']=0;
         $messages=$this->functions->select($cols, false, array('created'=>'DESC'), false,$row);
-        return $messages;
+        return count($messages);
     }
+//    public function check_new($recieved_id){
+//        $cols[]='id';
+//        $cols[]='from';
+//        $cols[]='to';
+//        $cols[]='name';
+//        $cols[]='message';
+//        $cols[]='created';
+//        $specific_row=array();
+//        $specific_row['cols']['seen']=0;
+//        $specific_row['cols']['to']=$recieved_id;
+//        try{
+//            $new_messages=$this->functions->select($cols, false, false, false, $specific_row);
+//            return $new_messages;
+//        } catch (Exception $ex) {
+//            return mysqli_errno($this->link);
+//        }
+//    }
     public function check_selected($user_id,$recieved_id,$last_created){
-        $query="SELECT id,body,created FROM chat WHERE (user_id=$user_id AND recieved_id=$recieved_id) AND created>$last_created";
+        $query="SELECT id,body,created FROM chat WHERE (recieved_id=$user_id AND user_id=$recieved_id) AND created>$last_created";
         try{
             $sql=  mysqli_query($this->link, $query);
             if(mysqli_affected_rows($this->link)){
@@ -47,7 +64,23 @@ class messages {
             echo mysqli_error($this->link);
         }
     }
-    public function view($user_id,$message_id=false){
+    public function view($user_id,$recieved_id){
+        $order['created']='DESC';
+        $specific_row['cols']['user_id']=$user_id;
+        $specific_row['cols']['recieved_id']=$recieved_id;
+        $specific_row['cols']['recieved_id']=$user_id;
+        $specific_row['cols']['user_id']=$recieved_id;
+        $specific_row['relation'][]=['AND'];
+        $specific_row['relation'][]=['OR'];
+        $specific_row['relation'][]=['AND'];
+        $messages=$this->functions->select(false, false, $order, false, $specific_row);
+        if($messages){
+            return $messages;
+        }else{
+            return 0;
+        }
+    }
+    public function view_selected($user_id,$message_id=false){
         $cols[]='id';
         $cols[]='from';
         $cols[]='to';
@@ -67,23 +100,6 @@ class messages {
             $message=$this->functions->select($cols, false, false, false,$row);
         }
         return $message;
-    }
-    public function check_new($recieved_id){
-        $cols[]='id';
-        $cols[]='from';
-        $cols[]='to';
-        $cols[]='name';
-        $cols[]='message';
-        $cols[]='created';
-        $specific_row=array();
-        $specific_row['cols']['seen']=0;
-        $specific_row['cols']['to']=$recieved_id;
-        try{
-            $new_messages=$this->functions->select($cols, false, false, false, $specific_row);
-            return $new_messages;
-        } catch (Exception $ex) {
-            return mysqli_errno($this->link);
-        }
     }
     public function typing($user_id,$recieved_id){
         $input['from']=$user_id;
