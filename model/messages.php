@@ -28,8 +28,24 @@ class messages {
         $cols[]='to';
         $row['cols']['from']=$user_id;
         $row['cols']['seen']=0;
-        $messages=$this->functions->select($cols, false, array('created'=>'ASC'), false,$row);
+        $messages=$this->functions->select($cols, false, array('created'=>'DESC'), false,$row);
         return $messages;
+    }
+    public function check_selected($user_id,$recieved_id,$last_created){
+        $query="SELECT id,body,created FROM chat WHERE (user_id=$user_id AND recieved_id=$recieved_id) AND created>$last_created";
+        try{
+            $sql=  mysqli_query($this->link, $query);
+            if(mysqli_affected_rows($this->link)){
+                while($row=  mysqli_fetch_array($sql)){
+                    $new_messages[]=$row;
+                }
+                return $new_messages;
+            }else{
+                return 0;
+            }
+        } catch (Exception $ex) {
+            echo mysqli_error($this->link);
+        }
     }
     public function view($user_id,$message_id=false){
         $cols[]='id';
