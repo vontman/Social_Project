@@ -24,9 +24,7 @@
                     }
                 });
             }
-            setInterval(function(){
-                
-            },500);
+            
         });
         // Remove Chat window !
         $('.message_fields').delegate('.message_field .chat_close','click',function(){
@@ -37,7 +35,8 @@
 
 
 $(document).ready(function(){
-    $('.message').click(function(){                                      
+    var selected_chat;
+    $('.message').click(function(){   
         var user_id2=$(this).attr('user');
         $.ajax({url:'controller/message.php',
         type:'get',
@@ -47,7 +46,26 @@ $(document).ready(function(){
         var scroll=$('.msgs').height();
         $('.messages').scrollTop(scroll);
         $('.message_field .chat_input').focus();
-      }
+        selected_chat=$('.message_fields').children('.messages').children('.msgs').children('div:last-child');
+        check_new();
+        }
       });
+      function check_new(){
+        var last_msg=selected_chat.attr('created');
+        var user_id=selected_chat.parents('.message_field').attr('user');
+        setInterval(function(){
+            $.ajax({url:'model/chat.php',
+                data:{last_msg:last_msg,user_id:user_id},
+                success:function(msgs){
+                    if(msgs>0){
+                        selected_chat.parents('.message_field').children('.messages').children('.msgs').append(msgs);
+                        selected_chat=$('.message_fields').children('.messages').children('.msgs').children('div:last-child');
+                        last_msg=selected_chat.attr('created');
+                        user_id=selected_chat.parents('.message_field').attr('user');
+                    }
+                }
+            });
+        },500);
+      }
     });
  });
