@@ -4,6 +4,8 @@
                 $user_id=$_SESSION['alterwire'];
                 include_once '../model/posts.php';
                 $posts=new posts();
+                include_once '../model/comments.php';
+                $comments=new comments();
                 $limit[15]=1;
                 $view_posts=$posts->view_posts($user_id, $limit);
                 foreach($view_posts as $k=>$v){
@@ -11,10 +13,10 @@
                     <div class='post_whole'>
                         <div class="post" post='<?php echo $v['id'] ;?>'>
                             <div class="post_info">
-                                <div class="writer_pic">
+                                <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
                                     <img src="user.png"/>
                                 </div>
-                                <div class="writer">
+                                <div class="writer" user='<?php  echo $v['user_id']; ?>'>
                                     <?php echo $v['username'];?>
                                 </div>
                                 <div class="post_date">
@@ -42,6 +44,41 @@
                                 <a href="" >Comment</a>
                             </div>
                         </div>
+                        <?php
+                            $limit[100]=1;
+                            $post_comments=$comments->view_comments($v['id'], $limit);
+                            if($post_comments){
+                                ?>
+                                <div class="comments">
+                                    <?php
+                                        foreach($post_comments as $k=>$v){
+                                            ?>
+                                        <div class="post_comment">
+                                            <div class="post_info">
+                                                <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
+                                                    <img src="user.png"/>
+                                                </div>
+                                                <div class="writer" user='<?php  echo $v['user_id']; ?>'>
+                                                    <?php  echo $v['user_id']; ?>
+                                                </div>
+                                            </div>
+                                            <div class="comment_body">
+                                                <?php
+                                                    echo $v['body'];
+                                                ?>
+                                            </div>
+                                            <div class="post_functions">
+                                                <img src="png/thumbs23.png"/>23 
+                                                <a href="" >Reply</a>
+                                            </div>
+                                        </div>
+                                        <?php
+                                            }
+                                        ?>
+                                </div>
+                            <?php
+                            }
+                            ?>
                     </div>
                     <?php
                 }
@@ -141,4 +178,3 @@
                     </div>
                     <?php 
                 }
-            ?>
