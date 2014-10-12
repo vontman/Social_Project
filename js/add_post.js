@@ -28,7 +28,7 @@ $(document).ready(function(){
                 data:{post_body:post_body,post_permission:post_permission},
                 success:function(add_post){
                     if(add_post){
-                        alert(add_post+'Post has been added !');
+                        alert('Post has been added !');
                     }else{
                         alert('Error !!');
                     }
