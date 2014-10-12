@@ -24,20 +24,18 @@
                                             </div>
                                         </div>
                                         <div id='notification_date'>
-                                            <?php 
-                                                $ago=0;
-                                                if((time()-$v['created'])/1000/60/60/60/60/24>1){
-                                                $ago=ceil((time()-$v['created'])/1000/60/60/60/24); 
-                                                echo $ago;
-                                                    echo ' days';
-                                                }elseif((time()-$v['created'])/1000/60/60/60/60>1){
-                                                    $ago=ceil((time()-$v['created'])/1000/60/60/60); 
-                                                    echo $ago;
-                                                    echo ' hours';
+                                            <?php
+                                                $current_date=date('Y-m-d h:i:s');
+                                                $created=$v['created'];
+                                                $diff=floor(strtotime($current_date)-strtotime($created));
+                                                if((($diff)/3600/24)>1){
+                                                    echo floor($diff/3600/24)." days";
+                                                }elseif((($diff)/3600/24/60)>1){
+                                                    echo floor($diff/3600/24/60)." hours";
+                                                }elseif((($diff)/3600/24/60/60)>1){
+                                                    echo floor($diff/3600/24/60)." minutes";
                                                 }else{
-                                                $ago=ceil((time()-$v['created'])/1000/60/60/60); 
-                                                echo $ago;
-                                                    echo ' minutes';
+                                                    echo " Few seconds ago !";
                                                 }
                                             ?> ago ....
                                         </div>

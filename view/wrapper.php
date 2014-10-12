@@ -18,7 +18,20 @@
                                     <?php echo $v['username'];?>
                                 </div>
                                 <div class="post_date">
-                                    5 hours ago
+                                    <?php
+                                        $current_date=date('Y-m-d h:i:s');
+                                        $created=$v['created'];
+                                        $diff=floor(strtotime($current_date)-strtotime($created));
+                                        if((($diff)/3600/24)>1){
+                                            echo floor($diff/3600/24)." days";
+                                        }elseif((($diff)/3600/24/60)>1){
+                                            echo floor($diff/3600/24/60)." hours";
+                                        }elseif((($diff)/3600/24/60/60)>1){
+                                            echo floor($diff/3600/24/60)." minutes";
+                                        }else{
+                                            echo " Few seconds ";
+                                        }
+                                    ?> ago ....
                                 </div>
                             </div>
                             <div class="post_body">
