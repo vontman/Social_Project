@@ -44,12 +44,12 @@
                                 <a href="" >Comment</a>
                             </div>
                         </div>
+                        <div class="comments">
                         <?php
                             $limit[100]=1;
                             $post_comments=$comments->view_comments($v['id'], $limit);
                             if($post_comments){
                                 ?>
-                                <div class="comments">
                                     <?php
                                         foreach($post_comments as $k=>$v){
                                             ?>
@@ -75,10 +75,14 @@
                                         <?php
                                             }
                                         ?>
-                                </div>
+                                
                             <?php
                             }
                             ?>
+                                    <div class='add_comment'>
+                                        <textarea id='add_comment_input'></textarea>
+                                    </div>
+                                </div>
                     </div>
                     <?php
                 }

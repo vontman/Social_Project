@@ -41,6 +41,9 @@
                 padding:4px;
                 transition: none;
             }
+        textarea:focus{
+            background:white;
+        }
             
 
 

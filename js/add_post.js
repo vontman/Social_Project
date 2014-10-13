@@ -36,6 +36,9 @@ $(document).ready(function(){
             });
         }
     });
+    $('.wrapper').delegate('#add_comment_input','click',function(){
+        $(this).css('height','60px');
+    });
 });
 $(window).scroll(function(){
     if($(window).scrollTop()>50){

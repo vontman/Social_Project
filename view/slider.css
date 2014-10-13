@@ -29,7 +29,8 @@
                 /*background: linear-gradient(rgb(101, 133, 141),rgb(0, 105, 71));*/
                 /*background: linear-gradient(rgb(91, 167, 142),rgb(44, 155, 39));*/
                 /*background:linear-gradient(rgb(137, 166, 173),rgb(11, 108, 139));*/
-                background: linear-gradient(rgb(115, 179, 196),rgb(22, 156, 113));
+                /*background: linear-gradient(rgb(115, 179, 196),rgb(22, 156, 113));*/
+                background:linear-gradient(rgb(53, 179, 113),rgb(49, 156, 22));
                 width:0px;
                 height:100%;
                 transition:all 1.2s ease;

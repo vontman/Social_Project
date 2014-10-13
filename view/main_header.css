@@ -228,9 +228,6 @@
         overflow-y:auto !important;
         transition:none !important;
     }
-    .add_post_input textarea:focus{
-        background:white;
-    }
     #permission_select{
         float:right;
         margin:0 4px;
