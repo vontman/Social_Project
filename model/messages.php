@@ -49,7 +49,7 @@ class messages {
 //        }
 //    }
     public function check_selected($user_id,$friend_id,$last_created){
-        $query="SELECT * FROM chat WHERE (recieved_id=$user_id AND user_id=$friend_id) AND created='$last_created' ORDER BY created DESC";
+        $query="SELECT * FROM chat WHERE ((recieved_id=$user_id AND user_id=$friend_id) AND created>'$last_created') AND SEEN=0 ORDER BY created DESC";
         try{
             $sql=  mysqli_query($this->link, $query);
             if(mysqli_affected_rows($this->link)>0){
