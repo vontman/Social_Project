@@ -48,12 +48,12 @@ class messages {
 //            return mysqli_errno($this->link);
 //        }
 //    }
-    public function check_selected($user_id,$recieved_id,$last_created){
-        $query="SELECT id,body,created FROM chat WHERE (recieved_id=$user_id AND user_id=$recieved_id) AND created>$last_created";
+    public function check_selected($user_id,$friend_id,$last_created){
+        $query="SELECT * FROM chat WHERE (recieved_id=$user_id AND user_id=$friend_id) AND created='$last_created' ORDER BY created DESC";
         try{
             $sql=  mysqli_query($this->link, $query);
-            if(mysqli_affected_rows($this->link)){
-                while($row=  mysqli_fetch_array($sql)){
+            if(mysqli_affected_rows($this->link)>0){
+                while($row=mysqli_fetch_array($sql)){
                     $new_messages[]=$row;
                 }
                 return $new_messages;
