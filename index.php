@@ -29,14 +29,16 @@
         <script src="custom-scrollbar/jquery.custom-scrollbar.js" type="text/javascript"></script>
         <script src="custom-scrollbar/jquery.custom-scrollbar.min.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='custom-scrollbar/jquery.custom-scrollbar.css'/>
-        <!-- END Addons !!!-->
-        <script src="js/index.js" type="text/javascript"></script>
-        <script src="js/message.js" type="text/javascript"></script>
-        <script src="js/search.js" type="text/javascript"></script>
         <link type='text/css' rel='stylesheet' href='datetimepicker/DateTimePicker.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.min.css'/>
         <link type='text/css' rel='stylesheet' href='fullcalendar/fullcalendar.print.css'/>
+        <!-- END Addons !!!-->
+        <script src="js/index.js" type="text/javascript"></script>
+        <script src="js/message.js" type="text/javascript"></script>
+        <script src="js/search.js" type="text/javascript"></script>
+        <script src="js/add_post.js" type="text/javascript"></script>
+        <script src="js/add_comment.js" type="text/javascript"></script>
     </head>
     <body>
         <script src="js/home.js"></script>

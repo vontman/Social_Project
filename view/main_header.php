@@ -16,7 +16,6 @@
             <a href="?logout">Logout</a>
         <!--</ul>-->
     </div>
-        <script src="js/add_post.js"></script>
         <div id='add_post_wrapper'>
             <div class="add_post">
                 <div class='add_post_input'>
