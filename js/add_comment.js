@@ -18,18 +18,20 @@ $(document).ready(function(){
         if(key.which==13 && !key.shiftKey){
             key.preventDefault();
             if($(this).val().length>0){
-                var post_id=$(this).parents('.comments').siblings('.post').attr('post');
+                var post_id=$(this).parent().siblings('.post').attr('post');
+                var post_comments=$(this).parent().siblings('.comments');
                 var comment_body=$(this).val();
-                var post_comments=$(this).parent('.comments');
+                var comment_input=$(this);
+                console.log(post_id+"   "+comment_body+"    ");
                 $.ajax({url:'controller/add_comment.php',
                     data:{post_id:post_id,comment:comment_body},
                     success:function(comment){
-//                        if(comment){
+                        if(comment){
+                            comment_input.val('');
                             post_comments.append(comment);
-                            $(this).val('');
-//                        }else{
-//                            alert('Error !!');
-//                        }
+                        }else{
+                            alert('Error !!');
+                        }
                     }
                 });
             }
