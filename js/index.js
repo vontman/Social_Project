@@ -79,7 +79,7 @@
                     super_zoom=true;
                     zoom=false;
                     r_sidebar_toggle();
-                }else if ($(window).width()<980){
+                }else if ($(window).width()<1050){
                     side_toggle=true;
                     super_zoom=false;
                     zoom=true;
