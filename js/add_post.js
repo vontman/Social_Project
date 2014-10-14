@@ -41,8 +41,8 @@ $(document).ready(function(){
                 data:{post_body:post_body,post_permission:post_permission},
                 success:function(add_post){
                     if(add_post){
-                        alert('Post has been added !');
                         addpost_toggle();
+                        $(add_post).prependTo('.wrapper').fadeIn(1500);
                     }else{
                         alert('Error !!');
                     }

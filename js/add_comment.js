@@ -28,7 +28,8 @@ $(document).ready(function(){
                     success:function(comment){
                         if(comment){
                             comment_input.val('');
-                            post_comments.append(comment);
+//                            post_comments.append(comment);
+                            $(comment).appendTo(post_comments).slideDown(400);
                         }else{
                             alert('Error !!');
                         }
