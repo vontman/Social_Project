@@ -14,6 +14,27 @@ $(document).ready(function(){
         }
     });
     //  !!!!!!
+    $('.wrapper').delegate('#add_comment_input','keypress',function(key){
+        if(key.which==13 && !key.shiftKey){
+            key.preventDefault();
+            if($(this).val().length>0){
+                var post_id=$(this).parents('.comments').siblings('.post').attr('post');
+                var comment_body=$(this).val();
+                var post_comments=$(this).parent('.comments');
+                $.ajax({url:'controller/add_comment.php',
+                    data:{post_id:post_id,comment:comment_body},
+                    success:function(comment){
+//                        if(comment){
+                            post_comments.append(comment);
+                            $(this).val('');
+//                        }else{
+//                            alert('Error !!');
+//                        }
+                    }
+                });
+            }
+        }
+    });
 });
 
 
