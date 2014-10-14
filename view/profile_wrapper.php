@@ -10,7 +10,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                         <div class="writer">
                             admin
                         </div>
-                        <div class="post_date">
+                        <div class="created">
                             5 hours ago
                         </div>
                     </div>

@@ -63,7 +63,7 @@
                 font-size:16px;
                 font-weight: bold;
             }
-            .post_whole .post .post_date{
+            .post_whole .post .created{
                 float:right;
                 position:relative;
                 color:#999;
