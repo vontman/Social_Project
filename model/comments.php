@@ -63,6 +63,11 @@ class comments {
             echo mysqli_errno($this->link);
         }
     }
+    public function count_comments($post_id){
+        $specific_row['cols']['post_id']=$post_id;
+        $this->functions->select(array('id'), false, FALSE, FALSE, $specific_row);
+        return mysqli_affected_rows($this->link);
+    }
     public function view_comments($post_id,$limit){
 //        $order['date']='DESC';
 //        $limit[$set_no]=5;
@@ -88,7 +93,7 @@ class comments {
         . "FROM comments "
         . "LEFT JOIN users ON users.id=comments.user_id "
         . "WHERE comments.post_id=$post_id "
-        . "ORDER BY comments.created DESC "
+        . "ORDER BY comments.created ASC "
         . "LIMIT $set_no,$items_no";
         try{
             $sql= mysqli_query($this->link, $query);
