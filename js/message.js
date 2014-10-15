@@ -5,14 +5,13 @@
         $('.message_fields').delegate('.message_field .chat_input','keypress',function(key){
             if(key.which == 13 && !key.shiftKey) {
                 key.preventDefault();
-                console.log('no comment');
                 // Dont send empty msgs !!
                 if($(this).val().length>0){
                     var selected_chat=$(this);
                     var msg_body=$(this).val();
                     var selected_parent=$(this).parents('.message_field');
                     var recieved_id=$(this).parents('.message_field').attr('user');
-                    console.log('no comment');
+                    console.log('msg sent to '+recieved_id);
                     // Send body and recieved  id to php and then to DB !!
                     $.ajax({url:'controller/chat.php',
                         data:{msg_body:msg_body,recieved_id:recieved_id},
@@ -34,41 +33,42 @@
         // Remove Chat window !
         $('.message_fields').delegate('.message_field .chat_close','click',function(){
             $(this).parent('.message_field').remove();
-              check_interval_stop=true;
-            console.log("okasodkaposjd");
+            clearInterval(chat_check_intervals[$(this).parent('.message_field').attr('user')]);
+            chat_check_intervals.pop($(this).parent('.message_field').attr('user'));
+            console.log("Closed !! :D ");
         });
     });
     // Fucntion to check new mgs !!
-        var check_interval_stop=false;
-      function check_new(){
-        selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
-        var last_msg=selected_chat.attr('created');
-        var user_id=selected_chat.parents('.message_field').attr('user');
-        console.log(last_msg);
-        console.log(user_id);
-        var check_new_interval =setInterval(function(){
-            if(check_interval_stop){
-                clearInterval(check_new_interval);
-            }
-                $.ajax({url:'controller/chat.php',
-                    data:{last_created:last_msg,user_id:user_id},
-                    success:function(new_msgs){
-                        if(new_msgs){
-                            console.log('new !!');
-                            selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
-                            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
-                            last_msg=selected_chat.attr('created');
-                            user_id=selected_chat.parents('.message_field').attr('user');
-                            selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
-                        }else{
-                            console.log('no new >_<  '+last_msg + new_msgs);
-                        }
-                    }
-                });
-        },500);
-      }
+//        var check_interval_stop=false;
+//      function check_new(){
+//        selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+//        var last_msg=selected_chat.attr('created');
+//        var user_id=selected_chat.parents('.message_field').attr('user');
+//        console.log(last_msg);
+//        console.log(user_id);
+//        var check_new_interval =setInterval(function(){
+//            if(check_interval_stop){
+//                clearInterval(check_new_interval);
+//            }
+//                $.ajax({url:'controller/chat.php',
+//                    data:{last_created:last_msg,user_id:user_id},
+//                    success:function(new_msgs){
+//                        if(new_msgs){
+//                            console.log('new !!');
+//                            selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
+//                            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+//                            last_msg=selected_chat.attr('created');
+//                            user_id=selected_chat.parents('.message_field').attr('user');
+//                            selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
+//                        }else{
+//                            console.log('no new >_<  '+last_msg + new_msgs);
+//                        }
+//                    }
+//                });
+//        },500);
+//      }
       //!!!!
-
+var chat_check_intervals=[];
 $(document).ready(function(){
     var selected_chat;
     // Add msg box !
@@ -80,16 +80,36 @@ $(document).ready(function(){
       success: function (lol){
           // Check if chat window already exists !!
           if($('.message_field[user='+user_id2+']').length>0){
-              $('.message_field[user='+user_id2+']').remove();
-              check_interval_stop=true;
+              $('.message_field[user='+user_id2+'] .chat_close').trigger('click');
           }else{
             $('.message_fields').append(lol); 
            //chat auto scroll to last message
            var scroll=$('.msgs').height();
            $('.messages').scrollTop(scroll);
            $('.message_field .chat_input').focus();
-//           selected_chat=$('.message_fields').children('.messages').children('.msgs').children('div:last-child');
-           check_new();
+//           check_new();
+        ////  !!!!! create new interval to check new messages !!!!!
+            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+            var last_msg=selected_chat.attr('created');
+            var user_id=selected_chat.parents('.message_field').attr('user');
+           chat_check_intervals[user_id2]=setInterval(function(){
+                $.ajax({url:'controller/chat.php',
+                    data:{last_created:last_msg,user_id:user_id},
+                    success:function(new_msgs){
+                        if(new_msgs){
+                            console.log('new !! from'+user_id2);
+                            selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
+                            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+                            last_msg=selected_chat.attr('created');
+                            user_id=selected_chat.parents('.message_field').attr('user');
+                            selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
+                        }else{
+                            console.log('no new >_<  from'+user_id2);
+                        }
+                    }
+                });
+           },700);
+           //// !!!!!!!!
           }
         }
       });
