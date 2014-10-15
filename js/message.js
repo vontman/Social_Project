@@ -32,7 +32,11 @@
         });
         // Remove Chat window !
         $('.message_fields').delegate('.message_field .chat_close','click',function(){
-            $(this).parent('.message_field').remove();
+            $(this).parent('.message_field').animate({
+                top:"250px"
+            },250,function(){
+                $(this).remove();
+            });
             clearInterval(chat_check_intervals[$(this).parent('.message_field').attr('user')]);
             chat_check_intervals.pop($(this).parent('.message_field').attr('user'));
             console.log("Closed !! :D ");
@@ -82,7 +86,8 @@ $(document).ready(function(){
           if($('.message_field[user='+user_id2+']').length>0){
               $('.message_field[user='+user_id2+'] .chat_close').trigger('click');
           }else{
-            $('.message_fields').append(lol); 
+            $(lol).appendTo('.message_fields');
+            $('.message_field[user='+user_id2+']').animate({top:'0'},250);
            //chat auto scroll to last message
            var scroll=$('.msgs').height();
            $('.messages').scrollTop(scroll);

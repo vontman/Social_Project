@@ -10,7 +10,7 @@
        $friend_username=$users->view_user($friend_id)[0]['username'];
        $chat_msgs=$messages->view($user_id, $friend_id);
        if($chat_msgs){
-           echo "<div class='message_field' user='$friend_id'>
+           echo "<div class='message_field' user='$friend_id' style='top:250px;'>
             <div class='chat_close'>
                 <img src='png/close19.png'/>
             </div>
