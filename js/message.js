@@ -59,7 +59,7 @@
                             selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
                             last_msg=selected_chat.attr('created');
                             user_id=selected_chat.parents('.message_field').attr('user');
-                            selected_chat.scrollTop(selected_chat.parents('.msgs').height());
+                            selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
                         }else{
                             console.log('no new >_<  '+last_msg + new_msgs);
                         }
