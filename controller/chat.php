@@ -21,6 +21,7 @@
         $new_msgs=$messages->check_selected($user_id, $friend_id, $last_msg);
         if($new_msgs){
             foreach($new_msgs as $k=>$v){
+                $messages->seen($new_msgs);
                 ?>
                 <div class='msg_contain' created="<?php echo $v['created']; ?>">
                     <div class='to'>

@@ -72,8 +72,9 @@
                 font-weight: bold;
             }
             .post_whole .created{
-                float:right;
-                position:relative;
+                position:absolute;
+                right:20px;
+                margin-top:5px;
                 color:#999;
                 font-size:12px;
             }

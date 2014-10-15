@@ -127,7 +127,7 @@ class db_functions{
 
         try{
             $sql= mysqli_query($this->link, $query);
-//            echo $query;
+            $query;
             if(mysqli_affected_rows($this->link)>0){
                 while($rows = mysqli_fetch_array($sql)){
                      $array[]=$rows;

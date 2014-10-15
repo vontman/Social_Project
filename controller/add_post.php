@@ -33,15 +33,19 @@
                                         $created=$current_date;
                                         $diff=floor(strtotime($current_date)-strtotime($created));
                                         if((($diff)/3600/24)>1){
-                                            echo floor($diff/3600/24)." days";
+                                            if(floor(($diff)/3600/24)==1){
+                                                echo " Yesterday ....";
+                                            }else{
+                                                echo floor($diff/3600/24)." days ago ....";
+                                            }
                                         }elseif((($diff)/3600)>1){
-                                            echo floor($diff/3600)." hours";
+                                            echo floor($diff/3600)." hours ago ....";
                                         }elseif((($diff)/60)>1){
-                                            echo floor($diff/60)." minutes";
+                                            echo floor($diff/60)." minutes ago ....";
                                         }else{
-                                            echo " Few seconds ";
+                                            echo " Few seconds ago ....";
                                         }
-                                    ?> ago ....
+                                    ?>
                                 </div>
                             </div>
                             <div class="post_body">
