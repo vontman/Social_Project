@@ -65,20 +65,28 @@ class messages {
         }
     }
     public function view($user_id,$recieved_id){
-        $order['created']='DESC';
-        $specific_row['cols']['user_id']=$user_id;
-        $specific_row['cols']['recieved_id']=$recieved_id;
-        $specific_row['cols']['recieved_id']=$user_id;
-        $specific_row['cols']['user_id']=$recieved_id;
-        $specific_row['relation'][]=['AND'];
-        $specific_row['relation'][]=['OR'];
-        $specific_row['relation'][]=['AND'];
-        $messages=$this->functions->select(false, false, $order, false, $specific_row);
-        if($messages){
-            return $messages;
-        }else{
-            return 0;
+//        $order['created']='DESC';
+//        $specific_row['cols']['user_id']=$user_id;
+//        $specific_row['cols']['recieved_id']=$recieved_id;
+//        $specific_row['cols']['user_id']=$recieved_id;
+//        $specific_row['cols']['recieved_id']=$user_id;
+//        $specific_row['relation'][]='AND';
+//        $specific_row['relation'][]='OR';
+//        $specific_row['relation'][]='AND';
+//        $messages=$this->functions->select(false, false, $order, false, $specific_row);
+//        if($messages){
+//            return $messages;
+//        }else{
+//            return false;
+//        }
+        $query="SELECT * FROM chat WHERE (user_id=$user_id AND recieved_id=$recieved_id) OR (user_id=$recieved_id AND recieved_id=$user_id) ORDER BY id ASC";
+        $sql=  mysqli_query($this->link, $query);
+        while($row=  mysqli_fetch_array($sql)){
+            $messages[]=$row;
         }
+        $query="UPDATE chat SET seen=1 WHERE (user_id=$recieved_id AND recieved_id=$user_id) AND seen=0";
+        $sql=  mysqli_query($this->link, $query);
+        return $messages;
     }
     public function view_selected($user_id,$message_id=false){
         $cols[]='id';
@@ -100,6 +108,13 @@ class messages {
             $message=$this->functions->select($cols, false, false, false,$row);
         }
         return $message;
+    }
+    public function seen($message_ids){
+        $update['seen']=1;
+        foreach ($message_ids as $k=>$v){
+            $message_id=$v['id'];
+            $this->functions->update($update, $message_id);
+        }
     }
     public function typing($user_id,$recieved_id){
         $input['from']=$user_id;
