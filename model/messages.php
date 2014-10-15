@@ -49,7 +49,7 @@ class messages {
 //        }
 //    }
     public function check_selected($user_id,$friend_id,$last_created){
-        $query="SELECT * FROM chat WHERE ((recieved_id=$user_id AND user_id=$friend_id) AND created>'$last_created') AND SEEN=0 ORDER BY created DESC";
+        $query="SELECT * FROM chat WHERE created>$last_created AND ((recieved_id=$user_id AND user_id=$friend_id) AND SEEN=0)  ORDER BY created DESC";
         try{
             $sql=  mysqli_query($this->link, $query);
             if(mysqli_affected_rows($this->link)>0){
@@ -88,27 +88,27 @@ class messages {
         $sql=  mysqli_query($this->link, $query);
         return $messages;
     }
-    public function view_selected($user_id,$message_id=false){
-        $cols[]='id';
-        $cols[]='from';
-        $cols[]='to';
-        $cols[]='name';
-        $cols[]='message';
-        $cols[]='created';
-        $row=array();
-        $row['cols']['from']=$user_id;
-        $row['cols']['to']=$user_id;
-        $row['relation'][]='OR';
-        if($message_id){
-            $message=$this->functions->select($cols, $message_id, false, false,$row);
-            $seen['seen']=1;
-            $this->functions->update($seen, $message_id);
-        }
-        else{
-            $message=$this->functions->select($cols, false, false, false,$row);
-        }
-        return $message;
-    }
+//    public function view_selected($user_id,$message_id=false){
+//        $cols[]='id';
+//        $cols[]='from';
+//        $cols[]='to';
+//        $cols[]='name';
+//        $cols[]='message';
+//        $cols[]='created';
+//        $row=array();
+//        $row['cols']['from']=$user_id;
+//        $row['cols']['to']=$user_id;
+//        $row['relation'][]='OR';
+//        if($message_id){
+//            $message=$this->functions->select($cols, $message_id, false, false,$row);
+//            $seen['seen']=1;
+//            $this->functions->update($seen, $message_id);
+//        }
+//        else{
+//            $message=$this->functions->select($cols, false, false, false,$row);
+//        }
+//        return $message;
+//    }
     public function seen($message_ids){
         $update['seen']=1;
         foreach ($message_ids as $k=>$v){
