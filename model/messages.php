@@ -25,7 +25,7 @@ class messages {
     public function check($user_id){
         $cols[]='id';
         $cols[]='seen';
-        $cols[]='to';
+        $cols[]='user_id';
         $row['cols']['recieved_id']=$user_id;
         $row['cols']['seen']=0;
         $messages=$this->functions->select($cols, false, array('created'=>'DESC'), false,$row);
@@ -117,8 +117,8 @@ class messages {
         }
     }
     public function typing($user_id,$recieved_id){
-        $input['from']=$user_id;
-        $input['to']=$recieved_id;
+        $input['user_id']=$user_id;
+        $input['recieved_id']=$recieved_id;
         try{
             $this->functions->insert($input);
         } catch (Exception $ex) {
@@ -126,8 +126,8 @@ class messages {
         }
     }
     public function check_typing($user_id,$recieved_id) {
-        $specific_row['cols']['from']=$user_id;
-        $specific_row['cols']['to']=$recieved_id;
+        $specific_row['cols']['user_id']=$user_id;
+        $specific_row['cols']['recieved_id']=$recieved_id;
         try{
             $typing=$this->functions->select(false, false, FALSE, false, $specific_row);
             return $typing;
