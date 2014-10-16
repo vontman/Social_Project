@@ -5,7 +5,6 @@
             function r_sidebar_toggle(){
                     w_width=$(window).width();
                     var l_width=$('.l-sidebar .sidebar_wrapper').width();
-//                    var r_width=$('.r-sidebar').width();
                     var w_width=$(window).width();
                     var width=w_width-l_width;
                 if(super_zoom && side_toggle){
@@ -20,7 +19,6 @@
                     console.log('6');
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":0,'min-width':0});
-//                    r_width=$('.r-sidebar').width();
                     $('#contain_wrapper').css({'padding-left':0,'max-width':'400%'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('.main_header').css({'min-width':'100%','right':0});
@@ -29,11 +27,7 @@
                     console.log("1");
                     $('.l-sidebar .sidebar_wrapper').css({"width":'200','min-width':'20%'});
                     $('.r-sidebar').css({"width":0,'min-width':0});
-//                    r_width=$('.r-sidebar').width();
-//                    $('#wrapper').css('float','right');
-//                    $('#contain_wrapper').css({'width':width,'float':'right'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
-//                    $('#wrapper').css({'float':'none','min-width':'80%'});
                     $('#contain_wrapper').css({'padding-left':l_width/2,'max-width':'90%'});
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
@@ -41,7 +35,6 @@
                     console.log('2');
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":200,'min-width':'20%'});
-//                    r_width=$('.r-sidebar').width();
                     $('#contain_wrapper').css({'padding-left':l_width/2,'max-width':'80%'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('.main_header').css({'min-width':width,'right':0});
@@ -58,16 +51,7 @@
                     console.log('4');
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":200,'min-width':'20%'});
-//                        r_width=$('.r-sidebar').width();
                         $('#contain_wrapper').css({'padding-left':35+"px",'max-width':'95%'});
-//                    setTimeout(function(){
-//                        r_width=$('.r-sidebar').width();
-//                        $('#contain_wrapper').css({'width':(w_width-l_width-r_width)+"px"});
-//                        console.log('hamada');
-//                    },1000);
-//                    r_width=$('.r-sidebar').width();
-//                    $('#wrapper').css({'float':'none','width':'560px','min-width':'0'});
-//                    $('#contain_wrapper').css({'width':'auto','float':'none'});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':'65%','right':'15%'});
                     side_toggle=true;

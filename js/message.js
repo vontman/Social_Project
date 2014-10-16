@@ -1,6 +1,24 @@
 
 
     $(document).ready(function(){
+        $('.message_fields').delegate('.message_field .chat_input','keyup',function(){      
+            var typing=true;
+            var user2_id=$(this).parents('.message_field').attr('user'); 
+            if(typing){
+                $.ajax({url:'controller/chat.php',
+                    data:{user2_id:user2_id},
+                    success:function(){    
+                        typing=true;
+                    }
+                });
+            }
+            var typing_timout=setTimeout(function(){
+                typing=false;
+                $.ajax({url:'controller/chat.php',
+                    data:{user2_id:recieved_id,typing:typing}
+                },1000);
+            });
+        });
         // disable skip line on keydown enter, and allowing shift+enter too skipline and enter to send :D
         $('.message_fields').delegate('.message_field .chat_input','keypress',function(key){
             if(key.which == 13 && !key.shiftKey) {
@@ -96,17 +114,17 @@ $(document).ready(function(){
         ////  !!!!! create new interval to check new messages !!!!!
             selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
             var last_msg=selected_chat.attr('created');
-            var user_id=selected_chat.parents('.message_field').attr('user');
+            var user_id2=selected_chat.parents('.message_field').attr('user');
            chat_check_intervals[user_id2]=setInterval(function(){
                 $.ajax({url:'controller/chat.php',
-                    data:{last_created:last_msg,user_id:user_id},
+                    data:{last_created:last_msg,user_id2:user_id2},
                     success:function(new_msgs){
                         if(new_msgs){
                             console.log('new !! from'+user_id2);
                             selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
                             selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
                             last_msg=selected_chat.attr('created');
-                            user_id=selected_chat.parents('.message_field').attr('user');
+                            user_id2=selected_chat.parents('.message_field').attr('user');
                             selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
                         }else{
                             console.log('no new >_<  from'+user_id2);

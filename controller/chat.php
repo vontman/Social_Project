@@ -15,25 +15,35 @@
             
         }
     }
-    if(isset($_GET['last_created'])&&isset($_GET['user_id'])){
-        $last_msg=$_GET['last_created'];
+    if(isset($_GET['user2_id'])){
         $friend_id=$_GET['user_id'];
-        $new_msgs=$messages->check_selected($user_id, $friend_id, $last_msg);
-        if($new_msgs){
-            foreach($new_msgs as $k=>$v){
-                $messages->seen($new_msgs);
-                ?>
-                <div class='msg_contain' created="<?php echo $v['created']; ?>">
-                    <div class='to'>
-                        <img src='user.png'/>
-                        <span>
-                            <?php echo $v['message']; ?>
-                        </span>
+        if(isset($_GET['last_created'])){            
+            $last_msg=$_GET['last_created'];
+            $new_msgs=$messages->check_selected($user_id, $friend_id, $last_msg);
+            if($new_msgs){
+                foreach($new_msgs as $k=>$v){
+                    $messages->seen($new_msgs);
+                    ?>
+                    <div class='msg_contain' created="<?php echo $v['created']; ?>">
+                        <div class='to'>
+                            <img src='user.png'/>
+                            <span>
+                                <?php echo $v['message']; ?>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <?php
+                    <?php
+                }
+            }elseif($messages->check_typing($friend_id, $user_id)){
+                echo 'lol';
+            }else{
+                echo false;
             }
-        }else{
-            echo false;
+        }elseif(isset($_GET['typing'])){
+            $typing=$_GET['typing'];
+            if($typing){
+                $messages->typing($user_id, $friend_id);
+            }else{
+            }
         }
     }
