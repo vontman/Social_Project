@@ -16,7 +16,7 @@ class messages {
         $input['user_id']=$user_id;
         $input['recieved_id']=$recieved_id;
        // $input['name']=$message_name;
-        $input['message']=$message_body;
+        $input['message']= htmlentities($message_body);
         $input['seen']=0;
         $input['created']=$this->date;
         $id=$this->functions->insert($input);
@@ -119,8 +119,19 @@ class messages {
     public function typing($user_id,$recieved_id){
         $input['user_id']=$user_id;
         $input['recieved_id']=$recieved_id;
+        $query="INSERT INTO chat_typing(user_id,recieved_id) VALUES ('$user_id','$recieved_id')";
         try{
-            $this->functions->insert($input);
+            $sql=  mysqli_query($this->link, $query);
+        } catch (Exception $ex) {
+            return mysqli_errno($this->link);
+        }
+    }
+    public function remove_typing($user_id,$recieved_id){
+        $input['user_id']=$user_id;
+        $input['recieved_id']=$recieved_id;
+        $query="DELETE FROM chat_typing WHERE user_id=$user_id AND recieved_id=$recieved_id";
+        try{
+            $sql=  mysqli_query($this->link, $query);
         } catch (Exception $ex) {
             return mysqli_errno($this->link);
         }
@@ -129,6 +140,7 @@ class messages {
         $specific_row['cols']['user_id']=$user_id;
         $specific_row['cols']['recieved_id']=$recieved_id;
         try{
+            $this->functions->table_name='chat_typing';
             $typing=$this->functions->select(false, false, FALSE, false, $specific_row);
             return $typing;
         } catch (Exception $ex) {
