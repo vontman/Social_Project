@@ -16,7 +16,7 @@
         }
     }
     if(isset($_GET['user2_id'])){
-        $friend_id=$_GET['user_id'];
+        $friend_id=$_GET['user2_id'];
         if(isset($_GET['last_created'])){            
             $last_msg=$_GET['last_created'];
             $new_msgs=$messages->check_selected($user_id, $friend_id, $last_msg);
@@ -28,7 +28,7 @@
                         <div class='to'>
                             <img src='user.png'/>
                             <span>
-                                <?php echo $v['message']; ?>
+                                <?php echo nl2br($v['message']); ?>
                             </span>
                         </div>
                     </div>
@@ -40,10 +40,9 @@
                 echo false;
             }
         }elseif(isset($_GET['typing'])){
-            $typing=$_GET['typing'];
-            if($typing){
-                $messages->typing($user_id, $friend_id);
-            }else{
-            }
+            echo 'lollll';
+            echo $messages->typing($user_id, $friend_id);
+        }else{
+            $messages->remove_typing($user_id, $friend_id);
         }
     }

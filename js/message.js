@@ -1,23 +1,29 @@
 
 
-    $(document).ready(function(){
-        $('.message_fields').delegate('.message_field .chat_input','keyup',function(){      
-            var typing=true;
+    $(document).ready(function(){     
+            var typing=0;
+            var typing_timeout=setTimeout();
+        $('.message_fields').delegate('.message_field .chat_input','keyup',function(){ 
             var user2_id=$(this).parents('.message_field').attr('user'); 
-            if(typing){
+            if(typing==0){
+                typing=1;
                 $.ajax({url:'controller/chat.php',
-                    data:{user2_id:user2_id},
-                    success:function(){    
-                        typing=true;
+                    data:{user2_id:user2_id,typing:typing},
+                    success:function(lol){    
+                        console.log('lol  '+lol);
                     }
                 });
             }
-            var typing_timout=setTimeout(function(){
-                typing=false;
+            clearTimeout(typing_timeout);
+            typing_timeout=setTimeout(function(){
+                typing=0;
                 $.ajax({url:'controller/chat.php',
-                    data:{user2_id:recieved_id,typing:typing}
-                },1000);
-            });
+                    data:{user2_id:user2_id},
+                    success:function(lol){
+                        console.log('SHIT'+lol);
+                    }
+                });
+            },2000);
         });
         // disable skip line on keydown enter, and allowing shift+enter too skipline and enter to send :D
         $('.message_fields').delegate('.message_field .chat_input','keypress',function(key){
@@ -95,47 +101,46 @@ $(document).ready(function(){
     var selected_chat;
     // Add msg box !
     $('.message').click(function(){   
-        var user_id2=$(this).attr('user');
-        $.ajax({url:'controller/message.php',
-        type:'get',
-      data:{user_id2:user_id2},
-      success: function (lol){
           // Check if chat window already exists !!
-          if($('.message_field[user='+user_id2+']').length>0){
-              $('.message_field[user='+user_id2+'] .chat_close').trigger('click');
-          }else{
-            $(lol).appendTo('.message_fields');
-            $('.message_field[user='+user_id2+']').animate({top:'0'},250);
-           //chat auto scroll to last message
-           var scroll=$('.msgs').height();
-           $('.messages').scrollTop(scroll);
-           $('.message_field .chat_input').focus();
-//           check_new();
-        ////  !!!!! create new interval to check new messages !!!!!
-            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
-            var last_msg=selected_chat.attr('created');
-            var user_id2=selected_chat.parents('.message_field').attr('user');
-           chat_check_intervals[user_id2]=setInterval(function(){
-                $.ajax({url:'controller/chat.php',
-                    data:{last_created:last_msg,user_id2:user_id2},
-                    success:function(new_msgs){
-                        if(new_msgs){
-                            console.log('new !! from'+user_id2);
-                            selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
-                            selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
-                            last_msg=selected_chat.attr('created');
-                            user_id2=selected_chat.parents('.message_field').attr('user');
-                            selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
-                        }else{
-                            console.log('no new >_<  from'+user_id2);
+        var user_id2=$(this).attr('user');
+        if($('.message_field[user='+user_id2+']').length){
+            $('.message_field[user='+user_id2+'] .chat_close').trigger('click');
+        }else{
+            $.ajax({url:'controller/message.php',
+          data:{user_id2:user_id2},
+          success: function (chatbox){
+              // add new chatbox with animation *_*
+                $(chatbox).appendTo('.message_fields').animate({top:'0'},250);
+               //chat auto scroll to last message
+               var scroll=$('.msgs').height();
+               $('.messages').scrollTop(scroll);
+               $('.message_field .chat_input').focus();
+    //           check_new();
+            ////  !!!!! create new interval to check new messages !!!!!
+                selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+                var last_msg=selected_chat.attr('created');
+                var user_id2=selected_chat.parents('.message_field').attr('user');
+               chat_check_intervals[user_id2]=setInterval(function(){
+                    $.ajax({url:'controller/chat.php',
+                        data:{last_created:last_msg,user_id2:user_id2},
+                        success:function(new_msgs){
+                            if(new_msgs){
+                                console.log('new !! from'+user_id2);
+                                selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
+                                selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+                                last_msg=selected_chat.attr('created');
+                                user_id2=selected_chat.parents('.message_field').attr('user');
+                                selected_chat.parents('.messages').scrollTop(selected_chat.parents('.msgs').height());
+                            }else{
+                                console.log('no new >_<  from'+user_id2);
+                            }
                         }
-                    }
-                });
-           },700);
-           //// !!!!!!!!
-          }
+                    });
+               },700);
+               //// !!!!!!!!
+              }
+          });
         }
-      });
     });
     // !!!
  });
