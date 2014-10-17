@@ -28,14 +28,14 @@
                     $('.l-sidebar .sidebar_wrapper').css({"width":'200','min-width':'20%'});
                     $('.r-sidebar').css({"width":0,'min-width':0});
                     $('#toggle img').css('transform','rotateZ(180deg)');
-                    $('#contain_wrapper').css({'padding-left':l_width/2,'max-width':'90%'});
+                    $('#contain_wrapper').css({'padding-left':l_width,'max-width':'80%'});
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
                 }else if(zoom && side_toggle){
                     console.log('2');
                     $('.r-sidebar').css({"width":'0','min-width':'0'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":200,'min-width':'20%'});
-                    $('#contain_wrapper').css({'padding-left':l_width/2,'max-width':'80%'});
+                    $('#contain_wrapper').css({'padding-left':l_width,'max-width':'80%'});
                     $('#toggle img').css('transform','rotateZ(180deg)');
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=false;
@@ -44,14 +44,14 @@
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":200,'min-width':'20%'});
                     $('#toggle img').css('transform','rotateZ(0deg)');
-                    $('#contain_wrapper').css({'padding-left':l_width/2,'max-width':'90%'});
+                    $('#contain_wrapper').css({'padding-left':l_width,'max-width':'80%'});
                     $('.main_header').css({'min-width':width,'right':0});
                     side_toggle=true;
                 }else{
                     console.log('4');
                     $('.r-sidebar').css({"width":'175px','min-width':'15%'});
                     $('.l-sidebar .sidebar_wrapper').css({"width":200,'min-width':'20%'});
-                        $('#contain_wrapper').css({'padding-left':35+"px",'max-width':'95%'});
+                        $('#contain_wrapper').css({'padding-left':l_width,'max-width':'65%'});
                     $('#toggle img').css('transform','rotateZ(0deg)');
                     $('.main_header').css({'min-width':'65%','right':'15%'});
                     side_toggle=true;
