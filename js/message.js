@@ -121,9 +121,10 @@ $(document).ready(function(){
     //           check_new();
             ////  !!!!! create new interval to check new messages !!!!!
                 chat_check_intervals[user_id2]=setInterval(function(){
-                    selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
+                    selected_chat=$('.message_fields .messages .msgs .to:last-child').parent('.msg_contain');
                     var last_msg=selected_chat.attr('created');
                     var user_id2=selected_chat.parents('.message_field').attr('user');
+                    console.log(last_msg+'  user:'+user_id2);
                     $.ajax({url:'controller/chat.php',
                         data:{last_msg:last_msg,user_id2:user_id2},
                         success:function(new_msgs){
