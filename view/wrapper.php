@@ -44,8 +44,9 @@
                                 <?php echo $v['body'];?>
                             </div>
                             <div class="post_functions">
-                                <img src="png/thumbs23.png"/>23 
-                                <a href="" >Comment</a>
+                                <div class="like_post">
+                                    <img src="png/thumbs23.png"/>23 
+                                </div>
                             </div>
                         </div>
                         <div class="comments">
@@ -92,8 +93,10 @@
                                                 ?>
                                             </div>
                                             <div class="post_functions">
-                                                <img src="png/thumbs23.png"/>23 
-                                                <a href="" >Reply</a>
+                                                <span class="reply">Reply</span>
+                                                <div class="like_post">
+                                                    <img src="png/thumbs23.png"/>23 
+                                                </div>
                                             </div>
                                         </div>
                                         <?php

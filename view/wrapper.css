@@ -89,16 +89,39 @@
             }
             .post_whole .post_functions{
                 float:right;
-                padding:0 15px;
+                margin-right: 10px;
                 margin-bottom: 2px;
                 overflow:hidden;
+                transition:all .3s ease;
+                padding:1px 2px;
             }    
+            .like_post{
+                padding:0 5px 0 0;
+                background: none;
+                overflow:hidden;
+                transition:all .3s ease;
+                float:right;
+                cursor: pointer;
+            }
+            .like_post:hover{
+                background:#c5f2ff;
+            }    
+            .post_functions:hover .likes_count{
+                color:#2980B9;
+            }
             .post_whole .post_functions img{
-                height:15px;
-            }    
-            .post_whole .post_functions a{
+                height:16px;
+            }     
+            .post_whole .post_functions .reply{
                 color:#418c96;
-                padding:2px 0px 2px 12px;
+                padding:2px 0px 2px 6px;
+                float:right;
+                cursor: pointer;
+            }  
+            .post_whole .post_functions .likes_count{
+                color:#418c96;
+                font-size:100%;
+                padding:2px 0;
             }
             .post_whole .comment_body{
                 overflow:hidden;
