@@ -1,5 +1,7 @@
 
-
+    function typing_append(){
+//        var appended='<div class="msg_contain typing"><div class="to"><img src="user.png"/><span>. . .</span></div></div> ';
+    }
     $(document).ready(function(){  
         ///////// TYPING !!!!
             var typing=0;
@@ -102,6 +104,7 @@
 var chat_check_intervals=[];
 $(document).ready(function(){
     var selected_chat;
+    var typing_timeouts=[];
     // Add msg box !
     $('.message').click(function(){   
           // Check if chat window already exists !!
@@ -118,6 +121,7 @@ $(document).ready(function(){
                var scroll=$('.msgs').height();
                $('.messages').scrollTop(scroll);
                $('.message_field .chat_input').focus();
+                    var user2_typing=false;
     //           check_new();
             ////  !!!!! create new interval to check new messages !!!!!
                 chat_check_intervals[user_id2]=setInterval(function(){
@@ -130,8 +134,22 @@ $(document).ready(function(){
                         success:function(new_msgs){
                             if(new_msgs){
                                 if(new_msgs=='10'){
+                                    console.log(user2_typing);
+                                    if(!user2_typing){
+                                        selected_chat.parents('.messages').children('.typing').slideDown('slow');
+                                        user2_typing=true;
+                                    }
+                                    typing_timeouts[user_id2]=setTimeout(function(){
+                                        user2_typing=false;
+                                        console.log(user2_typing);
+                                        selected_chat.parents('.messages').children('.typing').slideUp('slow');
+                                    },2500);
                                     console.log('User is typing !!');
                                 }else{
+                                    if(selected_chat.parents('.messages').children('.typing').length){
+                                        selected_chat.parents('.messages').children('.typing').slideUp('fast');
+                                            clearTimeout(typing_timeouts[user_id2]);
+                                    }
                                     console.log('new !! '+new_msgs+' from'+user_id2);
                                     selected_chat.parents('.message_field').children('.messages').children('.msgs').append(new_msgs);
 //                                    selected_chat=$('.message_fields .messages .msgs .msg_contain:last-child');
