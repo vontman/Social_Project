@@ -67,3 +67,8 @@
             echo false;
         }
     }
+    if(isset($_GET['post_id'])&&isset($_GET['post_type'])){
+        $post_id=$_GET['post_id'];
+        $post_type=$_GET['post_type'];
+        echo $posts->like($post_id, $post_type, $user_id);
+    }

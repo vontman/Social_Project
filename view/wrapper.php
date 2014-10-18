@@ -45,7 +45,8 @@
                             </div>
                             <div class="post_functions">
                                 <div class="like_post">
-                                    <img src="png/thumbs23.png"/>23 
+                                    <img src="png/thumbs23.png"/>
+                                    <span class="likes_count"><?php echo $posts->check_rating($v['id'], 0); ?></span> 
                                 </div>
                             </div>
                         </div>
@@ -95,7 +96,8 @@
                                             <div class="post_functions">
                                                 <span class="reply">Reply</span>
                                                 <div class="like_post">
-                                                    <img src="png/thumbs23.png"/>23 
+                                                    <img src="png/thumbs23.png"/>
+                                                    <span class="likes_count"><?php if($v['count_likes']>0){echo $v['count_likes'];} ?></span> 
                                                 </div>
                                             </div>
                                         </div>

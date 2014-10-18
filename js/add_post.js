@@ -50,6 +50,17 @@ $(document).ready(function(){
             });
         }
     });
-
+    $('.wrapper').delegate('.post .like_post','click',function(){
+        var post_parent=$(this).parents('.post_functions');
+        var post_id=$(this).parents('.post').attr('post');
+        var post_type=0;
+        $.ajax({url:'controller/add_post.php',
+            data:{post_id:post_id,post_type:post_type},
+            success:function(lol){
+                alert(lol);
+                post_parent.append('You like this ');
+            }
+        });
+    });
 });
 

@@ -90,8 +90,10 @@ class comments {
             }
         }
         $query="SELECT comments.*,users.username,users.id AS users_id "
+//        . ", COUNT(rating.id) AS count_likes "
         . "FROM comments "
         . "LEFT JOIN users ON users.id=comments.user_id "
+//        . "LEFT JOIN rating ON rating.type=2 AND rating.post_id=comments.id "
         . "WHERE comments.post_id=$post_id "
         . "ORDER BY comments.created ASC "
         . "LIMIT $set_no,$items_no";
