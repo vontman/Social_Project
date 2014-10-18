@@ -57,9 +57,11 @@ class posts{
             }
         }
         $query="SELECT DISTINCT posts.*,users.username,users.id AS user_id "
+//        . ",COUNT(rating.id) AS count_likes "
         . "FROM posts "
         . "LEFT JOIN friends ON (friends.user_id=$user_id OR friends.friend_id=$user_id) "
         . "LEFT JOIN users ON users.id=posts.user_id "
+//        . "LEFT JOIN rating ON rating.type=0 AND rating.post_id=posts.id "
         . "WHERE (posts.user_id=friends.user_id OR posts.user_id=friends.friend_id) AND posts.permission!=1 "
         . "ORDER BY posts.created DESC "
         . "LIMIT $set_no,$items_no";
@@ -110,5 +112,32 @@ class posts{
         } catch(Exception $ex){
             echo mysqli_errno($this->link);
         }
+    }
+    public function check_rating($post_id,$post_type,$user_id=false){
+        $specific_row['cols']['post_id']=$post_id;
+        $specific_row['cols']['type']=$post_type;
+        if($user_id){
+            $specific_row['cols']['user_id']=$user_id;
+        }
+        $this->functions->table_name='rating';
+        $this->functions->select(false, FALSE, FALSE, false, $specific_row);
+        $this->functions->table_name='posts';
+        return mysqli_affected_rows($this->link);
+    }
+    public function like($post_id,$post_type,$user_id){
+        $input['post_id']=$post_id;
+        $input['type']=$post_type;
+        $input['user_id']=$user_id;
+        $input['created']=$this->date;
+        if($this->check_rating($post_id, $post_type,$user_id)>0){
+            $query="DELETE FROM rating WHERE (post_id=$post_id AND type=$post_type) AND user_id=$user_id";
+            $sql=  mysqli_query($this->link, $query);
+            return -1;
+        }else{
+            $this->functions->table_name='rating';
+            $this->functions->insert($input);
+            return mysqli_affected_rows($this->link);
+        }
+        $this->functions->table_name='posts';
     }
 }
