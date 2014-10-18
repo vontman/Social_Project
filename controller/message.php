@@ -35,7 +35,11 @@
                     </div>
                 <?php
             }
-            echo '</div></div>
+            echo '</div>
+                <div class="typing">
+                User is typing ...
+                </div>
+                </div>
             <div class="chat_type" style="overflow:hidden;width:100%;">
                 <textarea class="chat_input"></textarea>
             </div>

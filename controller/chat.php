@@ -8,6 +8,7 @@
         $recieved_id=$_GET['recieved_id'];
         $done=$messages->send($user_id, $recieved_id, $msg_body);
         if($done){
+            $messages->remove_typing($user_id, $recieved_id);
             echo '<div class="msg_contain">'
                 . '<div class="from"><img src="user.png"/><span>'.$msg_body.'</span></div>'
                 . '</div>';

@@ -94,6 +94,16 @@
         resize:none;
         word-break: break-all;
     }
+    .typing{
+        position: absolute;
+        bottom: 35px;
+        background: rgb(207, 255, 236);
+        padding: 2px 4px;
+        font-size: 15px;
+        font-weight: 700;
+        left: 0;
+        display:none;
+    }
 
 
 
