@@ -38,13 +38,12 @@ class rating {
         $input['user_id']=$user_id;
         $input['created']=$this->date;
         if($this->check_rating($post_id, $post_type,$user_id)>0){
-//            $query="DELETE FROM rating WHERE (post_id=$post_id AND type=$post_type) AND user_id=$user_id";
-//            $sql=  mysqli_query($this->link, $query);
-//            return -1;
             $specific_row['cols']['post_id']=$post_id;
             $specific_row['cols']['type']=$post_type;
             $specific_row['cols']['user_id']=$user_id;
-            return $this->functions->delete(false, $specific_row);
+            if($this->functions->delete(false, $specific_row)){
+                return -1;
+            }
         }else{
             $this->functions->insert($input);
             if(mysqli_affected_rows($this->link)>0){
