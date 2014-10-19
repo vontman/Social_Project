@@ -51,9 +51,8 @@ $(document).ready(function(){
         }
     });
     $('.wrapper').delegate('.post_whole .like_post','click',function(){
-        var post_parent=$(this).parents('.post_functions');
         var post_id=$(this).parent().parent().attr('post');
-        var post_type=$(this).attr('type');
+        var post_type=$(this).parent().parent().attr('type');
         $.ajax({url:'controller/add_post.php',
             data:{post_id:post_id,post_type:post_type},
             success:function(lol){
