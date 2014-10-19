@@ -129,14 +129,22 @@ class posts{
         $input['type']=$post_type;
         $input['user_id']=$user_id;
         $input['created']=$this->date;
+        $this->functions->table_name='rating';
         if($this->check_rating($post_id, $post_type,$user_id)>0){
-            $query="DELETE FROM rating WHERE (post_id=$post_id AND type=$post_type) AND user_id=$user_id";
-            $sql=  mysqli_query($this->link, $query);
-            return -1;
+//            $query="DELETE FROM rating WHERE (post_id=$post_id AND type=$post_type) AND user_id=$user_id";
+//            $sql=  mysqli_query($this->link, $query);
+//            return -1;
+            $this->functions->table_name='rating';
+            $specific_row['cols']['post_id']=$post_id;
+            $specific_row['cols']['type']=$post_type;
+            $specific_row['cols']['user_id']=$user_id;
+            return $this->functions->delete(false, $specific_row);
         }else{
             $this->functions->table_name='rating';
             $this->functions->insert($input);
-            return mysqli_affected_rows($this->link);
+            if(mysqli_affected_rows($this->link)>0){
+                return 1;
+            }
         }
         $this->functions->table_name='posts';
     }

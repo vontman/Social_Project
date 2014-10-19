@@ -172,11 +172,42 @@ class db_functions{
                 return mysqli_errno($this->link);
             }
         }
-    public function delete($id){
-            $query="DELETE FROM $this->table_name WHERE id=$id";
+    public function delete($id=false,$specific_row=false){
+            $query="DELETE FROM $this->table_name WHERE ";
+            if($id){
+                $query.=" id=$id ";
+            }elseif($specific_row){
+            $i=0;
+            if($id){
+                $query.=" id=".$id." AND (";
+            }else{
+                $query.=" ( ";
+            }
+            $count=count($specific_row['cols']);
+            foreach($specific_row['cols'] as $k=>$v){
+                if($i>0){
+                    if(@$specific_row['relation']){
+                        $query.=" ".$specific_row['relation'][$i-1]." ";
+                    }
+                    else{
+                        $query.=" AND ";
+                    }
+                    if($i%2==0 && $i>1){
+                        $query.=' ( ';
+                    }
+                }
+                $query.=" ".$k."='".$v."' ";
+                $i++;
+                if($i%2==0 && $i>1 && $i<$count){
+                    $query.=' ) ';
+                }
+            }
+            $query.=" ) ";
+        }
             try{
                 $sql=  mysqli_query($this->link, $query);
                 return mysqli_affected_rows($this->link);
+//                return $query;
             } catch (Exception $ex) {
                 return mysqli_errno($this->link);
             }   

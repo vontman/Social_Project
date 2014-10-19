@@ -6,6 +6,8 @@
                 $posts=new posts();
                 include_once '../model/comments.php';
                 $comments=new comments();
+                include_once '../model/rating.php';
+                $rating=new rating();
                 $limit[30]=1;
                 $view_posts=$posts->view_posts($user_id, $limit);
                 foreach($view_posts as $k=>$v){
@@ -45,8 +47,15 @@
                             </div>
                             <div class="post_functions">
                                 <div class="like_post">
+                                    <?php 
+                                        if($rating->check_rating($v['id'], 0, $user_id)>0){
+                                            echo "You like this ";
+                                        }
+                                    ?>
                                     <img src="png/thumbs23.png"/>
-                                    <span class="likes_count"><?php echo $posts->check_rating($v['id'], 0); ?></span> 
+                                    <span class="likes_count"><?php
+                                        echo $rating->check_rating($v['id'], 0);
+                                    ?></span> 
                                 </div>
                             </div>
                         </div>
@@ -97,7 +106,7 @@
                                                 <span class="reply">Reply</span>
                                                 <div class="like_post">
                                                     <img src="png/thumbs23.png"/>
-                                                    <span class="likes_count"><?php if($v['count_likes']>0){echo $v['count_likes'];} ?></span> 
+                                                    <span class="likes_count"><?php // if($v['count_likes']>0){echo $v['count_likes'];} ?></span> 
                                                 </div>
                                             </div>
                                         </div>
