@@ -186,9 +186,6 @@
                                                         </div>
                                                 </div>
                                             </div>
-                                            <div class='add_comment'>
-                                                <textarea id='add_reply_input' placeholder="Write Reply Here ..." post_type='1'></textarea>
-                                            </div>
                                         </div>  
                                     </div>
                                         <?php
