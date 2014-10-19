@@ -23,10 +23,15 @@ class comments {
         $this->functions->table_name="comments";
         $this->date=date('Y/m/d h:i:s', time());
     }
-    public function add_comment($user_id,$post_id,$comment_body){
+    public function add_comment($user_id,$post_id,$comment_body,$post_type=false){
         $comment['user_id']=$user_id;
         $comment['post_id']=$post_id;
         $comment['body']=$comment_body;
+        if($post_type){
+            $comment['post_type']=$post_type;
+        }else{
+            $comment['post_type']=0;
+        }
         $comment['created']=$this->date;
         try{
             $comment_id=$this->functions->insert($comment);
@@ -68,7 +73,7 @@ class comments {
         $this->functions->select(array('id'), false, FALSE, FALSE, $specific_row);
         return mysqli_affected_rows($this->link);
     }
-    public function view_comments($post_id,$limit){
+    public function view_comments($post_id,$limit,$post_type=false){
 //        $order['date']='DESC';
 //        $limit[$set_no]=5;
 //        $specific_row['cols']['post_id']=$post_id;
@@ -89,12 +94,15 @@ class comments {
                 $set_no=($key*$value)-$key;
             }
         }
+        if(!$post_type){
+            $post_type=0;
+        }
         $query="SELECT comments.*,users.username,users.id AS users_id "
 //        . ", COUNT(rating.id) AS count_likes "
         . "FROM comments "
         . "LEFT JOIN users ON users.id=comments.user_id "
 //        . "LEFT JOIN rating ON rating.type=2 AND rating.post_id=comments.id "
-        . "WHERE comments.post_id=$post_id "
+        . "WHERE comments.post_id=$post_id AND comments.post_type=$post_type "
         . "ORDER BY comments.created ASC "
         . "LIMIT $set_no,$items_no";
         try{
