@@ -130,7 +130,67 @@
                                                     ?></span> 
                                                 </div>
                                             </div>
-                                        </div>
+                                            <div class="comments comment_replies" replied='<?php echo $v['id']; ?>'>
+                                                <div class="post_comment comment_reply" type="1" post="<?php echo $v['id']; ?>" >
+                                                    <div class="post_info reply_info">
+                                                        <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
+                                                            <img src="user.png"/>
+                                                        </div>
+                                                        <div class="writer" user='<?php  echo $v['user_id']; ?>'>
+                                                            <?php  echo $v['username']; ?>
+                                                        </div>
+                                                        <div class="created">
+                                                            <?php
+                                                                $current_date=date('Y-m-d h:i:s');
+                                                                $created=$v['created'];
+                                                                $diff=floor(strtotime($current_date)-strtotime($created));
+                                                                if((($diff)/3600/24)>1){
+                                                                    if(floor(($diff)/3600/24)==1){
+                                                                        echo " Yesterday ....";
+                                                                    }else{
+                                                                        echo floor($diff/3600/24)." days ago ....";
+                                                                    }
+                                                                }elseif((($diff)/3600)>1){
+                                                                    echo floor($diff/3600)." hours ago ....";
+                                                                }elseif((($diff)/60)>1){
+                                                                    echo floor($diff/60)." minutes ago ....";
+                                                                }else{
+                                                                    echo " Few seconds ago ....";
+                                                                }
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment_body">
+                                                        <?php
+                                                            echo $v['body'];
+                                                        ?>
+                                                    </div>
+                                                    <div class="post_functions">
+                                                        <div class="like_post">
+                                                            <img src="png/thumbs23.png"/>
+                                                            <span class="likes_count"><?php
+                                                                $likes_count=$rating->check_rating($v['id'], 1);
+                                                                if($likes_count>0){
+                                                                    if($rating->check_rating($v['id'], 1, $user_id)>0){
+                                                                        if($likes_count==1){
+                                                                            echo "You ";
+                                                                        }else{
+                                                                            echo "You and ".($likes_count-1);
+                                                                        }
+                                                                    }else{
+                                                                        echo $likes_count;
+                                                                    }
+                                                                    echo " like this ";
+                                                                }
+                                                            ?></span> 
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class='add_comment'>
+                                                <textarea id='add_reply_input' placeholder="Write Reply Here ..." post_type='1'></textarea>
+                                            </div>
+                                        </div>  
+                                    </div>
                                         <?php
                                             }
                                         ?>
@@ -140,7 +200,7 @@
                             ?>
                                 </div>
                                 <div class='add_comment'>
-                                    <textarea id='add_comment_input' placeholder="Write Comment Here ..."></textarea>
+                                    <textarea id='add_comment_input' placeholder="Write Comment Here ..." post_type='0'></textarea>
                                 </div>
                     </div>
                     <?php

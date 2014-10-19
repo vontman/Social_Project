@@ -5,11 +5,13 @@
     $users=new users();
     @session_start();
     $user_id=$_SESSION['alterwire'];
-    if(isset($_GET['post_id'])&& isset($_GET['comment'])){
+    if(isset($_GET['post_id'])&& isset($_GET['comment'])&&isset($_GET['post_type'])){
+        $post_type=$_GET['post_type'];
         $post_id=$_GET['post_id'];
         $comment_body=$_GET['comment'];
-        $post_comment=$comments->add_comment($user_id, $post_id, $comment_body);
+        $post_comment=$comments->add_comment($user_id, $post_id, $comment_body,$post_type);
         if($post_comment){
+            if($post_type==0){
             ?>
                 <div class="post_comment" style="display:none;" post="<?php echo $post_comment; ?>">
                     <div class="post_info">
@@ -54,6 +56,11 @@
                     </div>
                 </div>
             <?php
+            }elseif($post_type==1){
+                ?>
+                looooooool
+                <?php
+            }
         }else{
             return false;
         }
