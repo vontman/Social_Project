@@ -68,7 +68,9 @@
         }
     }
     if(isset($_GET['post_id'])&&isset($_GET['post_type'])){
+        include_once '../model/rating.php';
+        $rating=new rating();
         $post_id=$_GET['post_id'];
         $post_type=$_GET['post_type'];
-        echo $posts->like($post_id, $post_type, $user_id);
+        echo $rating->like($post_id, $post_type, $user_id);
     }
