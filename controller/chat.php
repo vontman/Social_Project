@@ -10,7 +10,7 @@
         if($done){
             $messages->remove_typing($user_id, $recieved_id);
             echo '<div class="msg_contain">'
-                . '<div class="from"><img src="user.png"/><span>'.$msg_body.'</span></div>'
+                . '<div class="from"><img src="user.png"/><span>'.nl2br($msg_body).'</span></div>'
                 . '</div>';
         }else{
             

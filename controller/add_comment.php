@@ -22,7 +22,7 @@
                         <div class="created">
                             <?php
                                 $current_date=date('Y-m-d h:i:s');
-                                $created=$v['created'];
+                                $created=$current_date;
                                 $diff=floor(strtotime($current_date)-strtotime($current_date));
                                 if((($diff)/3600/24)>1){
                                     if(floor(($diff)/3600/24)==1){
@@ -42,28 +42,14 @@
                     </div>
                     <div class="comment_body">
                         <?php
-                            echo $post_body;
+                            echo $comment_body;
                         ?>
                     </div>
                     <div class="post_functions">
                         <span class="reply">Reply</span>
                         <div class="like_post" type="1">
                             <img src="png/thumbs23.png"/>
-                            <span class="likes_count"><?php
-                                $likes_count=$rating->check_rating($v['id'], 1);
-                                if($likes_count>0){
-                                    if($rating->check_rating($v['id'], 1, $user_id)>0){
-                                        if($likes_count==1){
-                                            echo "You ";
-                                        }else{
-                                            echo "You and ".($likes_count-1);
-                                        }
-                                    }else{
-                                        echo $likes_count;
-                                    }
-                                    echo " like this ";
-                                }
-                            ?></span> 
+                            <span class="likes_count"></span> 
                         </div>
                     </div>
                 </div>

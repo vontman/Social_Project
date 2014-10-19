@@ -59,7 +59,7 @@
                         <div class="comments">
                         </div>
                         <div class='add_comment'>
-                            <textarea id='add_comment_input'></textarea>
+                            <textarea id='add_comment_input' placeholder="Write Comment Here ..."></textarea>
                         </div>
                     </div>
                     <?php

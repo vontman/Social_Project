@@ -13,7 +13,7 @@
                 foreach($view_posts as $k=>$v){
                     ?>  
                     <div class='post_whole'>
-                        <div class="post" post='<?php echo $v['id'] ;?>'>
+                        <div class="post" post='<?php echo $v['id'] ;?>' type="0">
                             <div class="post_info">
                                 <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
                                     <img src="user.png"/>
@@ -46,7 +46,7 @@
                                 <?php echo $v['body'];?>
                             </div>
                             <div class="post_functions">
-                                <div class="like_post" type="0">
+                                <div class="like_post">
                                     <img src="png/thumbs23.png"/>
                                     <span class="likes_count"><?php
                                         $likes_count=$rating->check_rating($v['id'], 0);
@@ -75,7 +75,7 @@
                                     <?php
                                         foreach($post_comments as $k=>$v){
                                             ?>
-                                        <div class="post_comment" post="<?php echo $v['id']; ?>">
+                                        <div class="post_comment" post="<?php echo $v['id']; ?>"  type="1">
                                             <div class="post_info">
                                                 <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
                                                     <img src="user.png"/>
@@ -111,7 +111,7 @@
                                             </div>
                                             <div class="post_functions">
                                                 <span class="reply">Reply</span>
-                                                <div class="like_post" type="1">
+                                                <div class="like_post">
                                                     <img src="png/thumbs23.png"/>
                                                     <span class="likes_count"><?php
                                                         $likes_count=$rating->check_rating($v['id'], 1);
@@ -140,7 +140,7 @@
                             ?>
                                 </div>
                                 <div class='add_comment'>
-                                    <textarea id='add_comment_input'></textarea>
+                                    <textarea id='add_comment_input' placeholder="Write Comment Here ..."></textarea>
                                 </div>
                     </div>
                     <?php
