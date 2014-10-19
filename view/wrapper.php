@@ -46,15 +46,22 @@
                                 <?php echo $v['body'];?>
                             </div>
                             <div class="post_functions">
-                                <div class="like_post">
-                                    <?php 
-                                        if($rating->check_rating($v['id'], 0, $user_id)>0){
-                                            echo "You like this ";
-                                        }
-                                    ?>
+                                <div class="like_post" type="0">
                                     <img src="png/thumbs23.png"/>
                                     <span class="likes_count"><?php
-                                        echo $rating->check_rating($v['id'], 0);
+                                        $likes_count=$rating->check_rating($v['id'], 0);
+                                        if($likes_count>0){
+                                            if($rating->check_rating($v['id'], 0, $user_id)>0){
+                                                if($likes_count==1){
+                                                    echo "You ";
+                                                }else{
+                                                    echo "You and ".($likes_count-1);
+                                                }
+                                            }else{
+                                                echo $likes_count;
+                                            }
+                                            echo " like this ";
+                                        }
                                     ?></span> 
                                 </div>
                             </div>
@@ -68,7 +75,7 @@
                                     <?php
                                         foreach($post_comments as $k=>$v){
                                             ?>
-                                        <div class="post_comment">
+                                        <div class="post_comment" post="<?php echo $v['id']; ?>">
                                             <div class="post_info">
                                                 <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
                                                     <img src="user.png"/>
@@ -104,9 +111,23 @@
                                             </div>
                                             <div class="post_functions">
                                                 <span class="reply">Reply</span>
-                                                <div class="like_post">
+                                                <div class="like_post" type="1">
                                                     <img src="png/thumbs23.png"/>
-                                                    <span class="likes_count"><?php // if($v['count_likes']>0){echo $v['count_likes'];} ?></span> 
+                                                    <span class="likes_count"><?php
+                                                        $likes_count=$rating->check_rating($v['id'], 1);
+                                                        if($likes_count>0){
+                                                            if($rating->check_rating($v['id'], 1, $user_id)>0){
+                                                                if($likes_count==1){
+                                                                    echo "You ";
+                                                                }else{
+                                                                    echo "You and ".($likes_count-1);
+                                                                }
+                                                            }else{
+                                                                echo $likes_count;
+                                                            }
+                                                            echo " like this ";
+                                                        }
+                                                    ?></span> 
                                                 </div>
                                             </div>
                                         </div>
