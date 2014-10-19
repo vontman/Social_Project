@@ -13,6 +13,15 @@ $(document).ready(function(){
             comment_input_toggle=false;
         }
     });
+    $('.wrapper').delegate('.reply','click',function(){
+        var reply_input="<div class='add_comment' style='display:none'><textarea id='add_reply_input' placeholder='Write Reply Here ...' post_type='1'></textarea></div>";
+        if(!$(this).parents('.post_comment ').children('.comment_replies').length){
+            var replied_id=$(this).parents('.post_comment ').attr('post');
+            var replies_div="<div class='comments comment_replies' replied='"+replied_id+"'></div>";
+            $(this).parents('.post_comment ').append(replies_div);
+        }
+        $(reply_input).appendTo($(this).parents('.post_comment ').children('.comment_replies')).slideDown(400);
+    });
     //  !!!!!!
     $('.wrapper').delegate('.add_comment textarea','keypress',function(key){
         if(key.which==13 && !key.shiftKey){
@@ -23,6 +32,7 @@ $(document).ready(function(){
                 var post_type=$(this).attr('post_type');
                 var post_id;
                 var post_comments;
+                // Check whether it is a comment for a post or a reply for a comment !!
                 if(post_type==1){
                     post_id=$(this).parent().parent().attr('replied');
                     post_comments=$(this).parent().parent();
@@ -35,12 +45,13 @@ $(document).ready(function(){
                     data:{post_id:post_id,comment:comment_body,post_type:post_type},
                     success:function(comment){
                         if(comment){
-                            alert(comment);
                             comment_input.val('');
 //                            post_comments.append(comment);
                             $(comment).appendTo(post_comments).slideDown(400);
+                            // remove add reply textarea
                             if($('.wrapper .comment_replies .add_comment').length){
                                 $('.wrapper .comment_replies .add_comment').slideUp(200);
+                                $('.wrapper .comment_replies .add_comment').remove();
                             }
                         }else{
                             alert('Error !!');
