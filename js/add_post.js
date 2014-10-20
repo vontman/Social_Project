@@ -53,10 +53,17 @@ $(document).ready(function(){
     $('.wrapper').delegate('.post_whole .like_post','click',function(){
         var post_id=$(this).parent().parent().attr('post');
         var post_type=$(this).parent().parent().attr('type');
+        var post_likes=$(this).children('.likes_count');
         $.ajax({url:'controller/add_post.php',
             data:{post_id:post_id,post_type:post_type},
             success:function(lol){
-                alert(lol);
+                if(post_likes.text()==''){
+                    post_likes.text('You like this ');
+                }else if(post_likes.text()>1){
+                    post_likes.text('You and '+(post_likes+1)+' like this ');
+                }else if(post_likes.text()=='You like this '){
+                    post_likes.text('');
+                }
             }
         });
     });
