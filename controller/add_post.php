@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="post_body">
-                                <?php echo $post_body;?>
+                                <?php echo nl2br($post_body);?>
                             </div>
                             <div class="post_functions">
                                 <img src="png/thumbs23.png"/>23 

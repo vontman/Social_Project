@@ -53,7 +53,7 @@
                                         if($likes_count>0){
                                             if($rating->check_rating($v['id'], 0, $user_id)>0){
                                                 if($likes_count==1){
-                                                    echo "You ";
+                                                    echo "You";
                                                 }else{
                                                     echo "You and ".($likes_count-1);
                                                 }
@@ -118,7 +118,7 @@
                                                         if($likes_count>0){
                                                             if($rating->check_rating($v['id'], 1, $user_id)>0){
                                                                 if($likes_count==1){
-                                                                    echo "You ";
+                                                                    echo "You";
                                                                 }else{
                                                                     echo "You and ".($likes_count-1);
                                                                 }
@@ -180,7 +180,7 @@
                                                                 if($likes_count>0){
                                                                     if($rating->check_rating($v['id'], 1, $user_id)>0){
                                                                         if($likes_count==1){
-                                                                            echo "You ";
+                                                                            echo "You";
                                                                         }else{
                                                                             echo "You and ".($likes_count-1);
                                                                         }

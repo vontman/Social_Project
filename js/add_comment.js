@@ -14,10 +14,10 @@ $(document).ready(function(){
             comment_input_toggle=false;                           
         }           
         if(reply_input_toggle){
-                console.log('O_O');
-                $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
-                
-            }
+            console.log('O_O');
+            $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
+            reply_input_toggle=false;
+        }
     });
     $('.wrapper').delegate('.reply','click',function(){
         setTimeout(function(){reply_input_toggle=true;},500);
@@ -56,8 +56,8 @@ $(document).ready(function(){
                         if(comment){
                             comment_input.val('');
 //                            post_comments.append(comment);
-                            $(comment).appendTo(post_comments).slideDown(400);
-                            // remove add reply textarea
+                            $(comment).insertBefore(comment_input.parent()).slideDown(400);
+                                // remove add reply textarea
                             if($('.wrapper .comment_replies .add_comment').length){
                                 $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
                             }

@@ -44,7 +44,7 @@
                     </div>
                     <div class="comment_body">
                         <?php
-                            echo $comment_body;
+                            echo nl2br($comment_body);
                         ?>
                     </div>
                     <div class="post_functions">
@@ -58,7 +58,48 @@
             <?php
             }elseif($post_type==1){
                 ?>
-                
+                    <div class="post_comment comment_reply" type="1" post="<?php echo $post_comment; ?>" style="display:none;">
+                            <div class="post_info reply_info">
+                                <div class="writer_pic" user='<?php  echo $user_id; ?>'>
+                                    <img src="user.png"/>
+                                </div>
+                                <div class="writer" user='<?php  echo $user_id; ?>'>
+                                    <?php  echo $users->view_user($user_id)[0]['username']; ?>
+                                </div>
+                                <div class="created">
+                                    <?php
+                                        $current_date=date('Y-m-d h:i:s');
+                                        $created=$current_date;
+                                        $diff=floor(strtotime($current_date)-strtotime($created));
+                                        if((($diff)/3600/24)>1){
+                                            if(floor(($diff)/3600/24)==1){
+                                                echo " Yesterday ....";
+                                            }else{
+                                                echo floor($diff/3600/24)." days ago ....";
+                                            }
+                                        }elseif((($diff)/3600)>1){
+                                            echo floor($diff/3600)." hours ago ....";
+                                        }elseif((($diff)/60)>1){
+                                            echo floor($diff/60)." minutes ago ....";
+                                        }else{
+                                            echo " Few seconds ago ....";
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="comment_body">
+                                <?php
+                                    echo nl2br($comment_body);
+                                ?>
+                            </div>
+                            <div class="post_functions">
+                                <div class="like_post">
+                                    <img src="png/thumbs23.png"/>
+                                    <span class="likes_count">
+                                    </span> 
+                                </div>
+                        </div>
+                    </div>
                 <?php
             }
         }else{
