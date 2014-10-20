@@ -58,7 +58,7 @@
             <?php
             }elseif($post_type==1){
                 ?>
-                looooooool
+                
                 <?php
             }
         }else{

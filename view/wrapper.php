@@ -130,7 +130,14 @@
                                                     ?></span> 
                                                 </div>
                                             </div>
+                                            <?php
+                                                $replies=$comments->view_comments($v['id'], $limit, 1);
+                                                if($replies){
+                                            ?>
                                             <div class="comments comment_replies" replied='<?php echo $v['id']; ?>'>
+                                                <?php
+                                                    foreach($replies as $v){
+                                                ?>
                                                 <div class="post_comment comment_reply" type="1" post="<?php echo $v['id']; ?>" >
                                                     <div class="post_info reply_info">
                                                         <div class="writer_pic" user='<?php  echo $v['user_id']; ?>'>
@@ -186,7 +193,13 @@
                                                         </div>
                                                 </div>
                                             </div>
-                                        </div>  
+                                                <?php
+                                                    }
+                                                ?>
+                                        </div>
+                                            <?php
+                                                }
+                                            ?>
                                     </div>
                                         <?php
                                             }
