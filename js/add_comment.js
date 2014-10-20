@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //  Comment Input expand and collapse
     var comment_input_toggle=false;
+    var reply_input_toggle=false;
     $('.wrapper').delegate('.add_comment textarea','click',function(){
         $(this).css('height','60px');
         setTimeout(function(){comment_input_toggle=true;},500);
@@ -10,10 +11,16 @@ $(document).ready(function(){
         if(comment_input_toggle){
         console.log('hi !!!');
             $('#contain_wrapper .add_comment textarea').css('height','30px');
-            comment_input_toggle=false;
-        }
+            comment_input_toggle=false;                           
+        }           
+        if(reply_input_toggle){
+                console.log('O_O');
+                $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
+                
+            }
     });
     $('.wrapper').delegate('.reply','click',function(){
+        setTimeout(function(){reply_input_toggle=true;},500);
         var reply_input="<div class='add_comment' style='display:none'><textarea id='add_reply_input' placeholder='Write Reply Here ...' post_type='1'></textarea></div>";
         if(!$(this).parents('.post_comment ').children('.comment_replies').length){
             var replied_id=$(this).parents('.post_comment ').attr('post');
@@ -21,6 +28,7 @@ $(document).ready(function(){
             $(this).parents('.post_comment ').append(replies_div);
         }
         $(reply_input).appendTo($(this).parents('.post_comment ').children('.comment_replies')).slideDown(400);
+        $('.add_comment #add_reply_input').focus();
     });
     //  !!!!!!
     $('.wrapper').delegate('.add_comment textarea','keypress',function(key){
@@ -34,6 +42,7 @@ $(document).ready(function(){
                 var post_comments;
                 // Check whether it is a comment for a post or a reply for a comment !!
                 if(post_type==1){
+                    
                     post_id=$(this).parent().parent().attr('replied');
                     post_comments=$(this).parent().parent();
                 }else if(post_type==0){
@@ -50,8 +59,7 @@ $(document).ready(function(){
                             $(comment).appendTo(post_comments).slideDown(400);
                             // remove add reply textarea
                             if($('.wrapper .comment_replies .add_comment').length){
-                                $('.wrapper .comment_replies .add_comment').slideUp(200);
-                                $('.wrapper .comment_replies .add_comment').remove();
+                                $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
                             }
                         }else{
                             alert('Error !!');
