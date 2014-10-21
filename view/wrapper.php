@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="post_body">
-                                <?php echo $v['body'];?>
+                                <?php echo nl2br($v['body']);?>
                             </div>
                             <div class="post_functions">
                                 <div class="like_post">
@@ -106,7 +106,7 @@
                                             </div>
                                             <div class="comment_body">
                                                 <?php
-                                                    echo $v['body'];
+                                                    echo nl2br($v['body']);
                                                 ?>
                                             </div>
                                             <div class="post_functions">
@@ -169,7 +169,7 @@
                                                     </div>
                                                     <div class="comment_body">
                                                         <?php
-                                                            echo $v['body'];
+                                                            echo nl2br($v['body']);
                                                         ?>
                                                     </div>
                                                     <div class="post_functions">
