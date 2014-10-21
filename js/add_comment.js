@@ -57,6 +57,7 @@ $(document).ready(function(){
                             comment_input.val('');
 //                            post_comments.append(comment);
                             $(comment).insertBefore(comment_input.parent()).slideDown(400);
+                            reply_input_toggle=false;
                                 // remove add reply textarea
                             if($('.wrapper .comment_replies .add_comment').length){
                                 $('.wrapper .comment_replies .add_comment').slideUp(200,function(){$('.wrapper .comment_replies .add_comment').remove();});
